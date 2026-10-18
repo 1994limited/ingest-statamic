@@ -41,7 +41,7 @@ use Statamic\Statamic;
 class ServiceProvider extends AddonServiceProvider
 {
     /** The Control Panel nav icon. */
-    public const ICON = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"><path d="M2 2.5h10M2 5h6" stroke="currentColor" stroke-linecap="round"/><path d="M7 7.5v4m0 0L5 9.5m2 2 2-2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 12.5h9" stroke="currentColor" stroke-linecap="round"/></svg>';
+    public const ICON = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14"><path d="M7 1.5V6.25M4.75 4L7 6.25L9.25 4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.75 7.75H4.5L5.5 9.25H8.5L9.5 7.75H12.25V9.75L9.75 12.25H1.75Z" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/><path d="M12.25 9.75H9.75V12.25" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
     protected $commands = [
         RunFeed::class,
