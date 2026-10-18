@@ -193,4 +193,32 @@ class DestinationsTest extends TestCase
         $crime = Entry::query()->where('title', 'Crime')->first();
         $this->assertSame('Fiction', $crime->parent()?->get('title'));
     }
+
+    #[Test]
+    public function a_users_feed_never_adopts_or_changes_an_administrator(): void
+    {
+        Role::make('member')->save();
+        config(['ingest.users.roles' => ['member']]);
+        $admin = User::make()->email('boss@example.com')->makeSuper();
+        $admin->save();
+
+        file_put_contents(self::TMP.'/members.json', json_encode(['members' => [['email' => 'boss@example.com', 'name' => 'Not the boss', 'new_email' => 'attacker@example.com']]]));
+        $this->serve('members.json', self::TMP.'/members.json');
+        $this->saveFeed('members', [
+            'source' => ['type' => 'url', 'url' => 'https://feeds.test/members.json'],
+            'format' => ['item_path' => 'members'],
+            'destination' => ['type' => 'users'],
+            'key' => ['email'],
+            'sync' => ['adopt' => ['field' => 'email', 'path' => 'email']],
+            'mapping' => ['email' => ['path' => 'new_email'], 'name' => ['path' => 'name']],
+        ]);
+
+        $run = $this->ingest('members');
+
+        $this->assertSame(1, $run->counts['failed']);
+        $boss = User::find($admin->id());
+        $this->assertSame('boss@example.com', $boss->email());
+        $this->assertTrue($boss->isSuper());
+        $this->assertNull(User::findByEmail('attacker@example.com'));
+    }
 }

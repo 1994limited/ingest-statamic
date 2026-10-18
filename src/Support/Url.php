@@ -41,6 +41,17 @@ class Url
         return $authority.self::normalise($dir.$relative);
     }
 
+    /**
+     * Text safe to show and log: query strings (which can hold API keys)
+     * and credentials are taken out of any URL in it.
+     */
+    public static function redact(string $text): string
+    {
+        $text = (string) preg_replace('~(https?://)[^/\s:@]+:[^/\s@]+@~i', '$1', $text);
+
+        return (string) preg_replace('~(https?://[^\s?#]+)\?[^\s#]*~i', '$1?…', $text);
+    }
+
     public static function isAbsolute(string $url): bool
     {
         return (bool) preg_match('#^https?://#i', $url);

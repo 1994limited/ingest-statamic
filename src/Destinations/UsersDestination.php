@@ -75,11 +75,28 @@ class UsersDestination implements Destination
 
     public function findBy(Feed $feed, string $field, mixed $value): Collection
     {
-        if ($field === 'email') {
-            return collect([User::findByEmail(mb_strtolower(trim(Value::text($value))))])->filter();
+        // Administrators are found too, so the item fails (in fill) rather
+        // than quietly creating someone else.
+        return $field === 'email'
+            ? collect([User::findByEmail(mb_strtolower(trim(Value::text($value))))])->filter()
+            : User::query()->where($field, $value)->limit(2)->get();
+    }
+
+    /**
+     * Super admins, and anyone with a role or group outside the allow-lists,
+     * are out of a feed's reach.
+     */
+    public function protectedUser(mixed $user): bool
+    {
+        if ($user->isSuper()) {
+            return true;
         }
 
-        return User::query()->where($field, $value)->limit(2)->get();
+        $roles = array_map('strval', (array) config('ingest.users.roles', []));
+        $groups = array_map('strval', (array) config('ingest.users.groups', []));
+
+        return $user->explicitRoles()->keys()->diff($roles)->isNotEmpty()
+            || $user->groups()->keys()->diff($groups)->isNotEmpty();
     }
 
     public function values(Feed $feed, mixed $content, array $handles): array
@@ -114,6 +131,10 @@ class UsersDestination implements Destination
 
     public function fill(Feed $feed, mixed $content, array $values, Context $context): void
     {
+        if ($content->id() && User::find($content->id()) && $this->protectedUser($content)) {
+            throw new FieldError(__('Ingest doesn\'t change administrators, or users with roles it isn\'t allowed to give.'));
+        }
+
         foreach ($values as $handle => $value) {
             if (in_array($handle, self::FORBIDDEN, true)) {
                 continue;
@@ -126,9 +147,6 @@ class UsersDestination implements Destination
                 default => $value === null ? $content->remove($handle) : $content->set($handle, $value),
             };
         }
-
-        // Never, whatever a feed or a hook says.
-        $content->remove('super');
     }
 
     /** @return string[] */
@@ -151,7 +169,6 @@ class UsersDestination implements Destination
 
     public function save(mixed $content): void
     {
-        $content->remove('super');
         config('ingest.quiet_saves', true) ? $content->saveQuietly() : $content->save();
     }
 
@@ -179,6 +196,10 @@ class UsersDestination implements Destination
         if ($published) {
             $content->remove('ingest_blocked');
 
+            return;
+        }
+
+        if ($this->protectedUser($content)) {
             return;
         }
 

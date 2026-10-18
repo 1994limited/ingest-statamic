@@ -46,11 +46,15 @@ Templates in mappings fill in values (`{first_name}`); they never run Antlers. T
 
 ## Users
 
-A users feed can't create super admins, set passwords, or give roles and groups that aren't on the allow-list. See [Users](destinations.md#users).
+A users feed can't create super admins, set passwords, give roles and groups that aren't on the allow-list, or change an existing administrator. See [Users](destinations.md#users).
 
 ## Permissions
 
-Viewing, running, editing feeds and undoing runs are separate permissions, so editors can watch feeds without changing them.
+Viewing, running, editing feeds and undoing runs are separate permissions, so editors can watch feeds without changing them. A feed writes on its editor's behalf, so setting one up also needs the permissions to make those changes by hand: editing and creating entries in its collection, editing its taxonomy's terms or its global set, or editing, creating and assigning roles to users.
+
+## Error messages
+
+Messages from failed requests have query strings and credentials taken out of URLs before they're shown, stored or emailed, so an API key sent as a query parameter never reaches the run log or a notification.
 
 ## Reporting a problem
 

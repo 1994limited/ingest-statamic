@@ -53,6 +53,8 @@ INGEST_QUEUE_CONNECTION=redis
 | Create and edit feeds | Create, edit, pause, duplicate and delete feeds; turn on webhooks |
 | Undo runs | Undo a run |
 
+Setting up a feed also needs permission to change what it writes to: editing and creating entries in its collection, editing its taxonomy's terms or its global set, or editing and creating users and assigning roles and groups. Super admins have all of these.
+
 ## Licensing
 
 Ingest is free to use while you build a site: on your machine, and on development or staging sites that aren't public. Buy a licence on the [Statamic Marketplace](https://statamic.com/addons) before the site goes live. One licence covers one live site.

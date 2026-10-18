@@ -5,6 +5,7 @@ namespace NineteenNinetyFour\Ingest\Http\Controllers\CP;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use NineteenNinetyFour\Ingest\Contracts\FeedRepository;
 use NineteenNinetyFour\Ingest\Contracts\ItemMap;
@@ -56,6 +57,7 @@ class FeedsController extends CpController
         $request->validate(['handle' => ['required', 'regex:/^[a-z0-9][a-z0-9_-]*$/', 'max:64']]);
 
         $feed = Feed::make($handle, $this->clean((array) $request->input('feed', [])));
+        $this->authorizeDestination($feed);
         $validator->validate($feed, true);
         $feeds->save($feed);
 
@@ -108,6 +110,7 @@ class FeedsController extends CpController
         $data['webhook'] = $existing->get('webhook');
 
         $model = Feed::make($existing->handle(), $data);
+        $this->authorizeDestination($model);
         $validator->validate($model, false);
         $feeds->save($model);
 
@@ -279,6 +282,36 @@ class FeedsController extends CpController
         $data['filters'] = array_values(array_filter((array) ($data['filters'] ?? []), fn ($f) => is_array($f) && ($f['path'] ?? '') !== ''));
 
         return $data;
+    }
+
+    /**
+     * A feed writes on its editor's behalf, so whoever sets one up must be
+     * allowed to make those changes themselves.
+     */
+    private function authorizeDestination(Feed $feed): void
+    {
+        $d = $feed->destination() + ['collection' => '', 'taxonomy' => '', 'set' => ''];
+        $user = auth()->user();
+
+        if ($user?->isSuper()) {
+            return;
+        }
+
+        $needs = match ($d['type'] ?? 'entries') {
+            'entries', 'cargo_products', 'cargo_stock' => ["edit {$d['collection']} entries", "create {$d['collection']} entries"],
+            'terms' => ["edit {$d['taxonomy']} terms"],
+            'globals' => ["edit {$d['set']} globals"],
+            'users' => ['edit users', 'create users', 'assign roles', 'assign user groups'],
+            default => [],
+        };
+
+        foreach ($needs as $permission) {
+            if (! $user?->can($permission)) {
+                throw ValidationException::withMessages([
+                    'destination.type' => __('You need the ":permission" permission to set up a feed that writes here.', ['permission' => $permission]),
+                ]);
+            }
+        }
     }
 
     private function find(FeedRepository $feeds, string $handle): Feed

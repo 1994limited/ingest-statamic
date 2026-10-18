@@ -64,7 +64,7 @@ class AssetDownloader
             try {
                 $this->fetcher->fetch($url, $tmp, maxBytes: (int) config('ingest.assets.max_size', 20) * 1024 * 1024);
             } catch (IngestException $e) {
-                throw new FieldError("Couldn't download {$url}: {$e->getMessage()}");
+                throw new FieldError('Couldn\'t download '.Url::redact($url).': '.$e->getMessage());
             }
 
             $mime = (string) (new \finfo(FILEINFO_MIME_TYPE))->file($tmp);

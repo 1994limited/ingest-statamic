@@ -146,4 +146,14 @@ class SupportTest extends TestCase
         $this->assertSame('/x?cursor=abc', Pagination::linkHeaderNext('</x?cursor=abc>; rel=next'));
         $this->assertNull(Pagination::linkHeaderNext('<https://api.test/x?page=1>; rel="prev"'));
     }
+
+    #[Test]
+    public function secrets_in_urls_are_kept_out_of_messages(): void
+    {
+        $this->assertSame(
+            "Couldn't connect: cURL error 7 for https://api.test/feed?… (see docs)",
+            Url::redact("Couldn't connect: cURL error 7 for https://api.test/feed?api_key=SECRET&x=1 (see docs)"),
+        );
+        $this->assertSame('https://api.test/x', Url::redact('https://user:pass@api.test/x'));
+    }
 }

@@ -41,7 +41,7 @@ class Fetcher
 
             if (in_array($response->status(), [301, 302, 303, 307, 308], true) && $response->header('Location')) {
                 if (++$hops > (int) config('ingest.http.max_redirects', 3)) {
-                    throw new IngestException("Too many redirects fetching {$url}.");
+                    throw new IngestException('Too many redirects fetching '.Url::redact($url).'.');
                 }
 
                 $url = Url::resolve($url, $response->header('Location'));
@@ -68,7 +68,7 @@ class Fetcher
         }
 
         if (($length = (int) $response->header('Content-Length')) > $maxBytes) {
-            throw new IngestException(sprintf('%s is %s, larger than the %s limit.', $url, self::size($length), self::size($maxBytes)));
+            throw new IngestException(sprintf('%s is %s, larger than the %s limit.', Url::redact($url), self::size($length), self::size($maxBytes)));
         }
 
         $size = $this->save($response, $destination, $maxBytes, $url);
@@ -89,12 +89,12 @@ class Fetcher
             'sink' => $sink ?? 'php://temp',
             'on_headers' => function ($response) use ($maxBytes, $url) {
                 if ((int) $response->getHeaderLine('Content-Length') > $maxBytes) {
-                    throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
+                    throw new IngestException(sprintf('%s is larger than the %s limit.', Url::redact($url), self::size($maxBytes)));
                 }
             },
             'progress' => function ($total, $downloaded) use ($maxBytes, $url) {
                 if ($downloaded > $maxBytes) {
-                    throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
+                    throw new IngestException(sprintf('%s is larger than the %s limit.', Url::redact($url), self::size($maxBytes)));
                 }
             },
             'timeout' => (int) config('ingest.http.timeout', 30),
@@ -131,7 +131,7 @@ class Fetcher
                 }
             }
 
-            throw new IngestException("Couldn't connect to ".parse_url($url, PHP_URL_HOST).': '.$e->getMessage(), 0, $e);
+            throw new IngestException(Url::redact("Couldn't connect to ".parse_url($url, PHP_URL_HOST).': '.$e->getMessage()), 0, $e);
         }
     }
 
@@ -149,7 +149,7 @@ class Fetcher
             if (strlen($body) > $maxBytes) {
                 @unlink($destination);
 
-                throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
+                throw new IngestException(sprintf('%s is larger than the %s limit.', Url::redact($url), self::size($maxBytes)));
             }
 
             file_put_contents($destination, $body);
@@ -160,7 +160,7 @@ class Fetcher
         if ($size > $maxBytes) {
             @unlink($destination);
 
-            throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
+            throw new IngestException(sprintf('%s is larger than the %s limit.', Url::redact($url), self::size($maxBytes)));
         }
 
         return $size;

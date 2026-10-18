@@ -19,7 +19,7 @@ class ControlPanelTest extends TestCase
 {
     use FakesRoles;
 
-    private function editor(array $permissions = ['view ingest', 'run ingest feeds', 'manage ingest feeds', 'undo ingest runs']): \Statamic\Contracts\Auth\User
+    private function editor(array $permissions = ['view ingest', 'run ingest feeds', 'manage ingest feeds', 'undo ingest runs', 'edit books entries', 'create books entries']): \Statamic\Contracts\Auth\User
     {
         $this->setTestRoles(['ingester' => ['access cp', ...$permissions]]);
         $user = User::make()->email('editor@example.com')->assignRole('ingester');
@@ -292,5 +292,16 @@ class ControlPanelTest extends TestCase
         $data = $component->toArray();
         $this->assertSame('ingest-feed-health', $data['name']);
         $this->assertCount(1, $data['props']['feeds']);
+    }
+
+    #[Test]
+    public function setting_up_a_feed_needs_permission_to_edit_its_destination(): void
+    {
+        $this->actingAs($this->editor(['view ingest', 'manage ingest feeds']))
+            ->postJson(cp_route('ingest.feeds.store'), ['feed' => $this->form()])
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['destination.type']);
+
+        $this->assertNull(app(FeedRepository::class)->find('books'));
     }
 }

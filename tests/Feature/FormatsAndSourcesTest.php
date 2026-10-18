@@ -2,6 +2,7 @@
 
 namespace NineteenNinetyFour\Ingest\Tests\Feature;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Http;
 use NineteenNinetyFour\Ingest\Runs\RunStatus;
@@ -367,5 +368,19 @@ class FormatsAndSourcesTest extends TestCase
 
         $this->assertSame(RunStatus::Failed, $run->status);
         $this->assertStringContainsString('Anyone with the link', $run->message);
+    }
+
+    #[Test]
+    public function an_api_key_in_the_query_never_reaches_the_run_message(): void
+    {
+        putenv('KEY=SECRET-KEY-1');
+        $this->serve('down.json', fn () => throw new ConnectionException('cURL error 7: Failed to connect for https://feeds.test/down.json?apikey=SECRET-KEY-1'));
+        $this->booksFeed(['source' => ['auth' => ['type' => 'api_key', 'name' => 'apikey', 'value' => 'env:KEY', 'in' => 'query']]], 'down.json');
+
+        $run = $this->ingest('books');
+
+        $this->assertSame(RunStatus::Failed, $run->status);
+        $this->assertStringNotContainsString('SECRET-KEY-1', $run->message);
+        putenv('KEY');
     }
 }
