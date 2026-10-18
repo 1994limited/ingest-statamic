@@ -85,6 +85,10 @@ return [
         // Largest feed file, in megabytes.
         'max_feed_size' => 200,
         'user_agent' => 'Ingest for Statamic',
+        // Check HTTPS certificates: true, or the path of a CA bundle (for a
+        // local development CA such as Herd's or Valet's). Never turn off
+        // in production.
+        'verify' => env('INGEST_HTTP_VERIFY', true),
     ],
 
     // Hosts allowed even though they resolve to private or internal

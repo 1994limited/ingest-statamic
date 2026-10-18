@@ -2,6 +2,7 @@
 
 namespace NineteenNinetyFour\Ingest\Mapping\Fields;
 
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use NineteenNinetyFour\Ingest\Mapping\Context;
 use NineteenNinetyFour\Ingest\Mapping\FieldError;
@@ -54,7 +55,7 @@ class EntriesMapper extends RelationshipMapper
             ->data(['title' => $value]);
 
         if ($entry->collection()->dated()) {
-            $entry->date(now());
+            $entry->date(Carbon::now());
         }
 
         config('ingest.quiet_saves', true) ? $entry->saveQuietly() : $entry->save();

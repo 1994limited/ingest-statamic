@@ -33,7 +33,11 @@ class Fetcher
         $hops = 0;
 
         while (true) {
-            $response = $this->send($url, $headers, $query, $method, $body);
+            if (! is_dir(dirname($destination))) {
+                mkdir(dirname($destination), 0755, true);
+            }
+
+            $response = $this->send($url, $headers, $query, $method, $body, $destination, $maxBytes);
 
             if (in_array($response->status(), [301, 302, 303, 307, 308], true) && $response->header('Location')) {
                 if (++$hops > (int) config('ingest.http.max_redirects', 3)) {
@@ -72,15 +76,30 @@ class Fetcher
         return new Fetched($destination, $response->status(), $url, $headersOut, $size);
     }
 
-    private function send(string $url, array $headers, array $query, string $method, ?string $body): Response
+    private function send(string $url, array $headers, array $query, string $method, ?string $body, ?string $sink = null, ?int $maxBytes = null): Response
     {
         $address = $this->guard->check($url);
+        $maxBytes ??= (int) config('ingest.http.max_feed_size', 200) * 1024 * 1024;
 
+        // Curl writes the body straight to a file. (Guzzle's "stream" option
+        // would switch to PHP's stream handler, which ignores the pinned
+        // address below.)
         $options = [
             'allow_redirects' => false,
-            'stream' => true,
+            'sink' => $sink ?? 'php://temp',
+            'on_headers' => function ($response) use ($maxBytes, $url) {
+                if ((int) $response->getHeaderLine('Content-Length') > $maxBytes) {
+                    throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
+                }
+            },
+            'progress' => function ($total, $downloaded) use ($maxBytes, $url) {
+                if ($downloaded > $maxBytes) {
+                    throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
+                }
+            },
             'timeout' => (int) config('ingest.http.timeout', 30),
             'connect_timeout' => (int) config('ingest.http.connect_timeout', 10),
+            'verify' => self::verify(),
         ];
 
         if ($address !== null) {
@@ -105,45 +124,57 @@ class Fetcher
         try {
             return $request->send($method, $url);
         } catch (ConnectionException $e) {
+            // A limit thrown from a callback arrives wrapped.
+            for ($previous = $e; $previous; $previous = $previous->getPrevious()) {
+                if ($previous instanceof IngestException) {
+                    throw $previous;
+                }
+            }
+
             throw new IngestException("Couldn't connect to ".parse_url($url, PHP_URL_HOST).': '.$e->getMessage(), 0, $e);
         }
     }
 
+    /**
+     * The body is in the file already (curl's sink); a faked response in
+     * tests isn't, so write it there.
+     */
     private function save(Response $response, string $destination, int $maxBytes, string $url): int
     {
-        if (! is_dir(dirname($destination))) {
-            mkdir(dirname($destination), 0755, true);
-        }
+        clearstatcache(true, $destination);
 
-        $stream = $response->toPsrResponse()->getBody();
-        if ($stream->isSeekable()) {
-            $stream->rewind();
-        }
+        if (! is_file($destination) || filesize($destination) === 0) {
+            $body = $response->body();
 
-        $out = fopen($destination, 'wb');
-        $size = 0;
+            if (strlen($body) > $maxBytes) {
+                @unlink($destination);
 
-        try {
-            while (! $stream->eof()) {
-                $chunk = $stream->read(1024 * 64);
-                $size += strlen($chunk);
-
-                if ($size > $maxBytes) {
-                    throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
-                }
-
-                fwrite($out, $chunk);
+                throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
             }
-        } catch (\Throwable $e) {
-            fclose($out);
+
+            file_put_contents($destination, $body);
+        }
+
+        $size = (int) filesize($destination);
+
+        if ($size > $maxBytes) {
             @unlink($destination);
 
-            throw $e;
+            throw new IngestException(sprintf('%s is larger than the %s limit.', $url, self::size($maxBytes)));
         }
 
-        fclose($out);
-
         return $size;
+    }
+
+    private static function verify(): bool|string
+    {
+        $verify = config('ingest.http.verify', true);
+
+        if (is_string($verify) && ! in_array(strtolower($verify), ['true', 'false', '1', '0', ''], true)) {
+            return $verify;
+        }
+
+        return filter_var($verify, FILTER_VALIDATE_BOOL, FILTER_NULL_ON_FAILURE) ?? true;
     }
 
     public static function size(int $bytes): string

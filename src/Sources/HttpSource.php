@@ -130,8 +130,12 @@ class HttpSource implements Source
                 break;
             }
 
-            if ($index + 1 >= $pagination->maxPages()) {
+            // A limit of one page is the preview reading a sample: no warning.
+            if ($index + 1 >= $pagination->maxPages() && $pagination->maxPages() > 1) {
                 $warnings[] = "Stopped after {$pagination->maxPages()} pages (the feed's page limit). Raise it if the feed is longer.";
+            }
+
+            if ($index + 1 >= $pagination->maxPages()) {
                 // A feed cut short is incomplete: nothing will be treated as missing.
                 $validators['incomplete'] = true;
             }

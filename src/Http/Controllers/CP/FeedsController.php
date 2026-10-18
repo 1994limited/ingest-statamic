@@ -256,6 +256,19 @@ class FeedsController extends CpController
                 ->all();
         }
 
+        // Defaults aren't written out, so files stay short.
+        foreach (['headers', 'query'] as $list) {
+            if (($data['source'][$list] ?? []) === []) {
+                unset($data['source'][$list]);
+            }
+        }
+        if (($data['source']['auth']['type'] ?? 'none') === 'none') {
+            unset($data['source']['auth']);
+        }
+        if (($data['source']['pagination']['type'] ?? 'none') === 'none') {
+            unset($data['source']['pagination']);
+        }
+
         $data['mapping'] = collect((array) ($data['mapping'] ?? []))
             ->filter(fn ($m) => is_array($m) && (
                 ($m['path'] ?? '') !== '' || ($m['template'] ?? '') !== '' || array_key_exists('value', $m) || ! empty($m['fields']) || ! empty($m['sets'])

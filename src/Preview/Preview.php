@@ -4,10 +4,12 @@ namespace NineteenNinetyFour\Ingest\Preview;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use NineteenNinetyFour\Ingest\Destinations\Destinations;
 use NineteenNinetyFour\Ingest\Feeds\Feed;
 use NineteenNinetyFour\Ingest\Formats\Formats;
 use NineteenNinetyFour\Ingest\Formats\JsonFormat;
+use NineteenNinetyFour\Ingest\Http\Presenter;
 use NineteenNinetyFour\Ingest\Ingest;
 use NineteenNinetyFour\Ingest\IngestException;
 use NineteenNinetyFour\Ingest\Mapping\Context;
@@ -15,6 +17,9 @@ use NineteenNinetyFour\Ingest\Mapping\Mapper;
 use NineteenNinetyFour\Ingest\Sources\Sources;
 use NineteenNinetyFour\Ingest\Support\Filters;
 use NineteenNinetyFour\Ingest\Support\Path;
+use Statamic\Facades\Entry;
+use Statamic\Facades\User;
+use Statamic\Fields\Field;
 use Throwable;
 
 /**
@@ -127,8 +132,51 @@ class Preview
             $context->forItem($item);
             $mapped = $this->mapper->map($feed->mapping(), $fields, $item, $context);
 
-            return ['values' => $mapped->values, 'errors' => $mapped->errors, 'warnings' => $context->warnings];
+            $display = [];
+            foreach ($mapped->values as $handle => $value) {
+                $display[$handle] = $this->display($fields->get($handle), $value);
+            }
+
+            return ['values' => $mapped->values, 'display' => $display, 'errors' => $mapped->errors, 'warnings' => $context->warnings];
         }, $items);
+    }
+
+    /**
+     * A value as a person reads it: related entries by title, variants as
+     * "Hardback £25.65 (11 in stock)", rich text as text.
+     */
+    private function display(?Field $field, mixed $value): ?string
+    {
+        if ($value === null || $value === '' || $value === []) {
+            return null;
+        }
+
+        try {
+            switch ($field?->type()) {
+                case 'entries':
+                    return collect((array) $value)->map(fn ($id) => Entry::find($id)?->get('title') ?? $id)->implode(', ');
+                case 'terms':
+                    return collect((array) $value)->map(fn ($slug) => Str::of((string) $slug)->afterLast('::')->replace('-', ' ')->title())->implode(', ');
+                case 'users':
+                    return collect((array) $value)->map(fn ($id) => User::find($id)?->name() ?? $id)->implode(', ');
+                case 'product_variants':
+                    return collect($value['options'] ?? [])->map(function ($o) {
+                        $price = isset($o['price']) ? ' '.number_format($o['price'] / 100, 2) : '';
+                        $stock = isset($o['stock']) ? ' ('.__(':n in stock', ['n' => $o['stock']]).')' : '';
+
+                        return ($o['variant'] ?? $o['key']).$price.$stock;
+                    })->implode(', ');
+                case 'money':
+                    return number_format($value / 100, 2);
+                case 'grid':
+                case 'replicator':
+                    return trans_choice(':count row|:count rows', count((array) $value));
+            }
+        } catch (Throwable) {
+            // Fall through to the plain version.
+        }
+
+        return Presenter::show($value);
     }
 
     /**

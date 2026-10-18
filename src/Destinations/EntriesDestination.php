@@ -2,7 +2,7 @@
 
 namespace NineteenNinetyFour\Ingest\Destinations;
 
-use Carbon\CarbonImmutable;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use NineteenNinetyFour\Ingest\Contracts\Destination;
@@ -155,7 +155,7 @@ class EntriesDestination implements Destination
         }
 
         if ($collection->dated() && ! array_key_exists('date', $values)) {
-            $entry->date(CarbonImmutable::now());
+            $entry->date(Carbon::now());
         }
 
         return $entry;
@@ -168,7 +168,8 @@ class EntriesDestination implements Destination
             match ($handle) {
                 'slug' => $value ? $content->slug($this->uniqueSlug($feed, (string) $value, $content)) : null,
                 'published' => $content->published((bool) $value),
-                'date' => $value ? $content->date(Transforms::parseDate((string) $value, null, 'UTC')) : null,
+                // Statamic's own type: Laravel 13 only unserialises known classes from the Stache cache.
+                'date' => $value ? $content->date(Carbon::instance(Transforms::parseDate((string) $value, null, 'UTC'))) : null,
                 'parent' => $this->parent($feed, $content, $value, $context),
                 default => $value === null ? $content->remove($handle) : $content->set($handle, $value),
             };
@@ -243,7 +244,7 @@ class EntriesDestination implements Destination
             $entry->origin($snapshot['origin']);
         }
         if ($snapshot['date'] ?? null) {
-            $entry->date(CarbonImmutable::parse($snapshot['date']));
+            $entry->date(Carbon::parse($snapshot['date']));
         }
 
         $this->save($entry);

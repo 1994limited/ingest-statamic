@@ -99,15 +99,66 @@ class Presenter
             'title' => $item->title,
             'content_id' => $item->contentId,
             'edit_url' => $this->editUrl($item),
-            'changes' => collect($item->changes)->map(fn ($change, $field) => [
-                'field' => $field,
-                'old' => $item->personal && ! $item->contentId ? null : self::show($change[0] ?? null),
-                'new' => self::show($change[1] ?? null),
-            ])->values()->all(),
+            'changes' => collect($item->changes)->flatMap(fn ($change, $field) => self::rows((string) $field, $change[0] ?? null, $change[1] ?? null))->values()->all(),
             'errors' => $item->errors,
             'warnings' => $item->warnings,
             'position' => $item->position,
         ];
+    }
+
+    /**
+     * A change as table rows. Structured values (variants, grids) are
+     * compared leaf by leaf, so only what moved is listed:
+     * product_variants › options.1.price  1650 → 1800.
+     *
+     * @return array<int, array{field: string, old: ?string, new: ?string}>
+     */
+    public static function rows(string $field, mixed $old, mixed $new): array
+    {
+        $structured = fn ($v) => is_array($v) && ! self::isBard($v);
+
+        if (! $structured($old) || ! $structured($new)) {
+            return [['field' => $field, 'old' => self::show($old), 'new' => self::show($new)]];
+        }
+
+        $before = self::leaves($old);
+        $after = self::leaves($new);
+        $rows = [];
+
+        foreach (array_unique(array_merge(array_keys($before), array_keys($after))) as $path) {
+            $a = $before[$path] ?? null;
+            $b = $after[$path] ?? null;
+
+            if ((string) json_encode($a) !== (string) json_encode($b)) {
+                $rows[] = ['field' => $field.' › '.$path, 'old' => self::show($a), 'new' => self::show($b)];
+            }
+        }
+
+        return array_slice($rows, 0, 50) ?: [['field' => $field, 'old' => self::show($old), 'new' => self::show($new)]];
+    }
+
+    /** @return array<string, mixed> */
+    private static function leaves(array $value, string $prefix = ''): array
+    {
+        $out = [];
+        foreach ($value as $key => $v) {
+            // Rows are named by their id or key where they have one.
+            $name = is_array($v) && isset($v['key']) && is_scalar($v['key']) ? (string) $v['key'] : (string) $key;
+            $path = $prefix === '' ? $name : $prefix.'.'.$name;
+
+            if (is_array($v) && $v !== [] && ! self::isBard($v)) {
+                $out += self::leaves($v, $path);
+            } else {
+                $out[$path] = $v;
+            }
+        }
+
+        return $out;
+    }
+
+    private static function isBard(array $value): bool
+    {
+        return Path::isList($value) && isset($value[0]['type']) && in_array($value[0]['type'], ['paragraph', 'heading', 'set', 'bulletList', 'orderedList', 'blockquote'], true);
     }
 
     /**
