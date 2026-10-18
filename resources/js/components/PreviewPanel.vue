@@ -161,7 +161,7 @@ export default {
             <template v-else>
                 <div class="flex items-center gap-2 px-3 py-2">
                     <Button size="sm" icon="chevron-left" :disabled="index === 0" :aria-label="__('Previous item')" @click="$emit('update:index', index - 1)" />
-                    <span class="text-sm tabular-nums">{{ __('Item :n of :total', { n: index + 1, total: preview.items.length }) }}</span>
+                    <span class="text-sm tabular-nums">{{ preview.items.length < preview.count ? __('Item :n of the first :total', { n: index + 1, total: preview.items.length }) : __('Item :n of :total', { n: index + 1, total: preview.items.length }) }}</span>
                     <Button size="sm" icon="chevron-right" :disabled="index >= preview.items.length - 1" :aria-label="__('Next item')" @click="$emit('update:index', index + 1)" />
                     <div class="ml-auto w-40"><Input v-model="filter" size="sm" :placeholder="__('Filter')" clearable /></div>
                 </div>

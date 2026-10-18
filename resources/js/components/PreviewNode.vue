@@ -110,7 +110,7 @@ export default {
                 <button
                     v-if="isList && size"
                     type="button"
-                    class="ml-1 hidden rounded bg-gray-100 px-1.5 text-xs text-gray-600 group-hover:inline! focus:inline! dark:bg-gray-700! dark:text-gray-300!"
+                    class="ml-1 rounded bg-gray-100 px-1.5 text-xs text-gray-600 opacity-0 group-focus-within:opacity-100! group-hover:opacity-100! focus-visible:opacity-100! dark:bg-gray-700! dark:text-gray-300!"
                     :title="__('Use :path (every item)', { path: path + '.*' })"
                     @click="$emit('use', path + '.*')"
                 >

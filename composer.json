@@ -24,7 +24,9 @@
         }
     ],
     "support": {
-        "email": "hello@1994.co.uk"
+        "email": "hello@1994.co.uk",
+        "issues": "https://github.com/1994limited/ingest-statamic/issues",
+        "docs": "https://github.com/1994limited/ingest-statamic/tree/main/docs"
     },
     "autoload": {
         "psr-4": {
@@ -38,6 +40,9 @@
     },
     "require": {
         "php": "^8.3",
+        "ext-curl": "*",
+        "ext-dom": "*",
+        "ext-fileinfo": "*",
         "ext-xmlreader": "*",
         "halaxa/json-machine": "^1.2",
         "league/html-to-markdown": "^5.1",
