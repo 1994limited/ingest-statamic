@@ -39,8 +39,9 @@ class Scheduler
      */
     public function tick(?CarbonImmutable $now = null): array
     {
+        // The heartbeat is the real time, whatever time is being checked.
+        Cache::forever(self::HEARTBEAT, CarbonImmutable::now()->toIso8601String());
         $now ??= CarbonImmutable::now();
-        Cache::forever(self::HEARTBEAT, $now->toIso8601String());
 
         $results = [];
 
