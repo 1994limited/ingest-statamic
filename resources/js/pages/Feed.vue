@@ -360,7 +360,7 @@ export default {
             <Button variant="primary" :loading="saving" :text="__('Save')" @click="save" />
         </Header>
 
-        <div class="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_28rem]">
+        <div class="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_28rem]!">
             <Tabs v-model="tab">
                 <TabList class="mb-4">
                     <TabTrigger name="source" :text="__('Source') + (tabErrors.source ? ' •' : '')" />
@@ -375,7 +375,7 @@ export default {
                 <TabContent name="source">
                     <Panel>
                         <div class="space-y-5 p-4">
-                            <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="grid gap-4 sm:grid-cols-2!">
                                 <Field :label="__('Name')" :error="err('title')" required>
                                     <Input v-model="form.title" :placeholder="__('Supplier catalogue')" />
                                 </Field>
@@ -393,7 +393,7 @@ export default {
                                     <Input v-model="form.source.url" type="url" class="font-mono" placeholder="https://supplier.example/api/books" />
                                 </Field>
 
-                                <div class="grid gap-4 sm:grid-cols-2">
+                                <div class="grid gap-4 sm:grid-cols-2!">
                                     <Field :label="__('Authentication')" :error="err('source.auth.type')">
                                         <Select
                                             v-model="form.source.auth.type"
@@ -419,17 +419,17 @@ export default {
                                         <Input v-model="form.source.auth.token" class="font-mono" placeholder="env:SUPPLIER_TOKEN" />
                                     </Field>
                                     <template v-if="form.source.auth.type === 'api_key'">
-                                        <div class="grid gap-4 sm:grid-cols-3">
+                                        <div class="grid gap-4 sm:grid-cols-3!">
                                             <Field :label="__('Sent as')"><Select v-model="form.source.auth.in" :options="[{ value: 'header', label: __('A header') }, { value: 'query', label: __('A query parameter') }]" option-label="label" option-value="value" :placeholder="__('A header')" /></Field>
                                             <Field :label="__('Name')"><Input v-model="form.source.auth.name" class="font-mono" placeholder="X-API-Key" /></Field>
                                             <Field :label="__('Key')" :error="err('source.auth.value')"><Input v-model="form.source.auth.value" class="font-mono" placeholder="env:SUPPLIER_KEY" /></Field>
                                         </div>
                                     </template>
-                                    <div v-if="form.source.auth.type === 'basic'" class="grid gap-4 sm:grid-cols-2">
+                                    <div v-if="form.source.auth.type === 'basic'" class="grid gap-4 sm:grid-cols-2!">
                                         <Field :label="__('Username')"><Input v-model="form.source.auth.username" /></Field>
                                         <Field :label="__('Password')" :error="err('source.auth.password')"><Input v-model="form.source.auth.password" class="font-mono" placeholder="env:SUPPLIER_PASSWORD" /></Field>
                                     </div>
-                                    <div v-if="form.source.auth.type === 'oauth2'" class="grid gap-4 sm:grid-cols-2">
+                                    <div v-if="form.source.auth.type === 'oauth2'" class="grid gap-4 sm:grid-cols-2!">
                                         <Field :label="__('Token URL')" class="sm:col-span-2"><Input v-model="form.source.auth.token_url" type="url" class="font-mono" placeholder="https://auth.example/oauth/token" /></Field>
                                         <Field :label="__('Client ID')"><Input v-model="form.source.auth.client_id" class="font-mono" /></Field>
                                         <Field :label="__('Client secret')" :error="err('source.auth.client_secret')"><Input v-model="form.source.auth.client_secret" class="font-mono" placeholder="env:SUPPLIER_CLIENT_SECRET" /></Field>
@@ -462,7 +462,7 @@ export default {
                                         option-value="value"
                                     />
                                 </Field>
-                                <div v-if="!['none', 'link_header', undefined].includes(form.source.pagination.type)" class="grid gap-4 rounded-lg bg-gray-50 p-4 sm:grid-cols-3 dark:bg-gray-850!">
+                                <div v-if="!['none', 'link_header', undefined].includes(form.source.pagination.type)" class="grid gap-4 rounded-lg bg-gray-50 p-4 sm:grid-cols-3! dark:bg-gray-850!">
                                     <Field v-if="['next_url', 'cursor'].includes(form.source.pagination.type)" :label="form.source.pagination.type === 'cursor' ? __('Where the cursor is') : __('Where the next link is')" :error="err('source.pagination.path')">
                                         <PathInput v-model="form.source.pagination.path" :placeholder="form.source.pagination.type === 'cursor' ? 'next_cursor' : 'links.next'" />
                                     </Field>
@@ -508,7 +508,7 @@ export default {
                                 <Field :label="__('Sheet link')" :error="err('source.url')" :instructions="__('Copy it from the sheet\'s Share button. The tab in the link is the one read, unless you name another.')">
                                     <Input v-model="form.source.url" type="url" class="font-mono" placeholder="https://docs.google.com/spreadsheets/d/…/edit#gid=0" />
                                 </Field>
-                                <div class="grid gap-4 sm:grid-cols-2">
+                                <div class="grid gap-4 sm:grid-cols-2!">
                                     <Field :label="__('Tab name')"><Input v-model="form.source.sheet" :placeholder="__('From the link')" /></Field>
                                     <div class="flex items-end pb-2"><Toggle v-model="form.source.private" :label="__('Private sheet (uses the service account)')" /></div>
                                 </div>
@@ -521,7 +521,7 @@ export default {
                 <TabContent name="items">
                     <Panel>
                         <div class="space-y-5 p-4">
-                            <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="grid gap-4 sm:grid-cols-2!">
                                 <Field :label="__('Format')" :error="err('format.type')">
                                     <Select v-model="form.format.type" :options="options.formats ?? []" option-label="label" option-value="value" />
                                 </Field>
@@ -548,7 +548,7 @@ export default {
                                 </div>
                             </div>
 
-                            <div v-if="form.format.type === 'csv' || preview?.format === 'csv'" class="grid gap-4 sm:grid-cols-4">
+                            <div v-if="form.format.type === 'csv' || preview?.format === 'csv'" class="grid gap-4 sm:grid-cols-4!">
                                 <Field :label="__('Separator')">
                                     <Select v-model="form.format.delimiter" :options="[{ value: 'auto', label: __('Detect') }, { value: ',', label: __('Comma') }, { value: ';', label: __('Semicolon') }, { value: '\\t', label: __('Tab') }, { value: '|', label: __('Pipe') }]" option-label="label" option-value="value" :placeholder="__('Detect')" />
                                 </Field>
@@ -583,12 +583,12 @@ export default {
                                 <Select v-model="form.destination.type" :options="options.destinations ?? []" option-label="label" option-value="value" />
                             </Field>
 
-                            <div v-if="['entries', 'cargo_products'].includes(destinationType)" class="grid gap-4 sm:grid-cols-3">
+                            <div v-if="['entries', 'cargo_products'].includes(destinationType)" class="grid gap-4 sm:grid-cols-3!">
                                 <Field :label="__('Collection')"><Select v-model="form.destination.collection" :options="collectionChoices" option-label="label" option-value="value" /></Field>
                                 <Field :label="__('Blueprint')"><Select v-model="form.destination.blueprint" :options="collection?.blueprints ?? []" option-label="label" option-value="value" :placeholder="__('Default')" /></Field>
                                 <Field v-if="options.multisite" :label="__('Site')"><Select v-model="form.destination.site" :options="options.sites ?? []" option-label="label" option-value="value" :placeholder="__('Default')" /></Field>
                             </div>
-                            <div v-if="destinationType === 'cargo_stock'" class="grid gap-4 sm:grid-cols-2">
+                            <div v-if="destinationType === 'cargo_stock'" class="grid gap-4 sm:grid-cols-2!">
                                 <Field :label="__('Product collection')"><Select v-model="form.destination.collection" :options="collectionChoices" option-label="label" option-value="value" /></Field>
                                 <Field :label="__('SKU field')" :instructions="__('The field on simple products, and the option field on variants, that holds the SKU.')"><Input v-model="form.destination.sku_field" class="font-mono" placeholder="sku" /></Field>
                             </div>
@@ -600,13 +600,13 @@ export default {
                                 <Select v-model="form.destination.tax_class" :options="options.tax_classes ?? []" option-label="label" option-value="value" clearable />
                             </Field>
 
-                            <div v-if="destinationType === 'terms'" class="grid gap-4 sm:grid-cols-3">
+                            <div v-if="destinationType === 'terms'" class="grid gap-4 sm:grid-cols-3!">
                                 <Field :label="__('Taxonomy')"><Select v-model="form.destination.taxonomy" :options="options.taxonomies ?? []" option-label="label" option-value="value" /></Field>
                                 <Field :label="__('Blueprint')"><Select v-model="form.destination.blueprint" :options="taxonomy?.blueprints ?? []" option-label="label" option-value="value" :placeholder="__('Default')" /></Field>
                                 <Field v-if="options.multisite" :label="__('Site')"><Select v-model="form.destination.site" :options="options.sites ?? []" option-label="label" option-value="value" :placeholder="__('Default')" /></Field>
                             </div>
 
-                            <div v-if="destinationType === 'globals'" class="grid gap-4 sm:grid-cols-2">
+                            <div v-if="destinationType === 'globals'" class="grid gap-4 sm:grid-cols-2!">
                                 <Field :label="__('Global set')" :instructions="__('The feed\'s first item fills the set.')"><Select v-model="form.destination.set" :options="options.globals ?? []" option-label="label" option-value="value" /></Field>
                                 <Field v-if="options.multisite" :label="__('Site')"><Select v-model="form.destination.site" :options="options.sites ?? []" option-label="label" option-value="value" :placeholder="__('Default')" /></Field>
                             </div>
@@ -629,7 +629,7 @@ export default {
                             </Field>
 
                             <Field v-if="destinationType !== 'globals'" :label="__('Adopt existing content')" :instructions="__('On the first run, items that already exist on the site (made by hand, or by another import) are found by this field and updated, rather than created twice.')">
-                                <div class="grid gap-2 sm:grid-cols-2">
+                                <div class="grid gap-2 sm:grid-cols-2!">
                                     <Input :model-value="form.sync.adopt?.field ?? ''" class="font-mono" :placeholder="__('Site field, e.g. isbn')" @update:model-value="form.sync.adopt = $event ? { ...(form.sync.adopt ?? {}), field: $event } : null" />
                                     <PathInput :model-value="form.sync.adopt?.path ?? ''" :placeholder="__('Feed path, e.g. isbn')" @update:model-value="form.sync.adopt = { ...(form.sync.adopt ?? {}), path: $event }" />
                                 </div>
@@ -676,7 +676,7 @@ export default {
                             </div>
 
                             <Field v-if="destinationType !== 'globals'" :label="__('Items that are no longer in the feed')" :error="err('sync.missing.action')">
-                                <div class="grid gap-3 sm:grid-cols-2">
+                                <div class="grid gap-3 sm:grid-cols-2!">
                                     <Select v-model="form.sync.missing.action" :options="[{ value: 'leave', label: __('Leave them as they are') }, { value: 'unpublish', label: destinationType === 'users' ? __('Block them (remove roles)') : __('Unpublish them') }, { value: 'delete', label: __('Delete them') }]" option-label="label" option-value="value" />
                                     <Input v-if="form.sync.missing.action === 'delete'" v-model="form.sync.missing.delete_after_days" type="number" min="1" :placeholder="__('Unpublish first, delete after … days (optional)')" />
                                 </div>
@@ -685,7 +685,7 @@ export default {
                             <div v-if="form.sync.missing.action !== 'leave'" class="space-y-3 rounded-lg bg-gray-50 p-4 dark:bg-gray-850!">
                                 <p class="text-sm font-medium">{{ __('Safety check') }}</p>
                                 <p class="text-sm text-gray-600 dark:text-gray-400!">{{ __('Items are only treated as missing after the whole feed was read. A run that would remove more than this share of the feed\'s items stops and tells you instead.') }}</p>
-                                <div class="grid gap-3 sm:grid-cols-2">
+                                <div class="grid gap-3 sm:grid-cols-2!">
                                     <Field :label="__('Most to remove in one run (%)')" :error="err('sync.safety.max_removal_percent')">
                                         <Input v-model="form.sync.safety.max_removal_percent" type="number" min="0" max="100" :placeholder="String(25)" />
                                     </Field>
@@ -718,7 +718,7 @@ export default {
                         <div class="space-y-5 p-4">
                             <Toggle :model-value="form.enabled !== false" :label="__('Feed is on')" @update:model-value="form.enabled = $event" />
 
-                            <div class="grid gap-4 sm:grid-cols-3">
+                            <div class="grid gap-4 sm:grid-cols-3!">
                                 <Field :label="__('Run')" :error="err('schedule.frequency')">
                                     <Select
                                         v-model="form.schedule.frequency"

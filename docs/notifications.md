@@ -34,6 +34,8 @@ Add the widget to `config/statamic/cp.php` to see feeds that need attention, and
 
 It also says when the scheduler isn't running.
 
+![The dashboard widget](images/cp-dashboard.png)
+
 ## Events
 
 To send alerts somewhere else, listen for `RunFailed`, `RunAborted` and `RunCompleted`. See [the PHP API](php-api.md#events).

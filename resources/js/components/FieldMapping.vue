@@ -217,7 +217,7 @@ export default {
         <p v-if="error" class="px-3 pb-2 text-sm text-red-600 dark:text-red-400!">{{ error }}</p>
 
         <div v-if="expanded" class="space-y-4 border-t border-gray-200 px-3 py-3 dark:border-gray-700!">
-            <div class="grid gap-3 sm:grid-cols-[12rem_1fr]">
+            <div class="grid gap-3 sm:grid-cols-[12rem_1fr]!">
                 <Select :model-value="mode" :options="modes" option-label="label" option-value="value" :aria-label="__('Where the value comes from')" @update:model-value="setMode" />
 
                 <PathInput v-if="mode === 'path'" :model-value="m.path ?? ''" :scope="scope" @update:model-value="set('path', $event)" />
@@ -247,17 +247,17 @@ export default {
                     </div>
                 </div>
 
-                <div v-if="field.kind === 'toggle' && mode !== 'value'" class="grid gap-3 sm:grid-cols-2">
+                <div v-if="field.kind === 'toggle' && mode !== 'value'" class="grid gap-3 sm:grid-cols-2!">
                     <label class="text-sm">{{ __('Also means yes') }}<Input :model-value="list(m.true_values)" placeholder="in stock, Y" @update:model-value="set('true_values', unlist($event))" /></label>
                     <label class="text-sm">{{ __('Also means no') }}<Input :model-value="list(m.false_values)" placeholder="sold out, N" @update:model-value="set('false_values', unlist($event))" /></label>
                 </div>
 
-                <div v-if="field.kind === 'date'" class="grid gap-3 sm:grid-cols-2">
+                <div v-if="field.kind === 'date'" class="grid gap-3 sm:grid-cols-2!">
                     <label class="text-sm">{{ __('Date format in the feed') }}<Input :model-value="m.format ?? ''" :placeholder="__('Detect (e.g. d/m/Y H:i)')" @update:model-value="set('format', $event)" /></label>
                     <label class="text-sm">{{ __('Timezone of the feed\'s dates') }}<Input :model-value="m.timezone ?? ''" placeholder="Europe/London" @update:model-value="set('timezone', $event)" /></label>
                 </div>
 
-                <div v-if="field.kind === 'relationship'" class="grid gap-3 sm:grid-cols-2">
+                <div v-if="field.kind === 'relationship'" class="grid gap-3 sm:grid-cols-2!">
                     <label class="text-sm">{{ __('Match on') }}
                         <Select :model-value="m.match ?? (field.type === 'users' ? 'email' : 'title')" :options="(field.type === 'users' ? ['email', 'id', 'name'] : ['title', 'slug', 'id']).map((v) => ({ value: v, label: v }))" option-label="label" option-value="value" @update:model-value="set('match', $event)" />
                     </label>
@@ -266,7 +266,7 @@ export default {
                     </div>
                 </div>
 
-                <div v-if="field.kind === 'assets'" class="grid gap-3 sm:grid-cols-2">
+                <div v-if="field.kind === 'assets'" class="grid gap-3 sm:grid-cols-2!">
                     <label class="text-sm">{{ __('Folder') }}<Input :model-value="m.folder ?? ''" class="font-mono" placeholder="books/{isbn}" @update:model-value="set('folder', $event)" /></label>
                     <label class="text-sm">{{ __('Alt text from') }}<PathInput :model-value="m.alt ?? ''" :placeholder="__('e.g. title')" @update:model-value="set('alt', $event)" /></label>
                     <div class="flex items-center gap-4 sm:col-span-2">
@@ -288,7 +288,7 @@ export default {
 
                 <!-- Rows: grid and replicator -->
                 <div v-if="field.kind === 'rows' && m.path" class="space-y-3">
-                    <div class="grid gap-3 sm:grid-cols-3">
+                    <div class="grid gap-3 sm:grid-cols-3!">
                         <label class="text-sm">{{ __('Rows') }}
                             <Select :model-value="m.mode ?? 'replace'" :options="[{ value: 'replace', label: __('Replace the rows') }, { value: 'append', label: __('Add after existing rows') }, { value: 'merge', label: __('Merge on a key') }]" option-label="label" option-value="value" @update:model-value="set('mode', $event === 'replace' ? null : $event)" />
                         </label>
@@ -335,7 +335,7 @@ export default {
                         <p class="mb-1 text-sm font-medium">{{ __('Variant dimensions') }}</p>
                         <Rows v-model="dimensionRows" name-key="name" value-key="path" :name-placeholder="__('Name, e.g. Format')" :value-placeholder="__('Path, e.g. binding')" :add-text="__('Add a dimension')" />
                     </div>
-                    <div class="grid gap-3 sm:grid-cols-3">
+                    <div class="grid gap-3 sm:grid-cols-3!">
                         <label class="text-sm">{{ __('SKU') }}<PathInput :model-value="m.sku ?? ''" :scope="m.path" placeholder="sku" @update:model-value="set('sku', $event)" /></label>
                         <label class="text-sm">{{ __('Price') }}<PathInput :model-value="m.price?.path ?? ''" :scope="m.path" placeholder="price" @update:model-value="setSub('price', 'path', $event)" /></label>
                         <label class="text-sm">{{ __('Stock') }}<PathInput :model-value="m.stock?.path ?? ''" :scope="m.path" placeholder="stock" @update:model-value="setSub('stock', 'path', $event)" /></label>

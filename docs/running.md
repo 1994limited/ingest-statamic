@@ -4,6 +4,8 @@
 
 **Tools → Ingest** lists every feed with its schedule, last run and next run. **Run** and **Dry run** start one. A feed's page has **Run with options**: a limit on the number of items, and **Read the whole feed even if unchanged, and ignore the safety limit**.
 
+![The feeds page](images/cp-feeds.png)
+
 A feed runs one run at a time. Starting it while it's running opens the running one. A run that stops reporting progress for 30 minutes (a worker killed mid-run) is marked failed so the feed can run again.
 
 ## Schedules

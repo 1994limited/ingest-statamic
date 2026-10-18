@@ -144,7 +144,7 @@ export default {
             </div>
         </Alert>
 
-        <div class="mb-6 grid gap-4 md:grid-cols-4">
+        <div class="mb-6 grid gap-4 md:grid-cols-4!">
             <Panel class="mb-0!">
                 <div class="px-4 py-3">
                     <div class="text-sm text-gray-600 dark:text-gray-400!">{{ __('From') }}</div>

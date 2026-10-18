@@ -2,6 +2,8 @@
 
 The **Sync rules** tab says what a run may do.
 
+![The sync rules tab](images/cp-sync-rules.png)
+
 ```yaml
 sync:
   create: true

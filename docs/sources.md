@@ -2,6 +2,8 @@
 
 Where a feed comes from. Choose it under **Source** on the feed form.
 
+![The source tab](images/cp-source.png)
+
 ## A URL or an API
 
 Any feed, export or API endpoint over HTTP(S). In the feed's YAML:

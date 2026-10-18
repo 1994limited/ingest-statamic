@@ -24,6 +24,8 @@ The **feed preview** on the right reads the feed straight away: it's JSON, with 
 
 **Mapping.** Every field in the blueprint is listed. Click **Map by name** to fill in the obvious ones (title, isbn, pages), then open **Description** and choose `description_html`. The value each field would get for the book in the preview is shown beside it. Step through other books with the arrows.
 
+![The mapping tab, with the feed preview beside it](images/cp-mapping.png)
+
 **Save.**
 
 ## 3. A dry run

@@ -231,7 +231,7 @@ export default {
             <ul class="list-disc pl-5"><li v-for="c in current.undo_conflicts" :key="c">{{ c }}</li></ul>
         </Alert>
 
-        <div class="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <div class="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3! lg:grid-cols-6!">
             <Panel v-for="[key, label, value] in tiles" :key="key" class="mb-0!">
                 <div class="px-4 py-3">
                     <div class="text-sm text-gray-600 dark:text-gray-400!">{{ label }}</div>
