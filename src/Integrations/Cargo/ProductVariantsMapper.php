@@ -21,6 +21,8 @@ use Statamic\Fields\Field;
  *   sku: sku                          stored on the option; options are matched on it
  *   price: { path: price }            "12.99" → 1299 (minor_units: true if already pence)
  *   stock: { path: stock, mode: set } set (default) or lower_only
+ *   create_only on price or stock: set it for new options only (a stock
+ *                feed keeps it up to date)
  *   fields: { …option field: mapping }
  *   mode: replace (default) or merge (keep options the feed doesn't list)
  *
@@ -66,16 +68,16 @@ class ProductVariantsMapper implements FieldMapper
                 $option['sku'] = Value::text(Path::get($element, $mapping['sku']));
             }
 
-            if (isset($mapping['price'])) {
+            $previous = $currentOptions->get($option['sku'] ?? $key) ?? $currentOptions->get($key);
+
+            if (isset($mapping['price']) && ! (! empty($mapping['price']['create_only']) && $previous)) {
                 $price = $mapper->resolve((array) $mapping['price'], $element, $context);
                 if (! Value::isEmpty($price)) {
                     $option['price'] = MoneyMapper::minor($price, ! empty($mapping['price']['minor_units']));
                 }
             }
 
-            $previous = $currentOptions->get($option['sku'] ?? $key) ?? $currentOptions->get($key);
-
-            if (isset($mapping['stock'])) {
+            if (isset($mapping['stock']) && ! (! empty($mapping['stock']['create_only']) && $previous)) {
                 $stock = $mapper->resolve((array) $mapping['stock'], $element, $context);
                 if (! Value::isEmpty($stock)) {
                     $stock = (int) $stock;

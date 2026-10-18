@@ -7,6 +7,7 @@ use NineteenNinetyFour\Ingest\Feeds\Feed;
 use NineteenNinetyFour\Ingest\IngestException;
 use NineteenNinetyFour\Ingest\Integrations\Cargo\Cargo;
 use NineteenNinetyFour\Ingest\Integrations\Cargo\CargoProductsDestination;
+use NineteenNinetyFour\Ingest\Integrations\Cargo\CargoStockDestination;
 
 /**
  * Where feeds can write. Add your own with Ingest::destination().
@@ -18,7 +19,7 @@ class Destinations
 
     public function __construct()
     {
-        foreach ([EntriesDestination::class, TermsDestination::class, GlobalsDestination::class, UsersDestination::class, CargoProductsDestination::class] as $class) {
+        foreach ([EntriesDestination::class, TermsDestination::class, GlobalsDestination::class, UsersDestination::class, CargoProductsDestination::class, CargoStockDestination::class] as $class) {
             $this->register($class);
         }
     }
@@ -47,7 +48,7 @@ class Destinations
     public function options(): array
     {
         return collect($this->destinations)
-            ->reject(fn ($class, $handle) => $handle === 'cargo_products' && ! Cargo::installed())
+            ->reject(fn ($class, $handle) => in_array($handle, ['cargo_products', 'cargo_stock'], true) && ! Cargo::installed())
             ->map(fn ($class) => $class::label())
             ->all();
     }

@@ -53,6 +53,10 @@ class ServiceProvider extends AddonServiceProvider
         TransferData::class,
     ];
 
+    protected $tags = [
+        Tags\IngestTags::class,
+    ];
+
     protected $widgets = [
         FeedHealth::class,
     ];

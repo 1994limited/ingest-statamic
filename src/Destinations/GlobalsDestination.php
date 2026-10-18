@@ -78,7 +78,7 @@ class GlobalsDestination implements Destination
     }
 
     /** The set's values always exist: the first run updates them. */
-    public function existing(Feed $feed): mixed
+    public function existing(Feed $feed, string $key = ''): mixed
     {
         return $this->variables($feed);
     }

@@ -149,7 +149,7 @@ class ItemProcessor
 
         // Destinations whose content always exists (a global set).
         if (! $content && method_exists($this->destination, 'existing')) {
-            $content = $this->destination->existing($this->feed);
+            $content = $this->destination->existing($this->feed, $sourceKey);
         }
 
         if (! $content && ($adopt = $this->feed->sync()['adopt'] ?? null)) {
@@ -161,6 +161,10 @@ class ItemProcessor
 
         $isNew = ! $content;
         $this->context->isNew = $isNew;
+
+        if ($isNew && method_exists($this->destination, 'creates') && ! $this->destination->creates()) {
+            return $this->row($sourceKey, RunItem::SKIPPED, warnings: [__('Nothing on the site matches this item, and this destination doesn\'t create new ones.')]);
+        }
 
         if ($isNew && ! ($this->feed->sync()['create'] ?? true)) {
             return $this->row($sourceKey, RunItem::SKIPPED, warnings: [__('New items aren\'t created by this feed.')]);

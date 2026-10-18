@@ -69,6 +69,7 @@ abstract class CargoTestCase extends TestCase
 
         $this->blueprint('collections.products', 'product', [
             'title' => ['type' => 'text'],
+            'sku' => ['type' => 'text'],
             'isbn' => ['type' => 'text'],
             'price' => ['type' => 'money'],
             'stock' => ['type' => 'integer'],

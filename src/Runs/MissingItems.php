@@ -38,7 +38,8 @@ class MissingItems
         $missing = $feed->sync()['missing'] ?? [];
         $action = (string) ($missing['action'] ?? 'leave');
 
-        if ($destination instanceof GlobalsDestination) {
+        // Destinations that never remove anything (globals, stock updates).
+        if ($destination instanceof GlobalsDestination || (method_exists($destination, 'creates') && ! $destination->creates())) {
             return;
         }
 

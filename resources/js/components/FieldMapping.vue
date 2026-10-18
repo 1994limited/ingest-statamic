@@ -344,6 +344,7 @@ export default {
                         <Toggle :model-value="!!m.price?.minor_units" :label="__('Prices are already in pence/cents')" @update:model-value="setSub('price', 'minor_units', $event || null)" />
                         <Toggle :model-value="m.stock?.mode === 'lower_only'" :label="__('Only ever lower stock')" @update:model-value="setSub('stock', 'mode', $event ? 'lower_only' : null)" />
                         <Toggle :model-value="m.mode === 'merge'" :label="__('Keep options the feed doesn\'t list')" @update:model-value="set('mode', $event ? 'merge' : null)" />
+                        <Toggle :model-value="!!(m.price?.create_only && m.stock?.create_only)" :label="__('Price and stock for new options only (a stock feed keeps them up to date)')" @update:model-value="emit({ ...m, price: { ...(m.price ?? {}), create_only: $event || undefined }, stock: { ...(m.stock ?? {}), create_only: $event || undefined } })" />
                     </div>
                     <div v-if="field.fields?.filter((f) => f.handle !== 'sku').length" class="space-y-2 border-l-2 border-gray-200 pl-3 dark:border-gray-700!">
                         <FieldMapping
@@ -367,6 +368,8 @@ export default {
                         <TransformsEditor :model-value="m.transforms ?? []" @update:model-value="set('transforms', $event)" />
                     </div>
                 </div>
+
+                <Toggle v-if="depth === 0 && field.kind !== 'variants'" :model-value="!!m.create_only" :label="__('Only when the item is created (then the site, or another feed, looks after it)')" @update:model-value="set('create_only', $event || null)" />
 
                 <div v-if="mode !== 'value' && mode !== 'fields'" class="flex flex-wrap items-center gap-2 text-sm">
                     <span>{{ __('When the feed has no value:') }}</span>

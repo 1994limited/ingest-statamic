@@ -94,7 +94,7 @@ export default {
 
         collectionChoices() {
             const all = this.options.collections ?? [];
-            return this.destinationType === 'cargo_products' ? all.filter((c) => c.cargo) : all;
+            return ['cargo_products', 'cargo_stock'].includes(this.destinationType) ? all.filter((c) => c.cargo) : all;
         },
 
         keyPaths() {
@@ -207,7 +207,7 @@ export default {
 
         async loadFields() {
             const d = this.form.destination;
-            const ready = { entries: d.collection, cargo_products: d.collection, terms: d.taxonomy, globals: d.set, users: true }[d.type];
+            const ready = { entries: d.collection, cargo_products: d.collection, cargo_stock: d.collection, terms: d.taxonomy, globals: d.set, users: true }[d.type];
 
             if (!ready) {
                 this.fields = [];
@@ -588,7 +588,13 @@ export default {
                                 <Field :label="__('Blueprint')"><Select v-model="form.destination.blueprint" :options="collection?.blueprints ?? []" option-label="label" option-value="value" :placeholder="__('Default')" /></Field>
                                 <Field v-if="options.multisite" :label="__('Site')"><Select v-model="form.destination.site" :options="options.sites ?? []" option-label="label" option-value="value" :placeholder="__('Default')" /></Field>
                             </div>
-                            <p v-if="destinationType === 'cargo_products' && !collectionChoices.length" class="text-sm text-amber-700">{{ __('No collection is one of Cargo\'s product collections.') }}</p>
+                            <div v-if="destinationType === 'cargo_stock'" class="grid gap-4 sm:grid-cols-2">
+                                <Field :label="__('Product collection')"><Select v-model="form.destination.collection" :options="collectionChoices" option-label="label" option-value="value" /></Field>
+                                <Field :label="__('SKU field')" :instructions="__('The field on simple products, and the option field on variants, that holds the SKU.')"><Input v-model="form.destination.sku_field" class="font-mono" placeholder="sku" /></Field>
+                            </div>
+                            <Alert v-if="destinationType === 'cargo_stock'" variant="default" :text="__('Each row is matched to a product or variant by SKU, and only its price and stock change. Nothing is created or removed; rows with an unknown SKU are skipped.')" />
+
+                            <p v-if="['cargo_products', 'cargo_stock'].includes(destinationType) && !collectionChoices.length" class="text-sm text-amber-700">{{ __('No collection is one of Cargo\'s product collections.') }}</p>
 
                             <Field v-if="destinationType === 'cargo_products'" :label="__('Tax class for new products')" :instructions="__('Given to new products that don\'t map one. Cargo can\'t check out a product without one.')">
                                 <Select v-model="form.destination.tax_class" :options="options.tax_classes ?? []" option-label="label" option-value="value" clearable />

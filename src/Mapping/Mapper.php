@@ -21,6 +21,7 @@ use Throwable;
  *   transforms  see Transforms
  *   empty       when the feed has nothing: clear (default), keep, default
  *   default     the value for empty: default
+ *   create_only set the field only when the item is created
  *
  * Only mapped fields are touched. Fields not in the mapping are never
  * read, cleared or changed.
@@ -80,6 +81,11 @@ class Mapper
      */
     public function field(Field $field, array $settings, array $item, Context $context): mixed
     {
+        // Set once, when the item is created; left to the site (or another feed) after that.
+        if (! empty($settings['create_only']) && ! $context->isNew) {
+            return Skip::FIELD;
+        }
+
         // A group mapped field by field reads the same item.
         if (! empty($settings['fields']) && empty($settings['path'])) {
             return $this->fieldMappers->for($field)->map($item, $field, $settings, $context, $this);
