@@ -64,7 +64,7 @@ export default {
                 ['created', __('Created'), c.created],
                 ['updated', __('Updated'), c.updated],
                 ['unchanged', __('Unchanged'), c.unchanged],
-                ['removed', __('Unpublished or deleted'), c.unpublished + c.deleted],
+                ['removed', __('Removed'), c.unpublished + c.deleted],
                 ['failed', __('Failed'), c.failed],
                 ['skipped', __('Skipped'), c.skipped],
             ];
@@ -244,7 +244,7 @@ export default {
             <template v-if="current.total !== null">{{ __(':n items read', { n: current.total }) }} · </template>
             <template v-if="current.duration !== null">{{ __('took :t', { t: duration(current.duration) }) }} · </template>
             <template v-if="current.user">{{ __('started by :name', { name: current.user }) }}</template>
-            <template v-else>{{ __('started by :what', { what: current.trigger }) }}</template>
+            <template v-else>{{ { schedule: __('started by the schedule'), webhook: __('started by the webhook'), cli: __('started from the command line'), chain: __('started by another feed'), apply: __('a dry run applied') }[current.trigger] ?? '' }}</template>
         </p>
 
         <div class="mb-3 flex flex-col gap-3 sm:flex-row">

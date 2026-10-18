@@ -77,7 +77,7 @@ class Presenter
             'unchanged_feed' => (bool) ($run->payload['unchanged'] ?? false),
             'applied_from' => $run->payload['applied_from'] ?? null,
             'undo_conflicts' => array_values((array) ($run->payload['undo_conflicts'] ?? [])),
-            'user' => $run->user ? (User::find($run->user)?->name() ?? null) : null,
+            'user' => $run->user ? (($u = User::find($run->user)) ? ($u->name() ?: $u->email()) : null) : null,
             'created_at' => $run->createdAt?->toIso8601String(),
             'started_at' => $run->startedAt?->toIso8601String(),
             'finished_at' => $run->finishedAt?->toIso8601String(),

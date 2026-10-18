@@ -91,7 +91,7 @@ export default {
         <div class="flex items-center gap-2 border-b border-gray-200 px-3 py-2 dark:border-gray-700!">
             <span class="font-medium">{{ __('Feed preview') }}</span>
             <Badge v-if="preview?.format" :text="preview.format.toUpperCase()" color="gray" size="sm" />
-            <span v-if="preview" class="text-sm text-gray-600 dark:text-gray-400!">{{ __(':count items in the first page', { count: preview.count }) }}</span>
+            <span v-if="preview" class="text-sm text-gray-600 dark:text-gray-400!">{{ preview.count === 1 ? __('1 item in the first page') : __(':count items in the first page', { count: preview.count }) }}</span>
             <Button class="ml-auto" size="sm" variant="ghost" icon="refresh" :loading="loading" :text="__('Refresh')" @click="$emit('refresh')" />
         </div>
 

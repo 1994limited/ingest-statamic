@@ -307,8 +307,11 @@ export default {
             const mapping = { ...this.form.mapping };
             let count = 0;
 
+            // Entry settings with generic names: a feed's "published" is usually a date, not the switch.
+            const skip = ['published', 'parent', 'slug'];
+
             for (const field of this.fields) {
-                if (mapping[field.handle] || ['rows', 'group', 'variants'].includes(field.kind)) continue;
+                if (mapping[field.handle] || skip.includes(field.handle) || ['rows', 'group', 'variants'].includes(field.kind)) continue;
 
                 const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
                 const match = paths.find((p) => norm(p) === norm(field.handle)) ?? paths.find((p) => norm(p.split('.').pop()) === norm(field.handle) && !p.includes('*'));
@@ -360,8 +363,8 @@ export default {
             <Button variant="primary" :loading="saving" :text="__('Save')" @click="save" />
         </Header>
 
-        <div class="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_28rem]!">
-            <Tabs v-model="tab">
+        <div class="grid grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_28rem]!">
+            <Tabs v-model="tab" class="min-w-0">
                 <TabList class="mb-4">
                     <TabTrigger name="source" :text="__('Source') + (tabErrors.source ? ' •' : '')" />
                     <TabTrigger name="items" :text="__('Items') + (tabErrors.items ? ' •' : '')" />
@@ -758,7 +761,7 @@ export default {
                 </TabContent>
             </Tabs>
 
-            <div class="xl:sticky xl:top-4">
+            <div class="min-w-0 xl:sticky xl:top-4">
                 <PreviewPanel v-model:index="previewIndex" :preview="preview" :loading="previewing" :error="previewError" @refresh="loadPreview(true)" />
             </div>
         </div>

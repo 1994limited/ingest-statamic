@@ -34,7 +34,7 @@ On the feed's page, click **Dry run**. Nothing is saved: the run page lists the 
 
 ## 4. Run it again
 
-Click **Run now**. This time every book is **unchanged**: Ingest compared the feed with what it saved last time and wrote nothing. When the feed changes, only the books that changed are updated, and only the fields you mapped.
+Click **Run now**. The run ends at once with "The feed hasn't changed since the last run": GitHub said so, so Ingest didn't even download it. Run it with **Run with options → Read the whole feed even if unchanged** and every book is **unchanged**: Ingest compared each one with what it saved last time and wrote nothing. When the feed does change, only the books that changed are updated, and only the fields you mapped.
 
 ## 5. Put it on a schedule
 
