@@ -1,0 +1,658 @@
+{
+    "products": [
+        {
+            "id": "DE-001",
+            "name": "Lost Library Tee",
+            "description": "House a full house kept old of had a house river everything town of and where.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-001.png",
+            "options": [
+                {
+                    "sku": "DE-001-BLA-S",
+                    "colour": "Black",
+                    "size": "S",
+                    "price": "25.95",
+                    "stock": 13
+                },
+                {
+                    "sku": "DE-001-BLA-M",
+                    "colour": "Black",
+                    "size": "M",
+                    "price": "25.95",
+                    "stock": 8
+                },
+                {
+                    "sku": "DE-001-BLA-L",
+                    "colour": "Black",
+                    "size": "L",
+                    "price": "25.95",
+                    "stock": 1
+                },
+                {
+                    "sku": "DE-001-BLA-XL",
+                    "colour": "Black",
+                    "size": "XL",
+                    "price": "25.95",
+                    "stock": 11
+                },
+                {
+                    "sku": "DE-001-FOR-S",
+                    "colour": "Forest",
+                    "size": "S",
+                    "price": "25.95",
+                    "stock": 0
+                },
+                {
+                    "sku": "DE-001-FOR-M",
+                    "colour": "Forest",
+                    "size": "M",
+                    "price": "25.95",
+                    "stock": 1
+                },
+                {
+                    "sku": "DE-001-FOR-L",
+                    "colour": "Forest",
+                    "size": "L",
+                    "price": "25.95",
+                    "stock": 21
+                },
+                {
+                    "sku": "DE-001-FOR-XL",
+                    "colour": "Forest",
+                    "size": "XL",
+                    "price": "25.95",
+                    "stock": 30
+                },
+                {
+                    "sku": "DE-001-RUS-S",
+                    "colour": "Rust",
+                    "size": "S",
+                    "price": "25.95",
+                    "stock": 22
+                },
+                {
+                    "sku": "DE-001-RUS-M",
+                    "colour": "Rust",
+                    "size": "M",
+                    "price": "25.95",
+                    "stock": 15
+                },
+                {
+                    "sku": "DE-001-RUS-L",
+                    "colour": "Rust",
+                    "size": "L",
+                    "price": "25.95",
+                    "stock": 0
+                },
+                {
+                    "sku": "DE-001-RUS-XL",
+                    "colour": "Rust",
+                    "size": "XL",
+                    "price": "25.95",
+                    "stock": 5
+                }
+            ]
+        },
+        {
+            "id": "DE-002",
+            "name": "Paper Canvas Apron",
+            "description": "Of one suitcase had flowers old drawn across where quiet shelf a secret stranger stranger quiet.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-002.png",
+            "options": [
+                {
+                    "sku": "DE-002-BLA-S",
+                    "colour": "Black",
+                    "size": "S",
+                    "price": "9.19",
+                    "stock": 19
+                },
+                {
+                    "sku": "DE-002-BLA-M",
+                    "colour": "Black",
+                    "size": "M",
+                    "price": "9.19",
+                    "stock": 2
+                },
+                {
+                    "sku": "DE-002-BLA-L",
+                    "colour": "Black",
+                    "size": "L",
+                    "price": "9.19",
+                    "stock": 30
+                },
+                {
+                    "sku": "DE-002-BLA-XL",
+                    "colour": "Black",
+                    "size": "XL",
+                    "price": "9.19",
+                    "stock": 14
+                }
+            ]
+        },
+        {
+            "id": "DE-003",
+            "name": "Borrowed Enamel Mug",
+            "description": "Arrived suitcase stranger of flowers where had arrived everything river and where the stranger remembered arrived.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-003.png",
+            "options": [
+                {
+                    "sku": "DE-003-BLA-Onesize",
+                    "colour": "Black",
+                    "size": "One size",
+                    "price": "23.69",
+                    "stock": 21
+                },
+                {
+                    "sku": "DE-003-NAT-Onesize",
+                    "colour": "Natural",
+                    "size": "One size",
+                    "price": "23.69",
+                    "stock": 14
+                }
+            ]
+        },
+        {
+            "id": "DE-004",
+            "name": "Quiet Tote Bag",
+            "description": "A stranger arrived summer suitcase and every small kindnesses of until slowly a suitcase letters of.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-004.png",
+            "options": [
+                {
+                    "sku": "DE-004-BLA-S",
+                    "colour": "Black",
+                    "size": "S",
+                    "price": "16.99",
+                    "stock": 24
+                },
+                {
+                    "sku": "DE-004-BLA-M",
+                    "colour": "Black",
+                    "size": "M",
+                    "price": "16.99",
+                    "stock": 18
+                },
+                {
+                    "sku": "DE-004-BLA-L",
+                    "colour": "Black",
+                    "size": "L",
+                    "price": "16.99",
+                    "stock": 29
+                },
+                {
+                    "sku": "DE-004-BLA-XL",
+                    "colour": "Black",
+                    "size": "XL",
+                    "price": "16.99",
+                    "stock": 28
+                }
+            ]
+        },
+        {
+            "id": "DE-005",
+            "name": "Lost Pencil Case",
+            "description": "Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-005.png",
+            "options": [
+                {
+                    "sku": "DE-005-NAT-S",
+                    "colour": "Natural",
+                    "size": "S",
+                    "price": "26.60",
+                    "stock": 4
+                },
+                {
+                    "sku": "DE-005-NAT-M",
+                    "colour": "Natural",
+                    "size": "M",
+                    "price": "26.60",
+                    "stock": 4
+                },
+                {
+                    "sku": "DE-005-NAT-L",
+                    "colour": "Natural",
+                    "size": "L",
+                    "price": "26.60",
+                    "stock": 30
+                },
+                {
+                    "sku": "DE-005-NAT-XL",
+                    "colour": "Natural",
+                    "size": "XL",
+                    "price": "26.60",
+                    "stock": 16
+                },
+                {
+                    "sku": "DE-005-RUS-S",
+                    "colour": "Rust",
+                    "size": "S",
+                    "price": "26.60",
+                    "stock": 26
+                },
+                {
+                    "sku": "DE-005-RUS-M",
+                    "colour": "Rust",
+                    "size": "M",
+                    "price": "26.60",
+                    "stock": 7
+                },
+                {
+                    "sku": "DE-005-RUS-L",
+                    "colour": "Rust",
+                    "size": "L",
+                    "price": "26.60",
+                    "stock": 24
+                },
+                {
+                    "sku": "DE-005-RUS-XL",
+                    "colour": "Rust",
+                    "size": "XL",
+                    "price": "26.60",
+                    "stock": 17
+                },
+                {
+                    "sku": "DE-005-NAV-S",
+                    "colour": "Navy",
+                    "size": "S",
+                    "price": "26.60",
+                    "stock": 18
+                },
+                {
+                    "sku": "DE-005-NAV-M",
+                    "colour": "Navy",
+                    "size": "M",
+                    "price": "26.60",
+                    "stock": 16
+                },
+                {
+                    "sku": "DE-005-NAV-L",
+                    "colour": "Navy",
+                    "size": "L",
+                    "price": "26.60",
+                    "stock": 27
+                },
+                {
+                    "sku": "DE-005-NAV-XL",
+                    "colour": "Navy",
+                    "size": "XL",
+                    "price": "26.60",
+                    "stock": 8
+                }
+            ]
+        },
+        {
+            "id": "DE-006",
+            "name": "Folded Bookmark Set",
+            "description": "Everything small town house across the changed shelf full small one slowly of secret stranger until.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-006.png",
+            "options": [
+                {
+                    "sku": "DE-006-BLA-Onesize",
+                    "colour": "Black",
+                    "size": "One size",
+                    "price": "36.72",
+                    "stock": 20
+                },
+                {
+                    "sku": "DE-006-NAT-Onesize",
+                    "colour": "Natural",
+                    "size": "One size",
+                    "price": "36.72",
+                    "stock": 5
+                },
+                {
+                    "sku": "DE-006-RUS-Onesize",
+                    "colour": "Rust",
+                    "size": "One size",
+                    "price": "36.72",
+                    "stock": 12
+                }
+            ]
+        },
+        {
+            "id": "DE-007",
+            "name": "Last Notebook",
+            "description": "Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-007.png",
+            "options": [
+                {
+                    "sku": "DE-007-NAT-S",
+                    "colour": "Natural",
+                    "size": "S",
+                    "price": "34.31",
+                    "stock": 0
+                },
+                {
+                    "sku": "DE-007-NAT-M",
+                    "colour": "Natural",
+                    "size": "M",
+                    "price": "34.31",
+                    "stock": 11
+                },
+                {
+                    "sku": "DE-007-NAT-L",
+                    "colour": "Natural",
+                    "size": "L",
+                    "price": "34.31",
+                    "stock": 4
+                },
+                {
+                    "sku": "DE-007-NAT-XL",
+                    "colour": "Natural",
+                    "size": "XL",
+                    "price": "34.31",
+                    "stock": 19
+                },
+                {
+                    "sku": "DE-007-NAV-S",
+                    "colour": "Navy",
+                    "size": "S",
+                    "price": "34.31",
+                    "stock": 28
+                },
+                {
+                    "sku": "DE-007-NAV-M",
+                    "colour": "Navy",
+                    "size": "M",
+                    "price": "34.31",
+                    "stock": 26
+                },
+                {
+                    "sku": "DE-007-NAV-L",
+                    "colour": "Navy",
+                    "size": "L",
+                    "price": "34.31",
+                    "stock": 20
+                },
+                {
+                    "sku": "DE-007-NAV-XL",
+                    "colour": "Navy",
+                    "size": "XL",
+                    "price": "34.31",
+                    "stock": 3
+                }
+            ]
+        },
+        {
+            "id": "DE-008",
+            "name": "Lost Sweatshirt",
+            "description": "Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-008.png",
+            "options": [
+                {
+                    "sku": "DE-008-FOR-S",
+                    "colour": "Forest",
+                    "size": "S",
+                    "price": "33.32",
+                    "stock": 30
+                },
+                {
+                    "sku": "DE-008-FOR-M",
+                    "colour": "Forest",
+                    "size": "M",
+                    "price": "33.32",
+                    "stock": 25
+                },
+                {
+                    "sku": "DE-008-FOR-L",
+                    "colour": "Forest",
+                    "size": "L",
+                    "price": "33.32",
+                    "stock": 22
+                },
+                {
+                    "sku": "DE-008-FOR-XL",
+                    "colour": "Forest",
+                    "size": "XL",
+                    "price": "33.32",
+                    "stock": 5
+                },
+                {
+                    "sku": "DE-008-RUS-S",
+                    "colour": "Rust",
+                    "size": "S",
+                    "price": "33.32",
+                    "stock": 9
+                },
+                {
+                    "sku": "DE-008-RUS-M",
+                    "colour": "Rust",
+                    "size": "M",
+                    "price": "33.32",
+                    "stock": 15
+                },
+                {
+                    "sku": "DE-008-RUS-L",
+                    "colour": "Rust",
+                    "size": "L",
+                    "price": "33.32",
+                    "stock": 13
+                },
+                {
+                    "sku": "DE-008-RUS-XL",
+                    "colour": "Rust",
+                    "size": "XL",
+                    "price": "33.32",
+                    "stock": 29
+                }
+            ]
+        },
+        {
+            "id": "DE-009",
+            "name": "Quiet Bookmark Set",
+            "description": "A kept secret pressed town a that and quiet pressed of drawn across slowly town flowers.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-009.png",
+            "options": [
+                {
+                    "sku": "DE-009-NAT-Onesize",
+                    "colour": "Natural",
+                    "size": "One size",
+                    "price": "9.58",
+                    "stock": 4
+                },
+                {
+                    "sku": "DE-009-RUS-Onesize",
+                    "colour": "Rust",
+                    "size": "One size",
+                    "price": "9.58",
+                    "stock": 10
+                }
+            ]
+        },
+        {
+            "id": "DE-010",
+            "name": "Distant Notebook",
+            "description": "Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-010.png",
+            "options": [
+                {
+                    "sku": "DE-010-NAT-S",
+                    "colour": "Natural",
+                    "size": "S",
+                    "price": "24.06",
+                    "stock": 27
+                },
+                {
+                    "sku": "DE-010-NAT-M",
+                    "colour": "Natural",
+                    "size": "M",
+                    "price": "24.06",
+                    "stock": 16
+                },
+                {
+                    "sku": "DE-010-NAT-L",
+                    "colour": "Natural",
+                    "size": "L",
+                    "price": "24.06",
+                    "stock": 11
+                },
+                {
+                    "sku": "DE-010-NAT-XL",
+                    "colour": "Natural",
+                    "size": "XL",
+                    "price": "24.06",
+                    "stock": 16
+                },
+                {
+                    "sku": "DE-010-FOR-S",
+                    "colour": "Forest",
+                    "size": "S",
+                    "price": "24.06",
+                    "stock": 3
+                },
+                {
+                    "sku": "DE-010-FOR-M",
+                    "colour": "Forest",
+                    "size": "M",
+                    "price": "24.06",
+                    "stock": 1
+                },
+                {
+                    "sku": "DE-010-FOR-L",
+                    "colour": "Forest",
+                    "size": "L",
+                    "price": "24.06",
+                    "stock": 2
+                },
+                {
+                    "sku": "DE-010-FOR-XL",
+                    "colour": "Forest",
+                    "size": "XL",
+                    "price": "24.06",
+                    "stock": 12
+                },
+                {
+                    "sku": "DE-010-RUS-S",
+                    "colour": "Rust",
+                    "size": "S",
+                    "price": "24.06",
+                    "stock": 14
+                },
+                {
+                    "sku": "DE-010-RUS-M",
+                    "colour": "Rust",
+                    "size": "M",
+                    "price": "24.06",
+                    "stock": 24
+                },
+                {
+                    "sku": "DE-010-RUS-L",
+                    "colour": "Rust",
+                    "size": "L",
+                    "price": "24.06",
+                    "stock": 23
+                },
+                {
+                    "sku": "DE-010-RUS-XL",
+                    "colour": "Rust",
+                    "size": "XL",
+                    "price": "24.06",
+                    "stock": 4
+                }
+            ]
+        },
+        {
+            "id": "DE-011",
+            "name": "Crooked Beanie",
+            "description": "Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-011.png",
+            "options": [
+                {
+                    "sku": "DE-011-BLA-S",
+                    "colour": "Black",
+                    "size": "S",
+                    "price": "36.15",
+                    "stock": 20
+                },
+                {
+                    "sku": "DE-011-BLA-M",
+                    "colour": "Black",
+                    "size": "M",
+                    "price": "36.15",
+                    "stock": 25
+                },
+                {
+                    "sku": "DE-011-BLA-L",
+                    "colour": "Black",
+                    "size": "L",
+                    "price": "36.15",
+                    "stock": 3
+                },
+                {
+                    "sku": "DE-011-BLA-XL",
+                    "colour": "Black",
+                    "size": "XL",
+                    "price": "36.15",
+                    "stock": 19
+                },
+                {
+                    "sku": "DE-011-RUS-S",
+                    "colour": "Rust",
+                    "size": "S",
+                    "price": "36.15",
+                    "stock": 9
+                },
+                {
+                    "sku": "DE-011-RUS-M",
+                    "colour": "Rust",
+                    "size": "M",
+                    "price": "36.15",
+                    "stock": 2
+                },
+                {
+                    "sku": "DE-011-RUS-L",
+                    "colour": "Rust",
+                    "size": "L",
+                    "price": "36.15",
+                    "stock": 14
+                },
+                {
+                    "sku": "DE-011-RUS-XL",
+                    "colour": "Rust",
+                    "size": "XL",
+                    "price": "36.15",
+                    "stock": 18
+                }
+            ]
+        },
+        {
+            "id": "DE-012",
+            "name": "Golden Sweatshirt",
+            "description": "Maps arrived arrived changed until every where slowly across where of old nobody the and where.",
+            "brand": "Dog-ear Goods",
+            "image": "images/products/DE-012.png",
+            "options": [
+                {
+                    "sku": "DE-012-BLA-Onesize",
+                    "colour": "Black",
+                    "size": "One size",
+                    "price": "9.51",
+                    "stock": 26
+                },
+                {
+                    "sku": "DE-012-NAT-Onesize",
+                    "colour": "Natural",
+                    "size": "One size",
+                    "price": "9.51",
+                    "stock": 0
+                },
+                {
+                    "sku": "DE-012-NAV-Onesize",
+                    "colour": "Navy",
+                    "size": "One size",
+                    "price": "9.51",
+                    "stock": 25
+                }
+            ]
+        }
+    ]
+}

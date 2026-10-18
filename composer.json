@@ -1,0 +1,80 @@
+{
+    "name": "1994/ingest-statamic",
+    "description": "Keep Statamic in sync with external feeds: JSON, XML, RSS, CSV, APIs and Google Sheets into entries, terms, globals, users and Cargo products, on a schedule, with dry runs and undo.",
+    "type": "statamic-addon",
+    "license": "proprietary",
+    "keywords": [
+        "statamic",
+        "statamic-addon",
+        "import",
+        "sync",
+        "feed",
+        "json",
+        "xml",
+        "csv",
+        "rss",
+        "google sheets",
+        "cargo"
+    ],
+    "authors": [
+        {
+            "name": "1994",
+            "email": "hello@1994.co.uk",
+            "homepage": "https://1994.co.uk"
+        }
+    ],
+    "support": {
+        "email": "hello@1994.co.uk"
+    },
+    "autoload": {
+        "psr-4": {
+            "NineteenNinetyFour\\Ingest\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NineteenNinetyFour\\Ingest\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^8.3",
+        "ext-xmlreader": "*",
+        "halaxa/json-machine": "^1.2",
+        "league/html-to-markdown": "^5.1",
+        "statamic/cms": "^6.35",
+        "symfony/html-sanitizer": "^7.1|^8.0"
+    },
+    "require-dev": {
+        "duncanmcclean/statamic-cargo": "^1.15",
+        "laravel/pint": "^1.20",
+        "orchestra/testbench": "^10.0|^11.0",
+        "phpunit/phpunit": "^12.0"
+    },
+    "suggest": {
+        "duncanmcclean/statamic-cargo": "Sync products, variants, prices and stock into Cargo (^1.15)."
+    },
+    "conflict": {
+        "duncanmcclean/statamic-cargo": "<1.15"
+    },
+    "extra": {
+        "statamic": {
+            "name": "Ingest",
+            "description": "Keep Statamic in sync with external feeds: JSON, XML, RSS, CSV, APIs and Google Sheets, on a schedule, with dry runs and undo.",
+            "developer": "1994",
+            "developer-url": "https://1994.co.uk"
+        },
+        "laravel": {
+            "providers": [
+                "NineteenNinetyFour\\Ingest\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

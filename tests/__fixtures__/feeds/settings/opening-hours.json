@@ -1,0 +1,43 @@
+{
+    "shop": "Dog-ear Books",
+    "phone": "01273 000000",
+    "hours": [
+        {
+            "day": "Monday",
+            "opens": "09:00",
+            "closes": "17:30"
+        },
+        {
+            "day": "Tuesday",
+            "opens": "09:00",
+            "closes": "17:30"
+        },
+        {
+            "day": "Wednesday",
+            "opens": "09:00",
+            "closes": "17:30"
+        },
+        {
+            "day": "Thursday",
+            "opens": "09:00",
+            "closes": "20:00"
+        },
+        {
+            "day": "Friday",
+            "opens": "09:00",
+            "closes": "17:30"
+        },
+        {
+            "day": "Saturday",
+            "opens": "10:00",
+            "closes": "18:00"
+        },
+        {
+            "day": "Sunday",
+            "opens": null,
+            "closes": null
+        }
+    ],
+    "notice": "Late opening every Thursday.",
+    "updated_at": "2026-10-01T09:00:00+00:00"
+}

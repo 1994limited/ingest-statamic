@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<!DOCTYPE catalogue [<!ENTITY secret SYSTEM "file:///etc/passwd">]>
+<catalogue><book><isbn>9780000000001</isbn><title>&secret;</title></book></catalogue>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>The Dog-ear Podcast</title>
+    <link>https://podcast.example.test</link>
+    <description>A made-up podcast feed</description>
+    <itunes:author>Dog-ear Books</itunes:author>
+    <item>
+      <title>Quiet Lanterns</title>
+      <guid isPermaLink="false">urn:dog-ear:post:1:episode</guid>
+      <pubDate>Mon, 28 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Shelf arrived changed where every old summer letters a one suitcase across them across a who full house one where.</description>
+      <enclosure url="https://audio.example.test/ep1.mp3" length="20000000" type="audio/mpeg"/>
+      <itunes:duration>30:15</itunes:duration>
+      <itunes:episode>1</itunes:episode>
+    </item>
+    <item>
+      <title>Borrowed Orchards</title>
+      <guid isPermaLink="false">urn:dog-ear:post:2:episode</guid>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 +0000</pubDate>
+      <description>With letters one drawn summer kindnesses nobody flowers and secret one that small changed full secret small of shelf who.</description>
+      <enclosure url="https://audio.example.test/ep2.mp3" length="20001000" type="audio/mpeg"/>
+      <itunes:duration>31:15</itunes:duration>
+      <itunes:episode>2</itunes:episode>
+    </item>
+    <item>
+      <title>Folded Meadows</title>
+      <guid isPermaLink="false">urn:dog-ear:post:3:episode</guid>
+      <pubDate>Thu, 24 Sep 2026 12:00:00 +0000</pubDate>
+      <description>River across maps carried shelf of changed everything who recipes old slowly every questions pressed old a nobody them and.</description>
+      <enclosure url="https://audio.example.test/ep3.mp3" length="20002000" type="audio/mpeg"/>
+      <itunes:duration>32:15</itunes:duration>
+      <itunes:episode>3</itunes:episode>
+    </item>
+    <item>
+      <title>A Harbour for Sol</title>
+      <guid isPermaLink="false">urn:dog-ear:post:4:episode</guid>
+      <pubDate>Tue, 22 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Summer quiet river drawn pressed kept who with old summer flowers them small old where carried across one until everything.</description>
+      <enclosure url="https://audio.example.test/ep4.mp3" length="20003000" type="audio/mpeg"/>
+      <itunes:duration>33:15</itunes:duration>
+      <itunes:episode>4</itunes:episode>
+    </item>
+    <item>
+      <title>An Atlas for Otto</title>
+      <guid isPermaLink="false">urn:dog-ear:post:5:episode</guid>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 +0000</pubDate>
+      <description>A remembered suitcase stranger small a one house kindnesses house kindnesses recipes carried kept house full flowers arrived every slowly.</description>
+      <enclosure url="https://audio.example.test/ep5.mp3" length="20004000" type="audio/mpeg"/>
+      <itunes:duration>34:15</itunes:duration>
+      <itunes:episode>5</itunes:episode>
+    </item>
+    <item>
+      <title>The Quiet Harbour</title>
+      <guid isPermaLink="false">urn:dog-ear:post:6:episode</guid>
+      <pubDate>Fri, 18 Sep 2026 12:00:00 +0000</pubDate>
+      <description>Them flowers flowers summer carried full maps remembered that had one slowly a summer and of a arrived letters shelf.</description>
+      <enclosure url="https://audio.example.test/ep6.mp3" length="20005000" type="audio/mpeg"/>
+      <itunes:duration>35:15</itunes:duration>
+      <itunes:episode>6</itunes:episode>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,55 @@
+{
+    "data": [
+        {
+            "isbn": "9791001000373",
+            "title": "An Orchard for Pip",
+            "subtitle": "Small arrived where and",
+            "contributors": [
+                {
+                    "name": "Kit Bramley",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Hollowtree Press",
+            "published": "2024-12-26",
+            "pages": 211,
+            "subjects": [
+                "Children",
+                "Biography"
+            ],
+            "description_html": "<p>Pressed old a shelf carried remembered them across a secret had who of who the. Suitcase kindnesses everything a across where shelf kept quiet river that and summer maps. Letters secret of a summer maps had small arrived kindnesses suitcase suitcase pressed river a.</p><p>Kindnesses letters arrived full every river until quiet everything one shelf of. The arrived and suitcase a suitcase town quiet.</p>",
+            "cover": "images/covers/9791001000373.png",
+            "formats": [
+                {
+                    "sku": "9791001000373-HB",
+                    "binding": "Hardback",
+                    "price": "25.65",
+                    "stock": 11
+                },
+                {
+                    "sku": "9791001000373-PB",
+                    "binding": "Paperback",
+                    "price": "17.65",
+                    "stock": 100
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001000748",
+            "title": "A Meadow for Eli",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Nell Rookwood",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Northgate Books",
+            "published": "2023-05-17",
+            "pages": 170,
+            "subjects": [
+                "Art"
+            ],
+            "description_html": "<p>Carried the town until a nobody secret a. A old recipes changed everything carried summer secret a changed small. Had until and and and had drawn flowers across changed full a of. Small a kindnesses river had a kindnesses small letters one suitcase and kept arrived.</p><p>Stranger house of everything river arrived flowers until of. Drawn drawn of the suitcase had who and a one across house that.</p><p>Carried suitcase every suitcase questions pressed l

@@ -1,0 +1,398 @@
+{
+    "results": [
+        {
+            "isbn": "9791001018873",
+            "title": "A Library for Tess",
+            "subtitle": "That until summer one",
+            "contributors": [
+                {
+                    "name": "Fern Calloway",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Pebble Lane",
+            "published": "2024-08-26",
+            "pages": 272,
+            "subjects": [
+                "Nature",
+                "Poetry"
+            ],
+            "description_html": "<p>Full nobody every them until kindnesses of slowly of. Small old remembered a pressed with arrived that shelf changed secret kept where maps suitcase.</p><p>Until everything river a where stranger of and. A carried across maps arrived every pressed drawn of drawn kept suitcase every kept.</p><p>And kindnesses remembered with house them full shelf nobody shelf one letters house of a and. Recipes everything recipes and carried full drawn with.</p>",
+            "cover": "images/covers/9791001018873.png",
+            "formats": [
+                {
+                    "sku": "9791001018873-HB",
+                    "binding": "Hardback",
+                    "price": "18.89",
+                    "stock": 25
+                },
+                {
+                    "sku": "9791001018873-PB",
+                    "binding": "Paperback",
+                    "price": "10.89",
+                    "stock": 4
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001019245",
+            "title": "Quiet Orchards",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Cal Kettering",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Marlow & Finch",
+            "published": "2025-12-21",
+            "pages": 412,
+            "subjects": [
+                "Science",
+                "Children"
+            ],
+            "description_html": "<p>Carried river where summer carried who secret pressed until until. A letters a nobody changed flowers maps house them carried stranger pressed one quiet.</p><p>Stranger pressed of remembered everything slowly kept of full. River nobody every every the flowers the kept nobody who a them flowers arrived every flowers.</p><p>Suitcase and old until of slowly maps remembered river suitcase house and where stranger. Maps across full and where full kindnesses until every secret across changed old full had. Suitcase everything that a questions quiet who that the arrived. Shelf town a every maps river slowly secret suitcase across summer stranger.</p>",
+            "cover": "images/covers/9791001019245.png",
+            "formats": [
+                {
+                    "sku": "9791001019245-HB",
+                    "binding": "Hardback",
+                    "price": "17.20",
+                    "stock": 12
+                },
+                {
+                    "sku": "9791001019245-PB",
+                    "binding": "Paperback",
+                    "price": "9.20",
+                    "stock": 0
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001019610",
+            "title": "Crooked Gardens",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Eli Gilchrist",
+                    "role": "author"
+                },
+                {
+                    "name": "Kit Bramley",
+                    "role": "illustrator"
+                }
+            ],
+            "publisher": "Hollowtree Press",
+            "published": "2025-08-08",
+            "pages": 275,
+            "subjects": [
+                "Travel"
+            ],
+            "description_html": "<p>A recipes nobody across where of of a pressed questions kept small every of where. River river summer every river kindnesses town who every quiet of stranger small changed maps every. Secret and secret until a kindnesses every suitcase small suitcase pressed slowly with that town kindnesses. A and changed nobody pressed them nobody them a every and had pressed across had.</p><p>House kindnesses where that everything that drawn old carried and kindnesses one with had. Flowers one a quiet river recipes town who maps. Questions summer a remembered of secret old and letters carried maps everything.</p><p>A small that quiet suitcase who everything every questions quiet shelf where drawn remembered them a. Secret them small kept suitcase and kindnesses and town secret carried. Remembered recipes remembered house and of changed everything everything questions house that everything.</p>",
+            "cover": "images/covers/9791001019610.png",
+            "formats": [
+                {
+                    "sku": "9791001019610-HB",
+                    "binding": "Hardback",
+                    "price": "30.77",
+                    "stock": 38
+                },
+                {
+                    "sku": "9791001019610-PB",
+                    "binding": "Paperback",
+                    "price": "22.77",
+                    "stock": 33
+                },
+                {
+                    "sku": "9791001019610-EB",
+                    "binding": "Ebook",
+                    "price": "19.77",
+                    "stock": null
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001019986",
+            "title": "A Kingdom for Bea",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Ivo Pennywhistle",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Hollowtree Press",
+            "published": "2020-12-21",
+            "pages": 180,
+            "subjects": [
+                "History",
+                "Travel",
+                "Art"
+            ],
+            "description_html": "<p>Everything quiet across a secret until of one and that had that every and shelf and. Of drawn of town of a small a of arrived stranger letters drawn kindnesses flowers. Them flowers maps kept summer house of questions with nobody that carried a.</p><p>Stranger river every full secret across carried summer every old old. Them that until a one arrived letters shelf secret kindnesses town remembered house full. Where with kept secret of and with questions arrived the shelf who small carried full. Summer summer maps and and shelf recipes secret everything stranger every summer arrived a.</p><p>With questions secret questions kindnesses everything carried town full every where a until recipes of. Everything summer letters arrived summer that flowers kept secret where recipes across. Recipes across old shelf drawn old stranger full them old small. One until who every full kindnesses changed recipes across and suitcase.</p>",
+            "cover": "images/covers/9791001019986.png",
+            "formats": [
+                {
+                    "sku": "9791001019986-HB",
+                    "binding": "Hardback",
+                    "price": "32.99",
+                    "stock": 19
+                },
+                {
+                    "sku": "9791001019986-PB",
+                    "binding": "Paperback",
+                    "price": "24.99",
+                    "stock": 28
+                },
+                {
+                    "sku": "9791001019986-EB",
+                    "binding": "Ebook",
+                    "price": "21.99",
+                    "stock": null
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001020357",
+            "title": "An Atlas for Dora",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Milo Everleigh",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Copperleaf",
+            "published": "2022-06-14",
+            "pages": 313,
+            "subjects": [
+                "Fiction",
+                "Gardening"
+            ],
+            "description_html": "<p>Drawn kindnesses and where every carried where had questions across everything shelf. Across a and shelf drawn summer them the suitcase of that had. Letters a and had had river of flowers one small slowly kindnesses of.</p><p>River pressed the until slowly stranger town and letters across recipes had with arrived town old. Old one town of remembered town small nobody one remembered. And and flowers suitcase had changed changed small pressed and of questions secret them small drawn.</p><p>One them kept and every kindnesses questions a drawn a them flowers old had town kept. Every them until kindnesses across quiet recipes nobody. Stranger house that a of nobody everything questions questions a questions a and.</p>",
+            "cover": "images/covers/9791001020357.png",
+            "formats": [
+                {
+                    "sku": "9791001020357-HB",
+                    "binding": "Hardback",
+                    "price": "28.57",
+                    "stock": 22
+                },
+                {
+                    "sku": "9791001020357-PB",
+                    "binding": "Paperback",
+                    "price": "20.57",
+                    "stock": 11
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001020722",
+            "title": "Paper Stations",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Otto Marchbank",
+                    "role": "author"
+                },
+                {
+                    "name": "Milo Everleigh",
+                    "role": "illustrator"
+                }
+            ],
+            "publisher": "Hollowtree Press",
+            "published": "2019-05-31",
+            "pages": 209,
+            "subjects": [
+                "Poetry",
+                "Gardening"
+            ],
+            "description_html": "<p>House remembered and of kindnesses of who nobody pressed suitcase secret where a across. That had shelf slowly nobody until recipes drawn. Across every small remembered old a recipes recipes questions stranger a who summer kept a. A and of recipes suitcase suitcase kindnesses who carried flowers questions every.</p><p>Nobody who the nobody town across quiet town old. Them where letters slowly summer letters maps suitcase everything river with changed the quiet. Carried kindnesses recipes secret that everything a changed them stranger recipes who secret and pressed. One across pressed drawn and across summer kept pressed slowly the.</p>",
+            "cover": "images/covers/9791001020722.png",
+            "formats": [
+                {
+                    "sku": "9791001020722-HB",
+                    "binding": "Hardback",
+                    "price": "26.89",
+                    "stock": 39
+                },
+                {
+                    "sku": "9791001020722-PB",
+                    "binding": "Paperback",
+                    "price": "18.89",
+                    "stock": 91
+                },
+                {
+                    "sku": "9791001020722-EB",
+                    "binding": "Ebook",
+                    "price": "15.89",
+                    "stock": null
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001021095",
+            "title": "The Winter Garden",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Kit Bramley",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Marlow & Finch",
+            "published": "2020-03-01",
+            "pages": 110,
+            "subjects": [
+                "Children"
+            ],
+            "description_html": "<p>Kindnesses small of drawn summer a drawn with kindnesses. A and shelf a maps of everything kindnesses the a until the slowly. Carried and the of had summer old full changed river where a changed of. A and and slowly summer questions house house house.</p><p>Full full shelf stranger had letters that of of suitcase. Letters across changed nobody remembered kept that shelf.</p><p>Carried who that flowers quiet a of where secret arrived. Letters quiet a quiet them river maps recipes town had. One shelf kindnesses the drawn old quiet stranger old changed one. Letters pressed a every of a shelf shelf drawn across.</p>",
+            "cover": "images/covers/9791001021095.png",
+            "formats": [
+                {
+                    "sku": "9791001021095-HB",
+                    "binding": "Hardback",
+                    "price": "28.51",
+                    "stock": 22
+                },
+                {
+                    "sku": "9791001021095-PB",
+                    "binding": "Paperback",
+                    "price": "20.51",
+                    "stock": 86
+                },
+                {
+                    "sku": "9791001021095-EB",
+                    "binding": "Ebook",
+                    "price": "17.51",
+                    "stock": null
+                }
+            ],
+            "status": "withdrawn",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001021460",
+            "title": "Folded Gardens",
+            "subtitle": "Flowers and of drawn",
+            "contributors": [
+                {
+                    "name": "Hattie Stanhope",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Northgate Books",
+            "published": "2024-11-15",
+            "pages": 139,
+            "subjects": [
+                "Fiction"
+            ],
+            "description_html": "<p>Quiet shelf every secret who questions stranger every slowly kindnesses questions a shelf a with suitcase. Town maps drawn summer a pressed a changed house recipes nobody every.</p><p>Remembered arrived letters town maps remembered and arrived letters and every across every one who questions. Flowers arrived quiet who had with with a. Shelf until who kindnesses a of remembered questions. Until changed kept kindnesses every a every flowers a letters old letters a the.</p>",
+            "cover": "images/covers/9791001021460.png",
+            "formats": [
+                {
+                    "sku": "9791001021460-HB",
+                    "binding": "Hardback",
+                    "price": "25.17",
+                    "stock": 1
+                },
+                {
+                    "sku": "9791001021460-PB",
+                    "binding": "Paperback",
+                    "price": "17.17",
+                    "stock": 34
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001021835",
+            "title": "The Golden Orchard",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Ivo Ingram",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Pebble Lane",
+            "published": "2019-12-25",
+            "pages": 251,
+            "subjects": [
+                "Fiction",
+                "Nature"
+            ],
+            "description_html": "<p>Summer maps carried town flowers slowly pressed arrived everything. Pressed and kept where across everything changed maps secret of shelf.</p><p>And pressed small kindnesses every river remembered drawn changed pressed small where small river. Town maps everything every stranger until river secret quiet every who until full a kindnesses.</p>",
+            "cover": "images/covers/9791001021835.png",
+            "formats": [
+                {
+                    "sku": "9791001021835-HB",
+                    "binding": "Hardback",
+                    "price": "30.74",
+                    "stock": 9
+                },
+                {
+                    "sku": "9791001021835-PB",
+                    "binding": "Paperback",
+                    "price": "22.74",
+                    "stock": 10
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "isbn": "9791001022207",
+            "title": "A Lighthouse for Lola",
+            "subtitle": null,
+            "contributors": [
+                {
+                    "name": "Wren Bramley",
+                    "role": "author"
+                }
+            ],
+            "publisher": "Copperleaf",
+            "published": "2023-11-10",
+            "pages": 232,
+            "subjects": [
+                "Crime",
+                "Travel",
+                "Poetry"
+            ],
+            "description_html": "<p>House town maps and until town that one pressed them arrived recipes had. Where across small a of had the with.</p><p>Everything secret river of across of kindnesses questions nobody maps where. Questions one of of suitcase and drawn maps letters suitcase maps that one river secret and. Letters of quiet suitcase who everything suitcase full until summer of and pressed old.</p><p>Nobody house everything kept kindnesses kept house a carried a old one. Where secret them pressed who recipes the maps a full remembered of of pressed where recipes.</p><p>Secret questions quiet carried recipes had suitcase and one full kindnesses. Suitcase a house and suitcase maps questions a who until nobody suitcase remembered slowly that them. A pressed stranger had a a carried drawn full everything flowers recipes them. Nobody the slowly stranger quiet flowers a the slowly of until across where old flowers.</p>",
+            "cover": "images/covers/9791001022207.png",
+            "formats": [
+                {
+                    "sku": "9791001022207-HB",
+                    "binding": "Hardback",
+                    "price": "17.16",
+                    "stock": 19
+                },
+                {
+                    "sku": "9791001022207-PB",
+                    "binding": "Paperback",
+                    "price": "9.16",
+                    "stock": 17
+                }
+            ],
+            "status": "live",
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        }
+    ],
+    "offset": 50,
+    "limit": 25,
+    "count": 60
+}

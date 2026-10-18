@@ -1,0 +1,22 @@
+{
+    "v1": {
+        "items": 20
+    },
+    "v2": {
+        "items": 20,
+        "price_changed": 5,
+        "title_changed": 1,
+        "removed": [
+            "9791001002599"
+        ],
+        "added": [
+            "9791001007778"
+        ]
+    },
+    "v3": {
+        "items": 20,
+        "cover_changed": [
+            "9791001000373"
+        ]
+    }
+}

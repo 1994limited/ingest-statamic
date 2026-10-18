@@ -1,0 +1,629 @@
+{
+    "properties": [
+        {
+            "ref": "DEA0001",
+            "branch_id": "10002",
+            "address_1": "35 Mill Lane",
+            "town": "Seaford",
+            "postcode": "BN8 3SV",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "price": 831000,
+            "transaction": "sale",
+            "type": "Terraced",
+            "summary": "Had shelf flowers shelf where pressed remembered suitcase town drawn carried everything until town questions house secret every.",
+            "description": "Until kept nobody nobody kept small flowers house where the remembered. Suitcase a stranger small with until flowers a town kindnesses them. A with a secret flowers that a them where remembered arrived a pressed and.\n\nWith of nobody letters the questions carried remembered a. Shelf every and every kindnesses them the flowers changed maps everything recipes slowly. One nobody of with a of everything quiet.",
+            "features": [
+                "Garden",
+                "Period features",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0001-1.png",
+                "images/property/DEA0001-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0002",
+            "branch_id": "10001",
+            "address_1": "46 High Street",
+            "town": "Hastings",
+            "postcode": "BN1 7LA",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "price": 840000,
+            "transaction": "sale",
+            "type": "Semi-detached",
+            "summary": "House recipes with the and had until with questions slowly everything of slowly pressed kindnesses river old remembered.",
+            "description": "Questions remembered stranger suitcase carried remembered house flowers a arrived with. Recipes had stranger summer of a kindnesses full the flowers questions town town. Pressed secret summer of one the summer pressed shelf that summer.\n\nCarried the suitcase summer everything kindnesses river across quiet kindnesses everything suitcase river drawn one quiet. Secret secret slowly remembered kept old nobody until of. A full where river stranger house with shelf town who a kindnesses drawn.",
+            "features": [
+                "Garden",
+                "Fireplace",
+                "Near station"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0002-1.png",
+                "images/property/DEA0002-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0003",
+            "branch_id": "10001",
+            "address_1": "62 Orchard Close",
+            "town": "Seaford",
+            "postcode": "BN18 1BR",
+            "bedrooms": 5,
+            "bathrooms": 4,
+            "price": 930000,
+            "transaction": "sale",
+            "type": "Semi-detached",
+            "summary": "Drawn drawn stranger flowers where with and secret town everything arrived a that summer across full and stranger.",
+            "description": "Questions of stranger recipes that flowers questions who arrived changed that. With letters slowly across nobody arrived and quiet flowers old had letters the where a. One one slowly across suitcase shelf them town kept carried everything and slowly.\n\nHouse of summer had a flowers across and the questions secret suitcase kindnesses one of. Suitcase every suitcase changed kept maps a summer river summer slowly and river arrived slowly. Questions river kept with a drawn remembered small a secret flowers. Drawn carried across who of pressed the questions a a everything small where.",
+            "features": [
+                "Parking",
+                "Period features",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0003-1.png",
+                "images/property/DEA0003-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0004",
+            "branch_id": "10002",
+            "address_1": "8 Castle Way",
+            "town": "Hastings",
+            "postcode": "BN22 8BB",
+            "bedrooms": 5,
+            "bathrooms": 4,
+            "price": 951,
+            "transaction": "let",
+            "type": "Cottage",
+            "summary": "Flowers one quiet quiet carried and quiet of small a and suitcase one recipes flowers and across a.",
+            "description": "Quiet flowers slowly nobody across shelf where a every and with a river everything quiet. House remembered kept until quiet letters arrived of had.\n\nTown everything remembered house everything shelf slowly across nobody that river had questions who one kept. Them flowers where suitcase town a changed nobody and pressed old.",
+            "features": [
+                "Garden",
+                "Period features",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0004-1.png",
+                "images/property/DEA0004-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0005",
+            "branch_id": "10001",
+            "address_1": "9 Mill Lane",
+            "town": "Eastbourne",
+            "postcode": "BN15 7MC",
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "price": 700000,
+            "transaction": "sale",
+            "type": "Flat",
+            "summary": "That full of kept shelf arrived a recipes until who maps drawn who house full recipes had them.",
+            "description": "Until small old nobody river quiet and across who a flowers changed stranger. Where a of and small the of of had.\n\nEvery across stranger drawn kept secret letters and and questions the nobody and slowly. Nobody kindnesses until shelf a a them a had small. Changed every kept pressed slowly full pressed kept suitcase.",
+            "features": [
+                "Parking",
+                "Near station",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0005-1.png",
+                "images/property/DEA0005-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0006",
+            "branch_id": "10002",
+            "address_1": "6 Church Road",
+            "town": "Ditchling",
+            "postcode": "BN14 9YT",
+            "bedrooms": 4,
+            "bathrooms": 4,
+            "price": 420000,
+            "transaction": "sale",
+            "type": "Cottage",
+            "summary": "A stranger changed secret arrived a and recipes a that summer town across letters shelf drawn of across.",
+            "description": "Shelf with river recipes questions kindnesses stranger with. Summer a across that quiet and kept house. Nobody small them who town maps drawn suitcase quiet river and questions had full.\n\nPressed a flowers river where house suitcase pressed house a until the shelf arrived full. One nobody across full suitcase and who remembered of suitcase pressed house suitcase questions who. Pressed had full flowers where questions until summer maps a letters across a kept.",
+            "features": [
+                "Garden",
+                "Parking",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0006-1.png",
+                "images/property/DEA0006-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0007",
+            "branch_id": "10001",
+            "address_1": "78 Orchard Close",
+            "town": "Rye",
+            "postcode": "BN19 5XE",
+            "bedrooms": 4,
+            "bathrooms": 3,
+            "price": 312000,
+            "transaction": "sale",
+            "type": "Semi-detached",
+            "summary": "Carried a that had remembered suitcase one recipes shelf old with letters until of kept a drawn carried.",
+            "description": "With where had old suitcase the a shelf a. Kept letters secret that secret across a and that pressed. Town carried nobody river of arrived stranger of. Had a old a carried town flowers remembered shelf suitcase changed had and.\n\nNobody kindnesses them a maps a every flowers pressed. Town where arrived kept small full remembered with carried quiet a town a.",
+            "features": [
+                "Parking",
+                "Fireplace",
+                "Near station"
+            ],
+            "status": "sold_stc",
+            "images": [
+                "images/property/DEA0007-1.png",
+                "images/property/DEA0007-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0008",
+            "branch_id": "10002",
+            "address_1": "17 Castle Way",
+            "town": "Hove",
+            "postcode": "BN26 7VZ",
+            "bedrooms": 4,
+            "bathrooms": 2,
+            "price": 2472,
+            "transaction": "let",
+            "type": "Cottage",
+            "summary": "Until town small flowers secret pressed a until drawn one of a kindnesses kept kept a slowly everything.",
+            "description": "River kindnesses maps quiet and with maps everything every everything a. Arrived stranger nobody a house of remembered stranger old river flowers flowers. Shelf kindnesses kept had them letters carried shelf river old with pressed. Letters river recipes pressed who full letters carried.\n\nWho town one where old until pressed suitcase letters had one every of kept suitcase and. With one a every full kept changed full shelf changed questions. Where a one small shelf arrived full everything a of flowers shelf. Small and a and everything and changed stranger until kindnesses questions arrived.",
+            "features": [
+                "Period features",
+                "New kitchen",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0008-1.png",
+                "images/property/DEA0008-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0009",
+            "branch_id": "10002",
+            "address_1": "66 Church Road",
+            "town": "Seaford",
+            "postcode": "BN20 6TZ",
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "price": 596000,
+            "transaction": "sale",
+            "type": "Cottage",
+            "summary": "Suitcase everything and the one recipes full them kindnesses letters who everything everything full quiet until small quiet.",
+            "description": "Across slowly town the kindnesses flowers drawn nobody them. Summer of a every nobody kindnesses of everything pressed maps had flowers arrived. Flowers with town nobody a letters across letters and quiet a flowers kindnesses and stranger across. Drawn kept that slowly and one had kept full nobody slowly summer until who a.\n\nAnd arrived small maps a and every flowers arrived. Had with where letters nobody quiet of and. Maps and summer the of of them a and. Questions until pressed the a the a until that of letters them a carried and shelf.",
+            "features": [
+                "Parking",
+                "New kitchen",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0009-1.png",
+                "images/property/DEA0009-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0010",
+            "branch_id": "10001",
+            "address_1": "69 School Lane",
+            "town": "Eastbourne",
+            "postcode": "BN4 8TL",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "price": 901000,
+            "transaction": "sale",
+            "type": "Semi-detached",
+            "summary": "And suitcase kept that had river across that letters full a kindnesses that pressed and changed changed changed.",
+            "description": "Where and drawn and across drawn quiet of a pressed stranger. Quiet carried a remembered one the every remembered kindnesses everything shelf them nobody. A summer secret summer nobody with every where slowly quiet where remembered a. With suitcase flowers every a pressed drawn nobody had everything river had nobody full slowly until.\n\nA old small who changed recipes old kept the. Drawn with everything that changed and carried river. A letters until letters slowly summer everything questions across river. Suitcase suitcase shelf questions every small kindnesses changed maps.",
+            "features": [
+                "Fireplace",
+                "Period features",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0010-1.png",
+                "images/property/DEA0010-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0011",
+            "branch_id": "10002",
+            "address_1": "69 Station Road",
+            "town": "Lewes",
+            "postcode": "BN22 8EW",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "price": 256000,
+            "transaction": "sale",
+            "type": "Detached",
+            "summary": "Kept changed with flowers summer recipes secret of until one every questions across nobody changed quiet a secret.",
+            "description": "Kindnesses river a remembered kindnesses flowers town across a flowers. Shelf house everything carried had everything that arrived of letters quiet of everything the letters. Who until kept river who them that the with a. Across quiet one them suitcase questions shelf the kindnesses.\n\nA suitcase of flowers house recipes of letters nobody. That pressed maps suitcase town house of arrived. Of slowly remembered town stranger pressed carried shelf quiet river remembered every flowers suitcase of full. Had river summer changed river one with slowly everything recipes had.",
+            "features": [
+                "Garden",
+                "Fireplace",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0011-1.png",
+                "images/property/DEA0011-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0012",
+            "branch_id": "10001",
+            "address_1": "36 Meadow View",
+            "town": "Seaford",
+            "postcode": "BN9 2RS",
+            "bedrooms": 3,
+            "bathrooms": 3,
+            "price": 1817,
+            "transaction": "let",
+            "type": "Cottage",
+            "summary": "Had house shelf them town house remembered a drawn of small summer river secret stranger until maps every.",
+            "description": "Old across kept old flowers across old and had house house everything shelf kindnesses. A kindnesses flowers who a across them a nobody. Arrived of a who old drawn letters kept maps town full had of drawn a flowers.\n\nEvery a that slowly where recipes questions carried them arrived stranger. Where had recipes and everything them letters suitcase a until a changed.",
+            "features": [
+                "Garden",
+                "Parking",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0012-1.png",
+                "images/property/DEA0012-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0013",
+            "branch_id": "10001",
+            "address_1": "6 Mill Lane",
+            "town": "Ditchling",
+            "postcode": "BN25 9RV",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "price": 218000,
+            "transaction": "sale",
+            "type": "Cottage",
+            "summary": "And and old recipes kindnesses that of nobody had of of kept changed them maps remembered drawn with.",
+            "description": "Full every a pressed suitcase letters quiet that pressed one and. Town where changed with house shelf carried maps letters town and every kindnesses a remembered.\n\nDrawn maps kindnesses a changed secret flowers across carried and summer them stranger. Flowers suitcase kept and small one carried quiet full changed every everything them had small. House a pressed shelf with summer a until drawn changed full flowers had. Suitcase remembered one old slowly house old nobody old a river across.",
+            "features": [
+                "Parking",
+                "Period features",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0013-1.png",
+                "images/property/DEA0013-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0014",
+            "branch_id": "10002",
+            "address_1": "53 Church Road",
+            "town": "Brighton",
+            "postcode": "BN1 4YY",
+            "bedrooms": 5,
+            "bathrooms": 3,
+            "price": 346000,
+            "transaction": "sale",
+            "type": "Cottage",
+            "summary": "Shelf one maps suitcase them secret quiet quiet drawn old a kindnesses remembered summer of where across them.",
+            "description": "Drawn of kept kindnesses small a maps a. Kindnesses them one maps kept secret kept slowly until a full recipes quiet everything of everything. Where quiet old across until a the until recipes questions one everything house and old. Of pressed shelf recipes and stranger slowly a and.\n\nOf quiet suitcase recipes house small every small of. Letters house summer had kindnesses maps and had of old where quiet quiet house. Secret nobody secret a house everything flowers had a full.",
+            "features": [
+                "Garden",
+                "Near station",
+                "New kitchen"
+            ],
+            "status": "sold_stc",
+            "images": [
+                "images/property/DEA0014-1.png",
+                "images/property/DEA0014-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0015",
+            "branch_id": "10002",
+            "address_1": "51 High Street",
+            "town": "Eastbourne",
+            "postcode": "BN14 1DS",
+            "bedrooms": 4,
+            "bathrooms": 3,
+            "price": 936000,
+            "transaction": "sale",
+            "type": "Terraced",
+            "summary": "Had and stranger carried changed that recipes of summer suitcase full stranger river town kept changed the a.",
+            "description": "Suitcase questions questions maps letters house slowly a maps one the. Flowers who and slowly carried kept pressed drawn suitcase a carried a shelf pressed who arrived. Quiet flowers quiet a changed until river secret changed a shelf changed questions slowly. Arrived with small questions and every changed changed stranger that nobody across.\n\nSlowly the flowers house drawn flowers maps secret with house recipes. Arrived letters carried carried small river letters remembered carried nobody nobody small nobody.",
+            "features": [
+                "Garden",
+                "Period features",
+                "New kitchen"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0015-1.png",
+                "images/property/DEA0015-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0016",
+            "branch_id": "10002",
+            "address_1": "109 Meadow View",
+            "town": "Hastings",
+            "postcode": "BN3 2ED",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "price": 1568,
+            "transaction": "let",
+            "type": "Detached",
+            "summary": "Remembered that had letters quiet river until shelf small one recipes everything remembered house with letters letters suitcase.",
+            "description": "Of slowly secret maps who of everything one. Shelf had kept suitcase old recipes and who town letters. A one stranger that changed a shelf of drawn recipes one of old arrived secret suitcase.\n\nCarried shelf shelf a kindnesses changed and kept of. Full the arrived a changed full secret shelf flowers recipes stranger the. Carried river them of kindnesses until slowly full.",
+            "features": [
+                "Fireplace",
+                "Period features",
+                "New kitchen"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0016-1.png",
+                "images/property/DEA0016-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0017",
+            "branch_id": "10002",
+            "address_1": "74 Castle Way",
+            "town": "Battle",
+            "postcode": "BN24 1GH",
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "price": 554000,
+            "transaction": "sale",
+            "type": "Cottage",
+            "summary": "Drawn letters one maps summer full a river a a summer and house shelf everything across full slowly.",
+            "description": "Shelf a and drawn everything of until the. Across a a shelf river changed a until flowers summer kindnesses across of. Until small the slowly had until a that that kept everything of and a. House carried the the flowers and kept changed until pressed kindnesses a drawn until kept river.\n\nFlowers arrived a and kept full old stranger suitcase slowly. Of secret of suitcase had recipes full drawn where secret. Remembered quiet with shelf house nobody full kindnesses and with house kept a. Everything questions of suitcase flowers until maps arrived stranger.",
+            "features": [
+                "Fireplace",
+                "Period features",
+                "New kitchen"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0017-1.png",
+                "images/property/DEA0017-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0018",
+            "branch_id": "10001",
+            "address_1": "48 School Lane",
+            "town": "Rye",
+            "postcode": "BN13 3TH",
+            "bedrooms": 4,
+            "bathrooms": 3,
+            "price": 692000,
+            "transaction": "sale",
+            "type": "Semi-detached",
+            "summary": "Of shelf of slowly quiet old and quiet summer old of and questions recipes had across changed who.",
+            "description": "Had town them nobody and recipes kindnesses and across. Kept and them old remembered a until remembered who quiet remembered flowers.\n\nWhere and of with house changed stranger nobody slowly recipes questions arrived maps and. And pressed with pressed where everything where across carried nobody of kindnesses. Secret questions everything house stranger quiet everything maps recipes every everything of river house across.",
+            "features": [
+                "Fireplace",
+                "Near station",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0018-1.png",
+                "images/property/DEA0018-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0019",
+            "branch_id": "10002",
+            "address_1": "94 High Street",
+            "town": "Hastings",
+            "postcode": "BN17 5QM",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "price": 923000,
+            "transaction": "sale",
+            "type": "Cottage",
+            "summary": "Recipes arrived shelf house and pressed maps kindnesses every recipes the flowers and where letters until town slowly.",
+            "description": "Where pressed full everything where secret carried had shelf. Shelf secret secret every remembered old stranger with remembered summer. And shelf remembered remembered nobody quiet kept slowly.\n\nNobody and had remembered letters summer town stranger. Stranger summer secret suitcase nobody secret had remembered old remembered slowly changed a. Them maps them with letters until quiet and a recipes.",
+            "features": [
+                "Near station",
+                "Period features",
+                "New kitchen"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0019-1.png",
+                "images/property/DEA0019-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0020",
+            "branch_id": "10002",
+            "address_1": "94 School Lane",
+            "town": "Uckfield",
+            "postcode": "BN22 6OL",
+            "bedrooms": 4,
+            "bathrooms": 4,
+            "price": 1267,
+            "transaction": "let",
+            "type": "Semi-detached",
+            "summary": "Who letters that maps small and with a maps pressed and them secret every with a and who.",
+            "description": "Who every changed until recipes pressed house kindnesses and that. Every carried carried a river maps everything flowers had town remembered a them a everything. Pressed a until secret house full until questions every who a that.\n\nPressed a questions kept town carried full old across nobody. Pressed drawn stranger summer carried town who pressed old carried until kindnesses the questions.",
+            "features": [
+                "Parking",
+                "Period features",
+                "New kitchen"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0020-1.png",
+                "images/property/DEA0020-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0021",
+            "branch_id": "10002",
+            "address_1": "9 School Lane",
+            "town": "Battle",
+            "postcode": "BN20 4DB",
+            "bedrooms": 2,
+            "bathrooms": 1,
+            "price": 578000,
+            "transaction": "sale",
+            "type": "Terraced",
+            "summary": "Where carried that kindnesses a shelf suitcase kindnesses kindnesses of small a house summer remembered every recipes pressed.",
+            "description": "Of drawn remembered and carried summer kept town letters who and secret had small until. Every drawn arrived who every slowly and remembered. Kept old had town drawn quiet them letters small had remembered. Questions questions stranger quiet drawn with house and across arrived drawn flowers where slowly everything carried.\n\nCarried house across arrived kept where of had recipes. Maps questions changed drawn that changed pressed kept flowers everything kindnesses nobody and who had. Town shelf letters nobody river where a nobody carried carried old. Every letters kept carried who a river and letters kept letters arrived house suitcase secret.",
+            "features": [
+                "Garden",
+                "Parking",
+                "New kitchen"
+            ],
+            "status": "sold_stc",
+            "images": [
+                "images/property/DEA0021-1.png",
+                "images/property/DEA0021-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0022",
+            "branch_id": "10002",
+            "address_1": "71 Orchard Close",
+            "town": "Hove",
+            "postcode": "BN3 3IM",
+            "bedrooms": 3,
+            "bathrooms": 3,
+            "price": 535000,
+            "transaction": "sale",
+            "type": "Detached",
+            "summary": "Everything a house shelf summer a full drawn and across town across drawn changed questions kept until a.",
+            "description": "Arrived maps stranger arrived small letters every maps changed slowly suitcase full where. Across suitcase drawn and and questions them slowly letters until had a suitcase drawn letters one. The where that summer had old full one.\n\nChanged suitcase small slowly suitcase house drawn carried of arrived. Stranger small of nobody slowly questions that pressed nobody pressed. Carried maps stranger a slowly kept one a kindnesses of where nobody.",
+            "features": [
+                "Fireplace",
+                "Near station",
+                "New kitchen"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0022-1.png",
+                "images/property/DEA0022-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0023",
+            "branch_id": "10002",
+            "address_1": "10 Orchard Close",
+            "town": "Battle",
+            "postcode": "BN25 9JD",
+            "bedrooms": 5,
+            "bathrooms": 5,
+            "price": 212000,
+            "transaction": "sale",
+            "type": "Cottage",
+            "summary": "A that carried nobody and and house slowly secret and full drawn river and had the kindnesses small.",
+            "description": "A arrived kept a quiet small full a nobody one and kindnesses kept slowly across maps. With arrived the a full one shelf who who shelf. Secret until drawn letters and and everything had drawn of.\n\nRiver slowly of arrived remembered shelf shelf everything remembered. Secret questions full maps a pressed river letters them flowers small arrived who stranger. Questions maps drawn small flowers carried carried every stranger secret of who changed.",
+            "features": [
+                "Garden",
+                "Parking",
+                "Garage"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0023-1.png",
+                "images/property/DEA0023-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0024",
+            "branch_id": "10002",
+            "address_1": "112 School Lane",
+            "town": "Eastbourne",
+            "postcode": "BN26 3GK",
+            "bedrooms": 5,
+            "bathrooms": 4,
+            "price": 1961,
+            "transaction": "let",
+            "type": "Cottage",
+            "summary": "Small full changed questions flowers letters changed kept remembered shelf who until recipes secret a until the that.",
+            "description": "Slowly nobody old house kindnesses every flowers full had until full kept. Of secret of questions full until full and flowers.\n\nShelf slowly town of river that of summer kindnesses recipes. Them shelf the a of maps with of kindnesses recipes. Them pressed changed a summer everything the where recipes small every. Remembered stranger a one maps questions across everything that full quiet arrived of kindnesses.",
+            "features": [
+                "Garden",
+                "Parking",
+                "Fireplace"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0024-1.png",
+                "images/property/DEA0024-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        },
+        {
+            "ref": "DEA0025",
+            "branch_id": "10002",
+            "address_1": "101 Orchard Close",
+            "town": "Hove",
+            "postcode": "BN6 7VU",
+            "bedrooms": 2,
+            "bathrooms": 1,
+            "price": 687000,
+            "transaction": "sale",
+            "type": "Cottage",
+            "summary": "A suitcase of who arrived quiet drawn suitcase that full shelf of drawn full house carried letters a.",
+            "description": "Suitcase old letters full where changed kindnesses of summer. Carried pressed and everything summer full with nobody secret full of and.\n\nHouse had pressed of until slowly drawn where. Kept drawn changed letters that kept everything carried small house a questions. Stranger one nobody them of questions nobody town letters of. Pressed and arrived one questions and that everything.",
+            "features": [
+                "Garden",
+                "Parking",
+                "Fireplace"
+            ],
+            "status": "available",
+            "images": [
+                "images/property/DEA0025-1.png",
+                "images/property/DEA0025-2.png"
+            ],
+            "updated_at": "2026-10-01T09:00:00+00:00"
+        }
+    ]
+}

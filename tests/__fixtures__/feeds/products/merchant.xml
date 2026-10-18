@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Dog-ear Goods</title>
+    <link>https://shop.example.test</link>
+    <description>Made-up product feed</description>
+    <item>
+      <g:id>DE-001-BLA-S</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Black, S</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>13</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-BLA-M</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Black, M</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>8</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-BLA-L</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Black, L</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>1</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-BLA-XL</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Black, XL</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>11</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-FOR-S</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Forest, S</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>out_of_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>0</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-FOR-M</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Forest, M</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>1</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-FOR-L</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Forest, L</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>21</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-FOR-XL</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Forest, XL</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>30</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-RUS-S</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Rust, S</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>22</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-RUS-M</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Rust, M</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>15</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-RUS-L</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Rust, L</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>out_of_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>0</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-001-RUS-XL</g:id>
+      <g:item_group_id>DE-001</g:item_group_id>
+      <title>Lost Library Tee – Rust, XL</title>
+      <description>House a full house kept old of had a house river everything town of and where.</description>
+      <link>https://shop.example.test/p/DE-001</link>
+      <g:image_link>images/products/DE-001.png</g:image_link>
+      <g:price>25.95 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>5</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-002-BLA-S</g:id>
+      <g:item_group_id>DE-002</g:item_group_id>
+      <title>Paper Canvas Apron – Black, S</title>
+      <description>Of one suitcase had flowers old drawn across where quiet shelf a secret stranger stranger quiet.</description>
+      <link>https://shop.example.test/p/DE-002</link>
+      <g:image_link>images/products/DE-002.png</g:image_link>
+      <g:price>9.19 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>19</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-002-BLA-M</g:id>
+      <g:item_group_id>DE-002</g:item_group_id>
+      <title>Paper Canvas Apron – Black, M</title>
+      <description>Of one suitcase had flowers old drawn across where quiet shelf a secret stranger stranger quiet.</description>
+      <link>https://shop.example.test/p/DE-002</link>
+      <g:image_link>images/products/DE-002.png</g:image_link>
+      <g:price>9.19 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>2</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-002-BLA-L</g:id>
+      <g:item_group_id>DE-002</g:item_group_id>
+      <title>Paper Canvas Apron – Black, L</title>
+      <description>Of one suitcase had flowers old drawn across where quiet shelf a secret stranger stranger quiet.</description>
+      <link>https://shop.example.test/p/DE-002</link>
+      <g:image_link>images/products/DE-002.png</g:image_link>
+      <g:price>9.19 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>30</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-002-BLA-XL</g:id>
+      <g:item_group_id>DE-002</g:item_group_id>
+      <title>Paper Canvas Apron – Black, XL</title>
+      <description>Of one suitcase had flowers old drawn across where quiet shelf a secret stranger stranger quiet.</description>
+      <link>https://shop.example.test/p/DE-002</link>
+      <g:image_link>images/products/DE-002.png</g:image_link>
+      <g:price>9.19 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>14</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-003-BLA-Onesize</g:id>
+      <g:item_group_id>DE-003</g:item_group_id>
+      <title>Borrowed Enamel Mug – Black, One size</title>
+      <description>Arrived suitcase stranger of flowers where had arrived everything river and where the stranger remembered arrived.</description>
+      <link>https://shop.example.test/p/DE-003</link>
+      <g:image_link>images/products/DE-003.png</g:image_link>
+      <g:price>23.69 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>21</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-003-NAT-Onesize</g:id>
+      <g:item_group_id>DE-003</g:item_group_id>
+      <title>Borrowed Enamel Mug – Natural, One size</title>
+      <description>Arrived suitcase stranger of flowers where had arrived everything river and where the stranger remembered arrived.</description>
+      <link>https://shop.example.test/p/DE-003</link>
+      <g:image_link>images/products/DE-003.png</g:image_link>
+      <g:price>23.69 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>14</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-004-BLA-S</g:id>
+      <g:item_group_id>DE-004</g:item_group_id>
+      <title>Quiet Tote Bag – Black, S</title>
+      <description>A stranger arrived summer suitcase and every small kindnesses of until slowly a suitcase letters of.</description>
+      <link>https://shop.example.test/p/DE-004</link>
+      <g:image_link>images/products/DE-004.png</g:image_link>
+      <g:price>16.99 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>24</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-004-BLA-M</g:id>
+      <g:item_group_id>DE-004</g:item_group_id>
+      <title>Quiet Tote Bag – Black, M</title>
+      <description>A stranger arrived summer suitcase and every small kindnesses of until slowly a suitcase letters of.</description>
+      <link>https://shop.example.test/p/DE-004</link>
+      <g:image_link>images/products/DE-004.png</g:image_link>
+      <g:price>16.99 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>18</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-004-BLA-L</g:id>
+      <g:item_group_id>DE-004</g:item_group_id>
+      <title>Quiet Tote Bag – Black, L</title>
+      <description>A stranger arrived summer suitcase and every small kindnesses of until slowly a suitcase letters of.</description>
+      <link>https://shop.example.test/p/DE-004</link>
+      <g:image_link>images/products/DE-004.png</g:image_link>
+      <g:price>16.99 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>29</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-004-BLA-XL</g:id>
+      <g:item_group_id>DE-004</g:item_group_id>
+      <title>Quiet Tote Bag – Black, XL</title>
+      <description>A stranger arrived summer suitcase and every small kindnesses of until slowly a suitcase letters of.</description>
+      <link>https://shop.example.test/p/DE-004</link>
+      <g:image_link>images/products/DE-004.png</g:image_link>
+      <g:price>16.99 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>28</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-NAT-S</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Natural, S</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>4</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-NAT-M</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Natural, M</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>4</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-NAT-L</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Natural, L</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>30</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-NAT-XL</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Natural, XL</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>16</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-RUS-S</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Rust, S</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>26</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-RUS-M</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Rust, M</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>7</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-RUS-L</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Rust, L</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>24</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-RUS-XL</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Rust, XL</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>17</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-NAV-S</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Navy, S</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>18</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-NAV-M</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Navy, M</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>16</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-NAV-L</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Navy, L</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>27</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-005-NAV-XL</g:id>
+      <g:item_group_id>DE-005</g:item_group_id>
+      <title>Lost Pencil Case – Navy, XL</title>
+      <description>Nobody had maps summer old recipes recipes had maps changed maps a pressed questions letters house.</description>
+      <link>https://shop.example.test/p/DE-005</link>
+      <g:image_link>images/products/DE-005.png</g:image_link>
+      <g:price>26.60 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>8</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-006-BLA-Onesize</g:id>
+      <g:item_group_id>DE-006</g:item_group_id>
+      <title>Folded Bookmark Set – Black, One size</title>
+      <description>Everything small town house across the changed shelf full small one slowly of secret stranger until.</description>
+      <link>https://shop.example.test/p/DE-006</link>
+      <g:image_link>images/products/DE-006.png</g:image_link>
+      <g:price>36.72 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>20</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-006-NAT-Onesize</g:id>
+      <g:item_group_id>DE-006</g:item_group_id>
+      <title>Folded Bookmark Set – Natural, One size</title>
+      <description>Everything small town house across the changed shelf full small one slowly of secret stranger until.</description>
+      <link>https://shop.example.test/p/DE-006</link>
+      <g:image_link>images/products/DE-006.png</g:image_link>
+      <g:price>36.72 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>5</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-006-RUS-Onesize</g:id>
+      <g:item_group_id>DE-006</g:item_group_id>
+      <title>Folded Bookmark Set – Rust, One size</title>
+      <description>Everything small town house across the changed shelf full small one slowly of secret stranger until.</description>
+      <link>https://shop.example.test/p/DE-006</link>
+      <g:image_link>images/products/DE-006.png</g:image_link>
+      <g:price>36.72 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>12</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-007-NAT-S</g:id>
+      <g:item_group_id>DE-007</g:item_group_id>
+      <title>Last Notebook – Natural, S</title>
+      <description>Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.</description>
+      <link>https://shop.example.test/p/DE-007</link>
+      <g:image_link>images/products/DE-007.png</g:image_link>
+      <g:price>34.31 GBP</g:price>
+      <g:availability>out_of_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>0</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-007-NAT-M</g:id>
+      <g:item_group_id>DE-007</g:item_group_id>
+      <title>Last Notebook – Natural, M</title>
+      <description>Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.</description>
+      <link>https://shop.example.test/p/DE-007</link>
+      <g:image_link>images/products/DE-007.png</g:image_link>
+      <g:price>34.31 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>11</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-007-NAT-L</g:id>
+      <g:item_group_id>DE-007</g:item_group_id>
+      <title>Last Notebook – Natural, L</title>
+      <description>Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.</description>
+      <link>https://shop.example.test/p/DE-007</link>
+      <g:image_link>images/products/DE-007.png</g:image_link>
+      <g:price>34.31 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>4</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-007-NAT-XL</g:id>
+      <g:item_group_id>DE-007</g:item_group_id>
+      <title>Last Notebook – Natural, XL</title>
+      <description>Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.</description>
+      <link>https://shop.example.test/p/DE-007</link>
+      <g:image_link>images/products/DE-007.png</g:image_link>
+      <g:price>34.31 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>19</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-007-NAV-S</g:id>
+      <g:item_group_id>DE-007</g:item_group_id>
+      <title>Last Notebook – Navy, S</title>
+      <description>Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.</description>
+      <link>https://shop.example.test/p/DE-007</link>
+      <g:image_link>images/products/DE-007.png</g:image_link>
+      <g:price>34.31 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>28</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-007-NAV-M</g:id>
+      <g:item_group_id>DE-007</g:item_group_id>
+      <title>Last Notebook – Navy, M</title>
+      <description>Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.</description>
+      <link>https://shop.example.test/p/DE-007</link>
+      <g:image_link>images/products/DE-007.png</g:image_link>
+      <g:price>34.31 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>26</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-007-NAV-L</g:id>
+      <g:item_group_id>DE-007</g:item_group_id>
+      <title>Last Notebook – Navy, L</title>
+      <description>Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.</description>
+      <link>https://shop.example.test/p/DE-007</link>
+      <g:image_link>images/products/DE-007.png</g:image_link>
+      <g:price>34.31 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>20</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-007-NAV-XL</g:id>
+      <g:item_group_id>DE-007</g:item_group_id>
+      <title>Last Notebook – Navy, XL</title>
+      <description>Old stranger maps shelf and shelf suitcase old flowers kept everything small drawn of and and.</description>
+      <link>https://shop.example.test/p/DE-007</link>
+      <g:image_link>images/products/DE-007.png</g:image_link>
+      <g:price>34.31 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>3</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-008-FOR-S</g:id>
+      <g:item_group_id>DE-008</g:item_group_id>
+      <title>Lost Sweatshirt – Forest, S</title>
+      <description>Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.</description>
+      <link>https://shop.example.test/p/DE-008</link>
+      <g:image_link>images/products/DE-008.png</g:image_link>
+      <g:price>33.32 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>30</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-008-FOR-M</g:id>
+      <g:item_group_id>DE-008</g:item_group_id>
+      <title>Lost Sweatshirt – Forest, M</title>
+      <description>Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.</description>
+      <link>https://shop.example.test/p/DE-008</link>
+      <g:image_link>images/products/DE-008.png</g:image_link>
+      <g:price>33.32 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>25</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-008-FOR-L</g:id>
+      <g:item_group_id>DE-008</g:item_group_id>
+      <title>Lost Sweatshirt – Forest, L</title>
+      <description>Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.</description>
+      <link>https://shop.example.test/p/DE-008</link>
+      <g:image_link>images/products/DE-008.png</g:image_link>
+      <g:price>33.32 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>22</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-008-FOR-XL</g:id>
+      <g:item_group_id>DE-008</g:item_group_id>
+      <title>Lost Sweatshirt – Forest, XL</title>
+      <description>Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.</description>
+      <link>https://shop.example.test/p/DE-008</link>
+      <g:image_link>images/products/DE-008.png</g:image_link>
+      <g:price>33.32 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>5</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-008-RUS-S</g:id>
+      <g:item_group_id>DE-008</g:item_group_id>
+      <title>Lost Sweatshirt – Rust, S</title>
+      <description>Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.</description>
+      <link>https://shop.example.test/p/DE-008</link>
+      <g:image_link>images/products/DE-008.png</g:image_link>
+      <g:price>33.32 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>9</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-008-RUS-M</g:id>
+      <g:item_group_id>DE-008</g:item_group_id>
+      <title>Lost Sweatshirt – Rust, M</title>
+      <description>Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.</description>
+      <link>https://shop.example.test/p/DE-008</link>
+      <g:image_link>images/products/DE-008.png</g:image_link>
+      <g:price>33.32 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>15</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-008-RUS-L</g:id>
+      <g:item_group_id>DE-008</g:item_group_id>
+      <title>Lost Sweatshirt – Rust, L</title>
+      <description>Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.</description>
+      <link>https://shop.example.test/p/DE-008</link>
+      <g:image_link>images/products/DE-008.png</g:image_link>
+      <g:price>33.32 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>13</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-008-RUS-XL</g:id>
+      <g:item_group_id>DE-008</g:item_group_id>
+      <title>Lost Sweatshirt – Rust, XL</title>
+      <description>Every kindnesses questions maps them until who letters of summer until remembered everything until kindnesses small.</description>
+      <link>https://shop.example.test/p/DE-008</link>
+      <g:image_link>images/products/DE-008.png</g:image_link>
+      <g:price>33.32 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>29</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-009-NAT-Onesize</g:id>
+      <g:item_group_id>DE-009</g:item_group_id>
+      <title>Quiet Bookmark Set – Natural, One size</title>
+      <description>A kept secret pressed town a that and quiet pressed of drawn across slowly town flowers.</description>
+      <link>https://shop.example.test/p/DE-009</link>
+      <g:image_link>images/products/DE-009.png</g:image_link>
+      <g:price>9.58 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>4</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-009-RUS-Onesize</g:id>
+      <g:item_group_id>DE-009</g:item_group_id>
+      <title>Quiet Bookmark Set – Rust, One size</title>
+      <description>A kept secret pressed town a that and quiet pressed of drawn across slowly town flowers.</description>
+      <link>https://shop.example.test/p/DE-009</link>
+      <g:image_link>images/products/DE-009.png</g:image_link>
+      <g:price>9.58 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>10</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-NAT-S</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Natural, S</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>27</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-NAT-M</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Natural, M</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>16</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-NAT-L</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Natural, L</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>11</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-NAT-XL</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Natural, XL</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>16</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-FOR-S</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Forest, S</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>3</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-FOR-M</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Forest, M</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>1</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-FOR-L</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Forest, L</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>2</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-FOR-XL</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Forest, XL</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Forest</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>12</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-RUS-S</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Rust, S</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>14</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-RUS-M</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Rust, M</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>24</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-RUS-L</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Rust, L</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>23</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-010-RUS-XL</g:id>
+      <g:item_group_id>DE-010</g:item_group_id>
+      <title>Distant Notebook – Rust, XL</title>
+      <description>Town a suitcase kindnesses until until that maps questions and one kindnesses and had a a.</description>
+      <link>https://shop.example.test/p/DE-010</link>
+      <g:image_link>images/products/DE-010.png</g:image_link>
+      <g:price>24.06 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>4</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-011-BLA-S</g:id>
+      <g:item_group_id>DE-011</g:item_group_id>
+      <title>Crooked Beanie – Black, S</title>
+      <description>Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.</description>
+      <link>https://shop.example.test/p/DE-011</link>
+      <g:image_link>images/products/DE-011.png</g:image_link>
+      <g:price>36.15 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>20</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-011-BLA-M</g:id>
+      <g:item_group_id>DE-011</g:item_group_id>
+      <title>Crooked Beanie – Black, M</title>
+      <description>Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.</description>
+      <link>https://shop.example.test/p/DE-011</link>
+      <g:image_link>images/products/DE-011.png</g:image_link>
+      <g:price>36.15 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>25</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-011-BLA-L</g:id>
+      <g:item_group_id>DE-011</g:item_group_id>
+      <title>Crooked Beanie – Black, L</title>
+      <description>Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.</description>
+      <link>https://shop.example.test/p/DE-011</link>
+      <g:image_link>images/products/DE-011.png</g:image_link>
+      <g:price>36.15 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>3</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-011-BLA-XL</g:id>
+      <g:item_group_id>DE-011</g:item_group_id>
+      <title>Crooked Beanie – Black, XL</title>
+      <description>Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.</description>
+      <link>https://shop.example.test/p/DE-011</link>
+      <g:image_link>images/products/DE-011.png</g:image_link>
+      <g:price>36.15 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>19</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-011-RUS-S</g:id>
+      <g:item_group_id>DE-011</g:item_group_id>
+      <title>Crooked Beanie – Rust, S</title>
+      <description>Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.</description>
+      <link>https://shop.example.test/p/DE-011</link>
+      <g:image_link>images/products/DE-011.png</g:image_link>
+      <g:price>36.15 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>S</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>9</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-011-RUS-M</g:id>
+      <g:item_group_id>DE-011</g:item_group_id>
+      <title>Crooked Beanie – Rust, M</title>
+      <description>Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.</description>
+      <link>https://shop.example.test/p/DE-011</link>
+      <g:image_link>images/products/DE-011.png</g:image_link>
+      <g:price>36.15 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>M</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>2</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-011-RUS-L</g:id>
+      <g:item_group_id>DE-011</g:item_group_id>
+      <title>Crooked Beanie – Rust, L</title>
+      <description>Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.</description>
+      <link>https://shop.example.test/p/DE-011</link>
+      <g:image_link>images/products/DE-011.png</g:image_link>
+      <g:price>36.15 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>L</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>14</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-011-RUS-XL</g:id>
+      <g:item_group_id>DE-011</g:item_group_id>
+      <title>Crooked Beanie – Rust, XL</title>
+      <description>Kept pressed quiet questions maps and stranger recipes remembered pressed recipes stranger of pressed every stranger.</description>
+      <link>https://shop.example.test/p/DE-011</link>
+      <g:image_link>images/products/DE-011.png</g:image_link>
+      <g:price>36.15 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Rust</g:color>
+      <g:size>XL</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>18</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-012-BLA-Onesize</g:id>
+      <g:item_group_id>DE-012</g:item_group_id>
+      <title>Golden Sweatshirt – Black, One size</title>
+      <description>Maps arrived arrived changed until every where slowly across where of old nobody the and where.</description>
+      <link>https://shop.example.test/p/DE-012</link>
+      <g:image_link>images/products/DE-012.png</g:image_link>
+      <g:price>9.51 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Black</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>26</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-012-NAT-Onesize</g:id>
+      <g:item_group_id>DE-012</g:item_group_id>
+      <title>Golden Sweatshirt – Natural, One size</title>
+      <description>Maps arrived arrived changed until every where slowly across where of old nobody the and where.</description>
+      <link>https://shop.example.test/p/DE-012</link>
+      <g:image_link>images/products/DE-012.png</g:image_link>
+      <g:price>9.51 GBP</g:price>
+      <g:availability>out_of_stock</g:availability>
+      <g:color>Natural</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>0</g:quantity>
+    </item>
+    <item>
+      <g:id>DE-012-NAV-Onesize</g:id>
+      <g:item_group_id>DE-012</g:item_group_id>
+      <title>Golden Sweatshirt – Navy, One size</title>
+      <description>Maps arrived arrived changed until every where slowly across where of old nobody the and where.</description>
+      <link>https://shop.example.test/p/DE-012</link>
+      <g:image_link>images/products/DE-012.png</g:image_link>
+      <g:price>9.51 GBP</g:price>
+      <g:availability>in_stock</g:availability>
+      <g:color>Navy</g:color>
+      <g:size>One size</g:size>
+      <g:brand>Dog-ear Goods</g:brand>
+      <g:quantity>25</g:quantity>
+    </item>
+  </channel>
+</rss>

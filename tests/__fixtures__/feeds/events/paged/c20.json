@@ -1,0 +1,187 @@
+{
+    "events": [
+        {
+            "id": "evt_1f4733bc8ee9",
+            "name": "An evening with Fern Quill",
+            "summary": "Stranger pressed old recipes river them and river everything questions the with of nobody.",
+            "starts_at": "2026-12-07T17:30:00+00:00",
+            "ends_at": "2026-12-07T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v1",
+                "name": "Dog-ear Books, Lewes",
+                "city": "Lewes"
+            },
+            "tickets": {
+                "price": "10.00",
+                "available": 3
+            },
+            "status": "on_sale"
+        },
+        {
+            "id": "evt_8e20fb37f921",
+            "name": "An evening with Dora Dunmore",
+            "summary": "Had and river a of of stranger pressed river suitcase had changed questions of.",
+            "starts_at": "2026-12-10T17:30:00+00:00",
+            "ends_at": "2026-12-10T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v3",
+                "name": "Town Hall Library",
+                "city": "Hastings"
+            },
+            "tickets": {
+                "price": "10.00",
+                "available": 22
+            },
+            "status": "cancelled"
+        },
+        {
+            "id": "evt_580a976c69b5",
+            "name": "An evening with Eli Underhill",
+            "summary": "The secret and maps pressed where everything remembered remembered nobody drawn with remembered summer.",
+            "starts_at": "2026-12-13T17:30:00+00:00",
+            "ends_at": "2026-12-13T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v3",
+                "name": "Town Hall Library",
+                "city": "Hastings"
+            },
+            "tickets": {
+                "price": "0.00",
+                "available": 15
+            },
+            "status": "on_sale"
+        },
+        {
+            "id": "evt_a0f3dae17359",
+            "name": "An evening with Wren Fairweather",
+            "summary": "Drawn flowers maps questions them them arrived a old that across who nobody until.",
+            "starts_at": "2026-12-16T17:30:00+00:00",
+            "ends_at": "2026-12-16T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v2",
+                "name": "The Corn Exchange",
+                "city": "Brighton"
+            },
+            "tickets": {
+                "price": "5.00",
+                "available": 80
+            },
+            "status": "on_sale"
+        },
+        {
+            "id": "evt_1666824b8da9",
+            "name": "An evening with Ivo Pennywhistle",
+            "summary": "With across changed nobody pressed flowers remembered full slowly who where them one summer.",
+            "starts_at": "2026-12-19T17:30:00+00:00",
+            "ends_at": "2026-12-19T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v2",
+                "name": "The Corn Exchange",
+                "city": "Brighton"
+            },
+            "tickets": {
+                "price": "10.00",
+                "available": 30
+            },
+            "status": "on_sale"
+        },
+        {
+            "id": "evt_8ce39abb67c3",
+            "name": "An evening with Eli Gilchrist",
+            "summary": "House suitcase quiet a questions of changed flowers recipes where remembered secret quiet of.",
+            "starts_at": "2026-12-22T17:30:00+00:00",
+            "ends_at": "2026-12-22T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v2",
+                "name": "The Corn Exchange",
+                "city": "Brighton"
+            },
+            "tickets": {
+                "price": "10.00",
+                "available": 9
+            },
+            "status": "on_sale"
+        },
+        {
+            "id": "evt_4bcbba5f0e47",
+            "name": "An evening with Eli Underhill",
+            "summary": "Had stranger kept of carried maps everything drawn flowers that of nobody of letters.",
+            "starts_at": "2026-12-25T17:30:00+00:00",
+            "ends_at": "2026-12-25T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v1",
+                "name": "Dog-ear Books, Lewes",
+                "city": "Lewes"
+            },
+            "tickets": {
+                "price": "0.00",
+                "available": 38
+            },
+            "status": "on_sale"
+        },
+        {
+            "id": "evt_d774cfe50c46",
+            "name": "An evening with June Ashdown",
+            "summary": "That and the suitcase shelf carried and summer recipes changed everything across slowly one.",
+            "starts_at": "2026-12-28T17:30:00+00:00",
+            "ends_at": "2026-12-28T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v1",
+                "name": "Dog-ear Books, Lewes",
+                "city": "Lewes"
+            },
+            "tickets": {
+                "price": "10.00",
+                "available": 16
+            },
+            "status": "on_sale"
+        },
+        {
+            "id": "evt_8ac7917e41b8",
+            "name": "An evening with Fern Dunmore",
+            "summary": "A a of questions them every every remembered nobody kept changed quiet quiet a.",
+            "starts_at": "2026-12-31T17:30:00+00:00",
+            "ends_at": "2026-12-31T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v2",
+                "name": "The Corn Exchange",
+                "city": "Brighton"
+            },
+            "tickets": {
+                "price": "10.00",
+                "available": 12
+            },
+            "status": "on_sale"
+        },
+        {
+            "id": "evt_0b7a171a6e6a",
+            "name": "An evening with Otto Quill",
+            "summary": "Who remembered old and old quiet of slowly house with flowers a town flowers.",
+            "starts_at": "2027-01-03T17:30:00+00:00",
+            "ends_at": "2027-01-03T19:00:00+00:00",
+            "timezone": "Europe/London",
+            "venue": {
+                "id": "v2",
+                "name": "The Corn Exchange",
+                "city": "Brighton"
+            },
+            "tickets": {
+                "price": "10.00",
+                "available": 70
+            },
+            "status": "on_sale"
+        }
+    ],
+    "pagination": {
+        "next": null
+    }
+}

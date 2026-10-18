@@ -1,0 +1,18 @@
+{
+    "id": "evt_ad52825a8f48",
+    "name": "An evening with Dora Dunmore",
+    "summary": "A kindnesses the maps questions changed carried and letters a letters a where kept.",
+    "starts_at": "2026-10-08T17:30:00+00:00",
+    "ends_at": "2026-10-08T19:00:00+00:00",
+    "timezone": "Europe/London",
+    "venue": {
+        "id": "v2",
+        "name": "The Corn Exchange",
+        "city": "Brighton"
+    },
+    "tickets": {
+        "price": "5.00",
+        "available": 41
+    },
+    "status": "on_sale"
+}
