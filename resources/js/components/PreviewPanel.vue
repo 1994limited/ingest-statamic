@@ -4,6 +4,8 @@
 -->
 <script>
 import { Alert, Badge, Button, Input } from '@statamic/cms/ui';
+import { reactive } from 'vue';
+import PreviewNode from './PreviewNode.vue';
 
 function flatten(value, prefix = '', out = [], depth = 0) {
     if (value === null || typeof value !== 'object' || depth > 8) {
@@ -25,9 +27,13 @@ function flatten(value, prefix = '', out = [], depth = 0) {
 }
 
 export default {
-    components: { Alert, Badge, Button, Input },
+    components: { Alert, Badge, Button, Input, PreviewNode },
 
     inject: { picker: { default: null } },
+
+    provide() {
+        return { tree: this.tree };
+    },
 
     props: {
         preview: { type: Object, default: null },
@@ -39,7 +45,31 @@ export default {
     emits: ['update:index', 'refresh'],
 
     data() {
-        return { filter: '' };
+        return {
+            filter: '',
+            // Shared with every node: expand/collapse all, and the filter.
+            tree: reactive({
+                all: null,
+                version: 0,
+                filtering: false,
+                visible: new Set(),
+                matches(path) {
+                    return !this.filtering || this.visible.has(path);
+                },
+            }),
+        };
+    },
+
+    watch: {
+        filter: {
+            handler() {
+                this.applyFilter();
+            },
+        },
+
+        item() {
+            this.applyFilter();
+        },
     },
 
     computed: {
@@ -47,12 +77,8 @@ export default {
             return this.preview?.items?.[this.index] ?? null;
         },
 
-        rows() {
-            if (!this.item) return [];
-
-            const q = this.filter.trim().toLowerCase();
-
-            return flatten(this.item).filter((r) => !q || r.path.toLowerCase().includes(q) || String(r.value ?? '').toLowerCase().includes(q));
+        keys() {
+            return this.item && typeof this.item === 'object' ? Object.entries(this.item) : [];
         },
 
         mapped() {
@@ -61,6 +87,28 @@ export default {
     },
 
     methods: {
+        setAll(open) {
+            this.tree.all = open;
+            this.tree.version++;
+        },
+
+        /** Keep only branches with a match: every prefix of a matching path. */
+        applyFilter() {
+            const q = this.filter.trim().toLowerCase();
+            this.tree.filtering = q !== '';
+
+            const visible = new Set();
+            if (q && this.item) {
+                for (const row of flatten(this.item)) {
+                    if (row.path.toLowerCase().includes(q) || String(row.value ?? '').toLowerCase().includes(q)) {
+                        const parts = row.path.split('.');
+                        parts.forEach((_, i) => visible.add(parts.slice(0, i + 1).join('.')));
+                    }
+                }
+            }
+            this.tree.visible = visible;
+        },
+
         show(value) {
             if (value === null) return 'null';
             if (Array.isArray(value)) return '[]';
@@ -120,18 +168,14 @@ export default {
 
                 <p v-if="picker?.target" class="px-3 pb-1 text-xs text-blue-700 dark:text-blue-400!">{{ __('Click a value to use its path.') }}</p>
 
-                <div class="max-h-[60vh] overflow-y-auto px-1 pb-2">
-                    <button
-                        v-for="row in rows"
-                        :key="row.path"
-                        type="button"
-                        class="flex w-full items-baseline gap-2 rounded px-2 py-1 text-left text-sm hover:bg-blue-50 dark:hover:bg-gray-800!"
-                        :title="__('Use :path', { path: row.path })"
-                        @click="use(row.path)"
-                    >
-                        <span class="shrink-0 font-mono text-xs text-gray-500">{{ row.path }}</span>
-                        <span class="min-w-0 truncate">{{ show(row.value) }}</span>
-                    </button>
+                <div class="flex gap-3 px-3 pb-1 text-xs">
+                    <button type="button" class="text-gray-600 hover:underline! dark:text-gray-400!" @click="setAll(true)">{{ __('Expand all') }}</button>
+                    <button type="button" class="text-gray-600 hover:underline! dark:text-gray-400!" @click="setAll(false)">{{ __('Collapse all') }}</button>
+                </div>
+
+                <div class="max-h-[60vh] overflow-y-auto px-1 pb-2" role="tree" :aria-label="__('The current item')">
+                    <PreviewNode v-for="[key, value] in keys" :key="key" :name="key" :value="value" :path="key" @use="use" />
+                    <p v-if="tree.filtering && !tree.visible.size" class="px-2 py-3 text-sm text-gray-500">{{ __('Nothing in this item matches.') }}</p>
                 </div>
 
                 <div v-if="mapped && Object.keys(mapped.errors ?? {}).length" class="border-t border-gray-200 px-3 py-2 dark:border-gray-700!">

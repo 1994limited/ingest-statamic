@@ -25,7 +25,12 @@ class BardMapper implements FieldMapper
             $value = $value['content'] ?? [];
         }
         if (Path::isList($value) && isset($value[0]['type'])) {
-            return $value;
+            if (($mapping['html'] ?? null) === 'trusted') {
+                return $value;
+            }
+
+            // Untrusted structure goes through HTML and the sanitiser like anything else.
+            $value = (new Augmentor($field->fieldtype()))->renderProsemirrorToHtml(['type' => 'doc', 'content' => $value]);
         }
 
         $text = Value::text($value, "\n\n");

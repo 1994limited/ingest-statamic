@@ -209,6 +209,19 @@ class UsersDestination implements Destination
     }
 
     /**
+     * Undoing a block: the roles and groups the user had, as far as the
+     * allow-lists still permit.
+     */
+    public function restoreAccess(mixed $content, array $snapshot): void
+    {
+        $roles = array_intersect((array) ($snapshot['roles'] ?? []), array_map('strval', (array) config('ingest.users.roles', [])));
+        $groups = array_intersect((array) ($snapshot['groups'] ?? []), array_map('strval', (array) config('ingest.users.groups', [])));
+
+        $content->explicitRoles(array_values($roles));
+        $content->groups(array_values($groups));
+    }
+
+    /**
      * New users have no password: send them an activation email when the
      * feed asks for it.
      */
@@ -221,6 +234,10 @@ class UsersDestination implements Destination
 
     public function delete(mixed $content): void
     {
+        if ($this->protectedUser($content)) {
+            throw new IngestException(__('Ingest doesn\'t delete administrators.'));
+        }
+
         config('ingest.quiet_saves', true) ? $content->deleteQuietly() : $content->delete();
     }
 

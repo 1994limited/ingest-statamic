@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Schema;
 use NineteenNinetyFour\Ingest\Runs\RunItem;
 use NineteenNinetyFour\Ingest\Runs\RunStatus;
+use NineteenNinetyFour\Ingest\Runs\Undoer;
 use NineteenNinetyFour\Ingest\Tests\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 use Statamic\Facades\Collection;
@@ -220,5 +221,39 @@ class DestinationsTest extends TestCase
         $this->assertSame('boss@example.com', $boss->email());
         $this->assertTrue($boss->isSuper());
         $this->assertNull(User::findByEmail('attacker@example.com'));
+    }
+
+    #[Test]
+    public function missing_administrators_are_never_deleted_and_undo_restores_roles(): void
+    {
+        Role::make('member')->save();
+        config(['ingest.users.roles' => ['member']]);
+        file_put_contents(self::TMP.'/members.json', json_encode(['members' => [['email' => 'ada@example.com', 'roles' => ['member']], ['email' => 'bea@example.com', 'roles' => ['member']], ['email' => 'cy@example.com', 'roles' => ['member']]]]));
+        $this->serve('members.json', self::TMP.'/members.json');
+        $this->saveFeed('members', [
+            'source' => ['type' => 'url', 'url' => 'https://feeds.test/members.json'],
+            'format' => ['item_path' => 'members'],
+            'destination' => ['type' => 'users'],
+            'key' => ['email'],
+            'sync' => ['missing' => ['action' => 'unpublish'], 'safety' => ['max_removal_percent' => 100]],
+            'mapping' => ['email' => ['path' => 'email'], 'roles' => ['path' => 'roles']],
+        ]);
+        $this->ingest('members');
+
+        // Bea is made a super admin on the site.
+        User::findByEmail('bea@example.com')->makeSuper()->save();
+
+        file_put_contents(self::TMP.'/members.json', json_encode(['members' => [['email' => 'ada@example.com', 'roles' => ['member']]]]));
+        $run = $this->ingest('members');
+
+        $this->assertSame(1, $run->counts['unpublished']);
+        $this->assertSame(1, $run->counts['failed']);
+        $this->assertTrue(User::findByEmail('bea@example.com')->isSuper());
+        $this->assertSame([], User::findByEmail('cy@example.com')->explicitRoles()->keys()->all());
+
+        app(Undoer::class)->undo($run);
+
+        $this->assertSame(['member'], User::findByEmail('cy@example.com')->explicitRoles()->keys()->all());
+        $this->assertNull(User::findByEmail('cy@example.com')->get('ingest_blocked'));
     }
 }

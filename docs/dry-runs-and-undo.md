@@ -6,7 +6,7 @@ A dry run reads the feed and works out everything a run would do, without saving
 
 ![A dry run of the stock feed](images/cp-dry-run.png)
 
-**Apply these changes** runs the feed with **exactly the items the dry run read**, not a fresh copy of the feed. What you previewed is what you get, even if the feed has changed since. A dry run's items are kept for a week.
+**Apply these changes** runs the feed with **exactly the items the dry run read**, not a fresh copy of the feed. What you previewed is what you get, even if the feed has changed since. If the feed's mapping, destination, key, filters or sync rules have been edited since the dry run, applying it is refused: run a new dry run to see what the new settings would do. A dry run's items are kept for a week.
 
 ## Reading a run
 

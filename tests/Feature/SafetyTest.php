@@ -238,4 +238,21 @@ class SafetyTest extends TestCase
         $this->assertTrue($run->payload['unchanged']);
         $this->assertSame(0, $run->counts['unchanged']);
     }
+
+    #[Test]
+    public function undo_puts_back_a_change_to_published_on_its_own(): void
+    {
+        $this->booksFeed();
+        $this->ingest('books');
+
+        // The feed now says every book is a draft, and nothing else changes.
+        $feed = $this->booksFeed(['mapping' => ['title' => ['path' => 'title'], 'isbn' => ['path' => 'isbn'], 'pages' => ['path' => 'pages'], 'price' => ['path' => 'formats.1.price'], 'published' => ['value' => false]]]);
+        $run = $this->ingest('books');
+        $this->assertSame(20, $run->counts['updated']);
+        $this->assertSame(0, $this->published());
+
+        app(Undoer::class)->undo($run);
+
+        $this->assertSame(20, $this->published());
+    }
 }

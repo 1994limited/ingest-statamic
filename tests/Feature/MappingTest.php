@@ -349,6 +349,21 @@ class MappingTest extends TestCase
         $this->assertSame(RunStatus::Failed, $run->status);
         $this->assertStringContainsString('Ingest::hook()', $run->message);
     }
+
+    #[Test]
+    public function prose_mirror_from_a_feed_is_sanitised_too(): void
+    {
+        $doc = [['type' => 'paragraph', 'content' => [['type' => 'text', 'text' => 'Click', 'marks' => [['type' => 'link', 'attrs' => ['href' => 'javascript:alert(1)']]]]]]];
+        file_put_contents(self::TMP.'/pm.json', json_encode(['data' => [['isbn' => '1', 'title' => 'T', 'body' => $doc]]]));
+        $this->serve('pm.json', self::TMP.'/pm.json');
+        $this->booksFeed(['mapping' => ['title' => ['path' => 'title'], 'description' => ['path' => 'body']]], 'pm.json');
+
+        $this->ingest('books');
+
+        $saved = json_encode(Entry::query()->where('collection', 'books')->first()->get('description'));
+        $this->assertStringContainsString('Click', $saved);
+        $this->assertStringNotContainsString('javascript:', $saved);
+    }
 }
 
 class SupplierHook extends FeedHook

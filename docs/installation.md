@@ -37,6 +37,8 @@ With a queue worker running (`php artisan queue:work`), each run is a chain of q
 
 Without a queue (the `sync` driver), a run started in the Control Panel happens after the page has been sent, and a run started with `php artisan ingest:run` happens there and then. That's fine for feeds of a few thousand items.
 
+Each batch job may run for up to 30 minutes. Make sure the queue connection's `retry_after` (in `config/queue.php`) is longer than that, 1900 seconds or more, or the queue may hand the same batch to a second worker. (Ingest notices and ignores the duplicate, but it's better not to cause one.)
+
 To run feeds on their own queue or connection:
 
 ```env

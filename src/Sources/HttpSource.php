@@ -66,6 +66,8 @@ class HttpSource implements Source
             $signature = $pageUrl.'?'.http_build_query($query);
             if (isset($seen[$signature])) {
                 $warnings[] = "Pagination returned to a page it had already fetched ({$pageUrl}); stopped there.";
+                // Pages after the loop were never read: nothing may count as missing.
+                $validators['incomplete'] = true;
 
                 break;
             }

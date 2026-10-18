@@ -157,6 +157,11 @@ class MissingItems
         }
 
         $title = $destination->title($content);
+
+        if (method_exists($destination, 'protectedUser') && $destination->protectedUser($content)) {
+            return new RunItem($run->id, $record->sourceKey, RunItem::FAILED, $record->contentType, $record->contentId, $title, errors: [__('Ingest doesn\'t block or delete administrators, or users with roles it isn\'t allowed to give.')], personal: true);
+        }
+
         $deleteNow = $action === 'delete' && ($days === null || $this->due($record->missingSince, (int) $days));
 
         if ($deleteNow) {
@@ -183,6 +188,9 @@ class MissingItems
             return null;
         }
 
+        // Users lose roles and groups when blocked: keep them, for undo.
+        $before = $destination->personal() ? ['content' => $destination->snapshot($content)] : null;
+
         if (! $run->dryRun) {
             $destination->setPublished($content, false);
             $destination->save($content);
@@ -192,7 +200,7 @@ class MissingItems
             (new ItemsFile(Ingest::storagePath('payloads/'.$run->id)))->markChanged($record->contentType, $record->contentId, RunItem::UNPUBLISHED);
         }
 
-        return new RunItem($run->id, $record->sourceKey, RunItem::UNPUBLISHED, $record->contentType, $record->contentId, $title, changes: ['published' => [true, false]], personal: $destination->personal());
+        return new RunItem($run->id, $record->sourceKey, RunItem::UNPUBLISHED, $record->contentType, $record->contentId, $title, changes: ['published' => [true, false]], snapshot: $before, personal: $destination->personal());
     }
 
     /**

@@ -18,6 +18,7 @@ use NineteenNinetyFour\Ingest\Ingest;
 use NineteenNinetyFour\Ingest\IngestException;
 use NineteenNinetyFour\Ingest\Jobs\StartRun;
 use NineteenNinetyFour\Ingest\Sources\Sources;
+use NineteenNinetyFour\Ingest\Support\Value;
 use Throwable;
 
 /**
@@ -122,7 +123,7 @@ class Runner
             return $this->runs->find($run->id) ?? $run;
         }
 
-        for ($chunk = 0; $this->chunk($run, $chunk); $chunk++) {
+        for ($chunk = 0; $this->chunk($run, $chunk) === true; $chunk++) {
             $run = $this->runs->find($run->id) ?? $run;
         }
 
@@ -137,6 +138,11 @@ class Runner
      */
     public function fetch(Run $run): bool
     {
+        // A redelivered job: the run has moved on already.
+        if ($run->status !== RunStatus::Queued) {
+            return false;
+        }
+
         $feed = $this->feed($run);
 
         return $this->guard($run, $feed, function () use ($run, $feed) {
@@ -194,6 +200,7 @@ class Runner
                 $run->total = $items->write($stream, $feed->key(), $this->chunkSize(), $limit !== null ? (int) $limit : null, $fixedKey);
 
                 $run->payload = [
+                    'config_hash' => self::configHash($feed),
                     'format' => $format,
                     'pages' => count($payload->pages),
                     'validators' => $payload->validators,
@@ -218,32 +225,65 @@ class Runner
     }
 
     /**
-     * Process one chunk. Returns whether there's another.
+     * Process one chunk. Returns whether there's another, or null when this
+     * delivery should do nothing (the chunk is done or being done already).
      */
-    public function chunk(Run $run, int $index): bool
+    public function chunk(Run $run, int $index): ?bool
     {
-        $run = $this->runs->find($run->id) ?? $run;
+        // One worker per run at a time; a duplicate delivery backs off.
+        $lock = Cache::lock('ingest:run:'.$run->id, 2 * 3600);
 
-        if ($run->status === RunStatus::Cancelling) {
-            $this->cancelled($run);
-
-            return false;
+        if (! $lock->get()) {
+            return null;
         }
 
-        if ($run->status !== RunStatus::Processing) {
-            return false;
+        try {
+            $run = $this->runs->find($run->id) ?? $run;
+
+            if ($run->status === RunStatus::Cancelling) {
+                $this->cancelled($run);
+
+                return false;
+            }
+
+            if ($run->status !== RunStatus::Processing) {
+                return null;
+            }
+
+            // Already processed: a queue delivered this chunk twice.
+            if ($index <= (int) ($run->payload['chunks_done'] ?? -1)) {
+                return null;
+            }
+
+            $feed = $this->feed($run);
+            $items = new ItemsFile(Ingest::storagePath('payloads/'.$run->id));
+
+            $more = $this->guard($run, $feed, function () use ($run, $feed, $items, $index) {
+                $rows = $this->processor->chunk($feed, $run, $items, $index);
+                $this->runs->addItems($run, $rows);
+
+                // Cancelled, or given up on, while this chunk ran: that status stands.
+                $stored = $this->runs->find($run->id);
+                if ($stored && $stored->status !== RunStatus::Processing) {
+                    $run->status = $stored->status;
+                    $run->message = $stored->message ?? $run->message;
+                    $run->finishedAt = $stored->finishedAt;
+                }
+
+                $run->payload['chunks_done'] = $index;
+                $this->beat($run);
+
+                return $index + 1 < $items->chunks();
+            });
+
+            return match ($this->runs->find($run->id)?->status) {
+                RunStatus::Processing => (bool) $more,
+                RunStatus::Cancelling => false,
+                default => null,
+            };
+        } finally {
+            $lock->release();
         }
-
-        $feed = $this->feed($run);
-        $items = new ItemsFile(Ingest::storagePath('payloads/'.$run->id));
-
-        return (bool) $this->guard($run, $feed, function () use ($run, $feed, $items, $index) {
-            $rows = $this->processor->chunk($feed, $run, $items, $index);
-            $this->runs->addItems($run, $rows);
-            $this->beat($run);
-
-            return $index + 1 < $items->chunks();
-        });
     }
 
     public function finish(Run $run): void
@@ -378,10 +418,23 @@ class Runner
         return isset($validators['file_hash'], $previous['file_hash']) && $validators['file_hash'] === $previous['file_hash'];
     }
 
+    /**
+     * The settings that decide what a run does with its items: mapping,
+     * destination, key, filters and sync rules. (Source and format only
+     * decide how items are fetched, and applying a dry run fetches nothing.)
+     * A dry run is only applied with the same ones.
+     */
+    public static function configHash(Feed $feed): string
+    {
+        $data = array_intersect_key($feed->toArray(), array_flip(['destination', 'key', 'filters', 'mapping', 'sync', 'hook', 'localizes']));
+
+        return Value::hash($data);
+    }
+
     private function lastSuccessful(Feed $feed): ?Run
     {
         return $this->runs->forFeed($feed->handle(), 10)
-            ->first(fn (Run $r) => ! $r->dryRun && ($r->status->successful() || $r->status === RunStatus::Aborted));
+            ->first(fn (Run $r) => ! $r->dryRun && $r->status->successful());
     }
 
     /**
@@ -396,12 +449,18 @@ class Runner
             throw new IngestException(__('That dry run\'s items aren\'t available any more. Run the feed again.'));
         }
 
+        if (($dry->payload['config_hash'] ?? null) !== self::configHash($this->feed($run))) {
+            throw new IngestException(__('The feed\'s settings have changed since this dry run. Run a new dry run to see what they would do.'));
+        }
+
         File::ensureDirectoryExists($directory);
         File::copy($source.'/items.ndjson', $directory.'/items.ndjson');
         File::copy($source.'/chunks.json', $directory.'/chunks.json');
 
         $run->total = $dry->total;
         $run->payload = $dry->payload;
+        // The dry run's progress isn't this run's.
+        unset($run->payload['chunks_done'], $run->payload['notes']);
         $run->payload['applied_from'] = $id;
     }
 }

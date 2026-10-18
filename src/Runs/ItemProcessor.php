@@ -2,9 +2,11 @@
 
 namespace NineteenNinetyFour\Ingest\Runs;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Support\Collection;
 use NineteenNinetyFour\Ingest\Contracts\Destination;
 use NineteenNinetyFour\Ingest\Contracts\ItemMap;
+use NineteenNinetyFour\Ingest\Contracts\RunRepository;
 use NineteenNinetyFour\Ingest\Destinations\Destinations;
 use NineteenNinetyFour\Ingest\Events\ItemFailed;
 use NineteenNinetyFour\Ingest\Events\ItemParsed;
@@ -42,7 +44,13 @@ class ItemProcessor
 
     private Context $context;
 
+    /** Seconds between heartbeats inside a chunk (lowered in tests). */
+    public static int $beatEvery = 30;
+
+    private float $lastBeat = 0;
+
     public function __construct(
+        private RunRepository $runs,
         private ItemMap $map,
         private Mapper $mapper,
         private Destinations $destinations,
@@ -64,7 +72,13 @@ class ItemProcessor
         $rows = [];
         $seen = [];
 
+        $this->lastBeat = microtime(true);
+
         foreach ($items->chunk($index) as $row) {
+            if (! $this->stillOurs()) {
+                break;
+            }
+
             $run->processed++;
 
             $item = (array) $row['i'];
@@ -289,6 +303,32 @@ class ItemProcessor
         $this->hook?->afterSave($content, $this->context);
 
         return $this->row($sourceKey, $action, contentId: $id, title: $this->destination->title($content) ?? $title, changes: $changes, warnings: array_merge($warnings, $this->context->warnings), snapshot: $this->context->created ? ['created' => $this->context->created] : null);
+    }
+
+    /**
+     * A long chunk (slow downloads, say) reports progress as it goes, so it
+     * isn't taken for dead. If the run was given up on or cancelled in the
+     * meantime, the chunk stops: another run may already own the feed.
+     */
+    private function stillOurs(): bool
+    {
+        if (microtime(true) - $this->lastBeat < self::$beatEvery) {
+            return true;
+        }
+
+        $this->lastBeat = microtime(true);
+        $this->map->flush();
+
+        $fresh = $this->runs->find($this->run->id);
+
+        if (! $fresh || $fresh->status !== RunStatus::Processing) {
+            return false;
+        }
+
+        $this->run->heartbeatAt = CarbonImmutable::now();
+        $this->runs->save($this->run);
+
+        return true;
     }
 
     /**

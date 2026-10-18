@@ -21,9 +21,12 @@ class ProcessChunk extends RunJob
             return;
         }
 
-        if ($runner->chunk($run, $this->chunk)) {
+        $more = $runner->chunk($run, $this->chunk);
+
+        // Null: a duplicate delivery, or a run that's over. Nothing to queue.
+        if ($more === true) {
             self::dispatch($this->runId, $this->chunk + 1);
-        } else {
+        } elseif ($more === false) {
             FinishRun::dispatch($this->runId);
         }
     }

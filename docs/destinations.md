@@ -46,7 +46,7 @@ Ingest can keep users in step with a membership system or CRM, with guardrails:
 - A feed never changes an administrator: super admins, and anyone with a role or group outside the allow-lists, are left alone, and an item that matches one fails.
 - Roles and groups are only given if they're listed in `ingest.users.roles` and `ingest.users.groups`. Anything else is left out with a warning.
 - New users can't sign in until they set a password. Turn on **Email new users a link to set their password** to send Statamic's activation email.
-- Users missing from the feed are **blocked**, not deleted, when the feed is set to unpublish: their roles and groups are removed and `ingest_blocked` is set. Deleting needs **Delete them**.
+- Users missing from the feed are **blocked**, not deleted, when the feed is set to unpublish: their roles and groups are removed and `ingest_blocked` is set. Undoing the run gives them back. Deleting needs **Delete them**, and never deletes or blocks an administrator.
 - Run history for users feeds is marked as personal data and its detail is cleared after `ingest.history.keep_personal_days` (7 days).
 
 Users are matched by email when adopting existing accounts.

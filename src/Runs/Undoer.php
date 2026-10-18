@@ -158,10 +158,23 @@ class Undoer
             }
         }
 
-        if ($restore !== []) {
-            $destination->fill($feed, $content, $restore, new Context($feed));
-            if (isset($item->changes['published'])) {
-                $destination->setPublished($content, (bool) $item->changes['published'][0]);
+        // Publication is undone on its own, with its own conflict check.
+        $publish = null;
+        if (isset($item->changes['published'])) {
+            [$was, $became] = $item->changes['published'];
+            if ($destination->isPublished($content) === (bool) $became) {
+                $publish = (bool) $was;
+            } else {
+                $conflicts[] = __(':item › published changed after the run, so it was kept.', ['item' => $item->title ?? $item->key]);
+            }
+        }
+
+        if ($restore !== [] || $publish !== null) {
+            if ($restore !== []) {
+                $destination->fill($feed, $content, $restore, new Context($feed));
+            }
+            if ($publish !== null) {
+                $destination->setPublished($content, $publish);
             }
             $destination->save($content);
 
@@ -175,7 +188,7 @@ class Undoer
             }
         }
 
-        return $conflicts !== [] ? $conflicts : ($restore !== [] ? true : null);
+        return $conflicts !== [] ? $conflicts : ($restore !== [] || $publish !== null ? true : null);
     }
 
     private function unpublish($feed, $destination, RunItem $item): ?bool
@@ -187,6 +200,10 @@ class Undoer
         }
 
         $destination->setPublished($content, true);
+        // Users had their roles and groups taken away: give them back.
+        if (method_exists($destination, 'restoreAccess') && isset($item->snapshot['content'])) {
+            $destination->restoreAccess($content, $item->snapshot['content']);
+        }
         $destination->save($content);
 
         if ($record = $this->record($item->contentId)) {

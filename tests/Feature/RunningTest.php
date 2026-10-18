@@ -12,11 +12,13 @@ use NineteenNinetyFour\Ingest\Feeds\Feed;
 use NineteenNinetyFour\Ingest\Jobs\ProcessChunk;
 use NineteenNinetyFour\Ingest\Jobs\StartRun;
 use NineteenNinetyFour\Ingest\Notifications\RunNotification;
+use NineteenNinetyFour\Ingest\Runs\ItemProcessor;
 use NineteenNinetyFour\Ingest\Runs\Pruner;
 use NineteenNinetyFour\Ingest\Runs\Run;
 use NineteenNinetyFour\Ingest\Runs\Runner;
 use NineteenNinetyFour\Ingest\Runs\RunStatus;
 use NineteenNinetyFour\Ingest\Schedule\Scheduler;
+use NineteenNinetyFour\Ingest\Sources\FileSource;
 use NineteenNinetyFour\Ingest\Tests\TestCase;
 use NineteenNinetyFour\Ingest\Webhooks\Token;
 use PHPUnit\Framework\Attributes\Test;
@@ -248,5 +250,94 @@ class RunningTest extends TestCase
         $this->assertSame(0, Entry::query()->where('collection', 'books')->count());
 
         $this->artisan('ingest:run', ['feed' => ['nope']])->assertFailed();
+    }
+
+    #[Test]
+    public function a_chunk_delivered_twice_is_processed_once(): void
+    {
+        config(['ingest.chunk_size' => 5]);
+        $this->booksFeed();
+        $runner = app(Runner::class);
+        $run = Run::make('books');
+        $this->runs()->save($run);
+        $runner->fetch($this->runs()->find($run->id));
+
+        $this->assertTrue($runner->chunk($this->runs()->find($run->id), 0));
+        $this->assertNull($runner->chunk($this->runs()->find($run->id), 0));
+        $this->assertFalse($runner->fetch($this->runs()->find($run->id)));
+
+        $this->assertSame(5, $this->runs()->find($run->id)->counts['created']);
+        $this->assertSame(5, Entry::query()->where('collection', 'books')->count());
+    }
+
+    #[Test]
+    public function a_run_given_up_on_stops_mid_chunk_and_stays_failed(): void
+    {
+        ItemProcessor::$beatEvery = 0;
+        $this->booksFeed();
+        $runner = app(Runner::class);
+        $run = Run::make('books');
+        $this->runs()->save($run);
+        $runner->fetch($this->runs()->find($run->id));
+
+        // Another process gives up on the run before this worker gets going.
+        $failed = $this->runs()->find($run->id);
+        $failed->status = RunStatus::Failed;
+        $failed->message = 'Stopped responding';
+        $this->runs()->save($failed);
+
+        $this->assertNull($runner->chunk(tap($this->runs()->find($run->id), fn ($r) => $r->status = RunStatus::Processing), 0));
+        $this->assertSame(RunStatus::Failed, $this->runs()->find($run->id)->status);
+        $this->assertSame(0, Entry::query()->where('collection', 'books')->count());
+
+        ItemProcessor::$beatEvery = 30;
+    }
+
+    #[Test]
+    public function a_pagination_loop_never_removes_anything(): void
+    {
+        $page = ['data' => array_slice($this->fixture('books/index.json')['data'], 0, 5), 'links' => ['next' => 'loop.json']];
+        file_put_contents(self::TMP.'/loop.json', json_encode($page));
+        $this->serve('loop.json', self::TMP.'/loop.json');
+        $this->booksFeed([], 'books/index.json');
+        $this->ingest('books');
+
+        $this->booksFeed(['source' => ['pagination' => ['type' => 'next_url', 'path' => 'links.next']], 'sync' => ['missing' => ['action' => 'delete'], 'safety' => ['max_removal_percent' => 100]]], 'loop.json');
+        $run = $this->ingest('books');
+
+        $this->assertFalse($run->payload['complete']);
+        $this->assertSame(0, $run->counts['deleted']);
+        $this->assertSame(60, Entry::query()->where('collection', 'books')->count());
+    }
+
+    #[Test]
+    public function a_dry_run_is_only_applied_with_the_settings_it_previewed(): void
+    {
+        $this->booksFeed();
+        $dry = $this->ingest('books', true);
+        $this->booksFeed(['sync' => ['missing' => ['action' => 'delete']]]);
+
+        $run = $this->ingest('books', options: ['apply' => $dry->id]);
+
+        $this->assertSame(RunStatus::Failed, $run->status);
+        $this->assertStringContainsString('settings have changed', $run->message);
+        $this->assertSame(0, Entry::query()->where('collection', 'books')->count());
+    }
+
+    #[Test]
+    public function after_a_safety_stop_the_same_file_runs_again(): void
+    {
+        @mkdir(FileSource::directory('upload'), 0755, true);
+        copy(self::FEEDS.'/states/books/v1.json', FileSource::directory('upload').'/books.json');
+        $this->booksFeed(['source' => ['type' => 'upload', 'file' => 'books.json'], 'sync' => ['missing' => ['action' => 'delete']]], handle: 'upload');
+        $this->ingest('upload');
+
+        file_put_contents(FileSource::directory('upload').'/books.json', json_encode(['data' => array_slice($this->fixture('states/books/v1.json')['data'], 0, 5)]));
+        $this->assertSame(RunStatus::Aborted, $this->ingest('upload')->status);
+
+        $this->booksFeed(['source' => ['type' => 'upload', 'file' => 'books.json'], 'sync' => ['missing' => ['action' => 'delete'], 'safety' => ['max_removal_percent' => 100]]], handle: 'upload');
+        $run = $this->ingest('upload');
+
+        $this->assertSame(15, $run->counts['deleted']);
     }
 }
