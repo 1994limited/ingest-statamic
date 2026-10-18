@@ -3,20 +3,20 @@
 
 /**
  * Copies the feeds the tests use from the test-data repository
- * (1994limited/ingest-statamic-test-data) into tests/__fixtures__/feeds.
+ * (1994limited/ingest-test-data) into tests/__fixtures__/feeds.
  *
- *   bin/sync-fixtures                       # from ../ingest-statamic-test-data
+ *   bin/sync-fixtures                       # from ../ingest-test-data
  *   bin/sync-fixtures /path/to/test-data
  *
  * The tests never fetch over the network: they read these copies through
  * Http::fake(). Re-run this after changing the test data, and commit.
  */
 
-$source = rtrim($argv[1] ?? dirname(__DIR__, 2).'/ingest-statamic-test-data', '/');
+$source = rtrim($argv[1] ?? dirname(__DIR__, 2).'/ingest-test-data', '/');
 $target = dirname(__DIR__).'/tests/__fixtures__/feeds';
 
 if (! is_dir($source.'/books')) {
-    fwrite(STDERR, "No test data at {$source}. Clone 1994limited/ingest-statamic-test-data next to this repository, or pass its path.\n");
+    fwrite(STDERR, "No test data at {$source}. Clone 1994limited/ingest-test-data next to this repository, or pass its path.\n");
     exit(1);
 }
 

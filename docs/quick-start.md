@@ -13,7 +13,7 @@ Go to **Tools → Ingest → Create Feed**.
 **Source.** Give it a name ("Books") and paste the feed URL:
 
 ```
-https://raw.githubusercontent.com/1994limited/ingest-statamic-test-data/main/books/index.json
+https://raw.githubusercontent.com/1994limited/ingest-test-data/main/books/index.json
 ```
 
 The **feed preview** on the right reads the feed straight away: it's JSON, with 60 items.
