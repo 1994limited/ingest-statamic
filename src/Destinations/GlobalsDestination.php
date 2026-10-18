@@ -77,6 +77,12 @@ class GlobalsDestination implements Destination
         return $this->variables($feed);
     }
 
+    /** The set's values always exist: the first run updates them. */
+    public function existing(Feed $feed): mixed
+    {
+        return $this->variables($feed);
+    }
+
     public function findBy(Feed $feed, string $field, mixed $value): Collection
     {
         return collect([$this->variables($feed)]);

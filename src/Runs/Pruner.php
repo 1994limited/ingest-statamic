@@ -64,7 +64,7 @@ class Pruner
         }
 
         // Dry runs' items, kept so they can be applied, and anything left behind.
-        foreach (File::directories(Ingest::storagePath('payloads')) as $dir) {
+        foreach (is_dir(Ingest::storagePath('payloads')) ? File::directories(Ingest::storagePath('payloads')) : [] as $dir) {
             if (File::lastModified($dir) < $now->subDays(7)->getTimestamp()) {
                 File::deleteDirectory($dir);
                 $counts['payloads']++;

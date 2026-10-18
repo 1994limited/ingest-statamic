@@ -147,6 +147,11 @@ class ItemProcessor
             $record = null;
         }
 
+        // Destinations whose content always exists (a global set).
+        if (! $content && method_exists($this->destination, 'existing')) {
+            $content = $this->destination->existing($this->feed);
+        }
+
         if (! $content && ($adopt = $this->feed->sync()['adopt'] ?? null)) {
             [$content, $error] = $this->adopt((array) $adopt, $item);
             if ($error) {
@@ -258,7 +263,13 @@ class ItemProcessor
         $this->destination->save($content);
 
         if (method_exists($this->destination, 'afterSave')) {
-            $this->destination->afterSave($this->feed, $content, $this->context);
+            try {
+                $this->destination->afterSave($this->feed, $content, $this->context);
+            } catch (Throwable $e) {
+                // Saved already: report the rest as a warning.
+                report($e);
+                $this->context->warn($e->getMessage());
+            }
         }
 
         $id = $this->destination->id($content);
@@ -273,7 +284,7 @@ class ItemProcessor
         event(new ItemSaved($this->feed, $content, $action, $changes, $this->context));
         $this->hook?->afterSave($content, $this->context);
 
-        return $this->row($sourceKey, $action, contentId: $id, title: $this->destination->title($content) ?? $title, changes: $changes, warnings: $warnings, snapshot: $this->context->created ? ['created' => $this->context->created] : null);
+        return $this->row($sourceKey, $action, contentId: $id, title: $this->destination->title($content) ?? $title, changes: $changes, warnings: array_merge($warnings, $this->context->warnings), snapshot: $this->context->created ? ['created' => $this->context->created] : null);
     }
 
     /**

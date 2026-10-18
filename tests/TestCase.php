@@ -20,6 +20,7 @@ use Statamic\Facades\AssetContainer;
 use Statamic\Facades\Blueprint;
 use Statamic\Facades\Collection;
 use Statamic\Facades\Taxonomy;
+use Statamic\Statamic;
 use Statamic\Testing\AddonTestCase;
 use Statamic\Testing\Concerns\PreventsSavingStacheItemsToDisk;
 
@@ -83,8 +84,13 @@ abstract class TestCase extends AddonTestCase
         File::deleteDirectory(resource_path('blueprints'));
         File::delete(resource_path('addons/ingest-statamic.yaml'));
         Settings::flush();
+        File::delete(resource_path('sites.yaml'));
 
         parent::tearDown();
+
+        // Statamic keeps action routes in a static list: providers from this
+        // test (Cargo's) mustn't register routes in the next test's app.
+        (fn () => static::$actionRoutes = [])->bindTo(null, Statamic::class)();
     }
 
     /**
@@ -212,6 +218,14 @@ abstract class TestCase extends AddonTestCase
             $feed->set('mapping', $overrides['mapping']);
         }
 
+        app(FeedRepository::class)->save($feed);
+
+        return $feed;
+    }
+
+    protected function saveFeed(string $handle, array $data): Feed
+    {
+        $feed = Feed::make($handle, $data);
         app(FeedRepository::class)->save($feed);
 
         return $feed;

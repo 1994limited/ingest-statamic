@@ -14,6 +14,7 @@ use NineteenNinetyFour\Ingest\Mapping\Context;
 use NineteenNinetyFour\Ingest\Mapping\Transforms;
 use NineteenNinetyFour\Ingest\Support\Value;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Facades\Blink;
 use Statamic\Facades\Collection as Collections;
 use Statamic\Facades\Entry;
 use Statamic\Fields\Blueprint;
@@ -300,7 +301,21 @@ class EntriesDestination implements Destination
             return;
         }
 
-        $tree = $this->collection($feed)->structure()->in($feed->site());
+        $collection = $this->collection($feed);
+        // Statamic remembers the collection's entries for the request when
+        // checking a tree; entries this run created would look foreign.
+        Blink::flush();
+
+        $tree = $collection->structure()->in($feed->site());
+        // Statamic shows entries missing from the stored tree at the top
+        // level; store them there too, so they can be moved.
+        $tree->tree($tree->tree());
+
+        if (! $tree->find($context->parent)) {
+            $context->warn(__('The parent isn\'t in the collection\'s tree, so the entry was left at the top level.'));
+
+            return;
+        }
 
         if ($tree->find($entry->id())) {
             if ($tree->find($entry->id())->parent()?->id() !== $context->parent) {

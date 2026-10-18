@@ -88,7 +88,7 @@ class UsersDestination implements Destination
         foreach ($handles as $handle) {
             $out[$handle] = match ($handle) {
                 'email' => $content->email(),
-                'roles' => $content->roles()->keys()->sort()->values()->all(),
+                'roles' => $content->explicitRoles()->keys()->sort()->values()->all(),
                 'groups' => $content->groups()->keys()->sort()->values()->all(),
                 default => $content->get($handle),
             };
@@ -121,7 +121,7 @@ class UsersDestination implements Destination
 
             match ($handle) {
                 'email' => $value ? $content->email(mb_strtolower(trim((string) $value))) : null,
-                'roles' => $content->roles($this->allowed((array) $value, 'roles', $context)),
+                'roles' => $content->explicitRoles($this->allowed((array) $value, 'roles', $context)),
                 'groups' => $content->groups($this->allowed((array) $value, 'groups', $context)),
                 default => $value === null ? $content->remove($handle) : $content->set($handle, $value),
             };
@@ -182,7 +182,7 @@ class UsersDestination implements Destination
             return;
         }
 
-        $content->roles([]);
+        $content->explicitRoles([]);
         $content->groups([]);
         $content->set('ingest_blocked', true);
     }
@@ -208,7 +208,7 @@ class UsersDestination implements Destination
         return [
             'id' => $content->id(),
             'email' => $content->email(),
-            'roles' => $content->roles()->keys()->all(),
+            'roles' => $content->explicitRoles()->keys()->all(),
             'groups' => $content->groups()->keys()->all(),
             'data' => collect($content->data()->all())->except(self::FORBIDDEN)->all(),
         ];
@@ -217,7 +217,7 @@ class UsersDestination implements Destination
     public function restore(Feed $feed, array $snapshot): mixed
     {
         $user = User::make()->id($snapshot['id'])->email($snapshot['email'])->data((array) $snapshot['data']);
-        $user->roles((array) $snapshot['roles']);
+        $user->explicitRoles((array) $snapshot['roles']);
         $user->groups((array) $snapshot['groups']);
         $this->save($user);
 

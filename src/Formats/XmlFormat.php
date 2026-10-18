@@ -118,7 +118,8 @@ class XmlFormat implements Format
 
         try {
             $doc = new DOMDocument;
-            $loaded = @$doc->load($file, LIBXML_NONET | LIBXML_COMPACT | LIBXML_BIGLINES);
+            // Parsed from a string: the hardened entity loader would refuse to open the file itself.
+            $loaded = @$doc->loadXML((string) file_get_contents($file), LIBXML_NONET | LIBXML_COMPACT | LIBXML_BIGLINES);
             $this->throwErrors();
 
             if (! $loaded || ! $doc->documentElement) {
