@@ -22,20 +22,21 @@ class IngestTags extends Tags
 {
     protected static $handle = 'ingest';
 
-    public function feed(): array
+    /** Nothing at all (not an empty context) when there's no such feed. */
+    public function feed(): array|string
     {
         $feed = app(FeedRepository::class)->find((string) $this->params->get(['handle', 'feed']));
 
-        return $feed ? $this->describe($feed) : [];
+        return $feed ? $this->describe($feed) : '';
     }
 
-    public function source(): array
+    public function source(): array|string
     {
         $id = $this->params->get('id') ?? $this->context->value('id');
         $record = $id ? app(ItemMap::class)->forContent((string) $id) : null;
         $feed = $record ? app(FeedRepository::class)->find($record->feed) : null;
 
-        return $feed ? $this->describe($feed) + ['key' => $record->sourceKey] : [];
+        return $feed ? $this->describe($feed) + ['key' => $record->sourceKey] : '';
     }
 
     private function describe(Feed $feed): array

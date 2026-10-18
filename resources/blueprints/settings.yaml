@@ -1,0 +1,50 @@
+tabs:
+  main:
+    sections:
+      -
+        display: Notifications
+        fields:
+          -
+            handle: notify_mail
+            field:
+              type: list
+              display: 'Notification emails'
+              instructions: 'Who hears when a feed fails, is stopped by its safety check, or goes quiet. Each feed chooses which of these it sends. Slack is set with INGEST_SLACK_WEBHOOK_URL in .env.'
+      -
+        display: Safety
+        fields:
+          -
+            handle: max_removal_percent
+            field:
+              type: integer
+              display: 'Most to remove in one run (%)'
+              instructions: 'A run that would unpublish or delete more than this share of a feed''s items stops and tells you instead. Feeds can set their own.'
+              placeholder: '25'
+      -
+        display: 'Run history'
+        fields:
+          -
+            handle: keep_runs
+            field:
+              type: integer
+              display: 'Runs to keep in detail'
+              instructions: 'Per feed. Older runs keep their summary but lose the item-by-item detail (and can no longer be undone).'
+              placeholder: '20'
+              width: 50
+          -
+            handle: keep_failed_days
+            field:
+              type: integer
+              display: 'Days to keep failed runs'
+              placeholder: '30'
+              width: 50
+      -
+        display: Performance
+        fields:
+          -
+            handle: chunk_size
+            field:
+              type: integer
+              display: 'Items per batch'
+              instructions: 'How many items each queued job handles. Lower it if jobs time out.'
+              placeholder: '100'

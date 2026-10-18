@@ -315,6 +315,11 @@ class Runner
         $run->message ??= __('Cancelled. Items processed before cancelling were kept; undo the run to reverse them.');
         $run->finishedAt = CarbonImmutable::now();
         $this->runs->save($run);
+
+        if ($feed = $this->feeds->find($run->feed)) {
+            $this->finisher->settle($feed, $run);
+            $this->finisher->afterRun($feed, $run);
+        }
     }
 
     /**
@@ -335,6 +340,7 @@ class Runner
             $this->runs->save($run);
 
             event(new RunFailed($feed, $run));
+            $this->finisher->settle($feed, $run);
             $this->finisher->afterRun($feed, $run);
 
             return false;

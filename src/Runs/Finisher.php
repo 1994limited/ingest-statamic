@@ -37,12 +37,7 @@ class Finisher
 
     public function finish(Feed $feed, Run $run): void
     {
-        $items = new ItemsFile(Ingest::storagePath('payloads/'.$run->id));
-
-        if (! $run->dryRun && config('ingest.quiet_saves', true)) {
-            $this->catchUp($items->changed());
-            $this->commit($feed, $run);
-        }
+        $this->settle($feed, $run);
 
         if ($run->status !== RunStatus::Aborted) {
             $run->status = $run->counts['failed'] > 0 ? RunStatus::CompletedWithErrors : RunStatus::Completed;
@@ -62,6 +57,21 @@ class Finisher
         if (! $run->dryRun && $run->status->successful()) {
             $this->chain($feed, $run);
         }
+    }
+
+    /**
+     * Bring search, the static cache and Git up to date with what a run
+     * changed, however it ended (finished, failed partway, cancelled).
+     */
+    public function settle(Feed $feed, Run $run): void
+    {
+        if ($run->dryRun || ! config('ingest.quiet_saves', true)) {
+            return;
+        }
+
+        $items = new ItemsFile(Ingest::storagePath('payloads/'.$run->id));
+        $this->catchUp($items->changed());
+        $this->commit($feed, $run);
     }
 
     /**
