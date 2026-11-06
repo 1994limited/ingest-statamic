@@ -2,7 +2,7 @@
 
 [Dog-ear Books](https://github.com/1994limited/ingest-statamic-demo) is a small bookshop built on Statamic and Cargo whose catalogue, stock, events, news, jobs, staff picks and opening hours all arrive from feeds. It includes a **feed lab**: made-up feeds served by the site itself, with switches to make them change, break or slow down, so you can see every part of Ingest without a real supplier.
 
-![Dog-ear Books](images/shop-home.png)
+![Dog-ear Books](https://raw.githubusercontent.com/1994limited/statamic-marketplace/main/ingest/charts/shop-home.png)
 
 ## Running it
 

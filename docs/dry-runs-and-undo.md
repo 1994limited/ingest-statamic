@@ -4,7 +4,7 @@
 
 A dry run reads the feed and works out everything a run would do, without saving anything: no content, no relationships, no downloads, no notifications. Its page lists each item it would create, update, unpublish or delete, with every field's old and new value. Structured fields show only what moved: `product_variants › options.Paperback.price  1299 → 1449`.
 
-![A dry run of the stock feed](images/cp-dry-run.png)
+![A dry run of the stock feed](https://raw.githubusercontent.com/1994limited/statamic-marketplace/main/ingest/charts/cp-dry-run.png)
 
 **Apply these changes** runs the feed with **exactly the items the dry run read**, not a fresh copy of the feed. What you previewed is what you get, even if the feed has changed since. If the feed's mapping, destination, key, filters or sync rules have been edited since the dry run, applying it is refused: run a new dry run to see what the new settings would do. A dry run's items are kept for a week.
 

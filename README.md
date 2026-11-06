@@ -16,7 +16,7 @@ Moving a site from WordPress once? Statamic's official [Importer](https://github
 
 | Feeds | The feed form | A dry run |
 |---|---|---|
-| ![The feeds list](docs/images/cp-feeds.png) | ![Mapping with the live preview](docs/images/cp-mapping.png) | ![What a dry run would change](docs/images/cp-dry-run.png) |
+| ![The feeds list](https://raw.githubusercontent.com/1994limited/statamic-marketplace/main/ingest/charts/cp-feeds.png) | ![Mapping with the live preview](https://raw.githubusercontent.com/1994limited/statamic-marketplace/main/ingest/charts/cp-mapping.png) | ![What a dry run would change](https://raw.githubusercontent.com/1994limited/statamic-marketplace/main/ingest/charts/cp-dry-run.png) |
 
 There's a demo shop, [Dog-ear Books](docs/demo.md), that keeps its catalogue, stock, events, news, jobs and opening hours in step with seven feeds.
 

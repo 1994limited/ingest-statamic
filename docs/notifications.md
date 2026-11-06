@@ -34,7 +34,7 @@ Add the widget to `config/statamic/cp.php` to see feeds that need attention, and
 
 It also says when the scheduler isn't running.
 
-![The dashboard widget](images/cp-dashboard.png)
+![The dashboard widget](https://raw.githubusercontent.com/1994limited/statamic-marketplace/main/ingest/charts/cp-dashboard.png)
 
 ## Events
 

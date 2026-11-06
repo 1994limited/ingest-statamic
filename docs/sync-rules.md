@@ -2,7 +2,7 @@
 
 The **Sync rules** tab says what a run may do.
 
-![The sync rules tab](images/cp-sync-rules.png)
+![The sync rules tab](https://raw.githubusercontent.com/1994limited/statamic-marketplace/main/ingest/charts/cp-sync-rules.png)
 
 ```yaml
 sync:

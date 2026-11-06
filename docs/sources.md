@@ -2,7 +2,7 @@
 
 Where a feed comes from. Choose it under **Source** on the feed form.
 
-![The source tab](images/cp-source.png)
+![The source tab](https://raw.githubusercontent.com/1994limited/statamic-marketplace/main/ingest/charts/cp-source.png)
 
 ## A URL or an API
 
