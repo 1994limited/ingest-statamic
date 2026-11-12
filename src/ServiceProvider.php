@@ -71,8 +71,9 @@ class ServiceProvider extends AddonServiceProvider
     ];
 
     /**
-     * The package is 1994/ingest-statamic; config, views and translations
-     * are read as plain "ingest", so they're loaded by hand. Routes too:
+     * The package is 1994/ingest-statamic; config and translations
+     * are read as plain "ingest", so they're loaded by hand (there are no
+     * Blade views: the Control Panel pages are Inertia). Routes too:
      * actions live at /!/ingest.
      */
     protected $config = false;
@@ -114,7 +115,6 @@ class ServiceProvider extends AddonServiceProvider
 
     public function bootAddon(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'ingest');
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'ingest');
 
         $this->publishes([__DIR__.'/../config/ingest.php' => config_path('ingest.php')], 'ingest-config');
