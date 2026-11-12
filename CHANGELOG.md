@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 (2026-11-12)
+
+### Fixed
+
+- `php artisan view:cache` no longer fails: the addon stopped registering a `resources/views` folder it doesn't ship.
+
 ## 1.0.0 (2026-10-18)
 
 The first release.
