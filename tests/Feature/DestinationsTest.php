@@ -2,6 +2,7 @@
 
 namespace NineteenNinetyFour\Ingest\Tests\Feature;
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Schema;
 use NineteenNinetyFour\Ingest\Runs\RunItem;
@@ -35,6 +36,36 @@ class DestinationsTest extends TestCase
         $subjects = collect($this->fixture('books/index.json')['data'])->flatMap(fn ($b) => $b['subjects'])->unique();
         $this->assertSame($subjects->count(), $run->counts['created'], (string) $run->message);
         $this->assertSame('Books about Crime', Term::find('subjects::crime')?->get('description'));
+    }
+
+    #[Test]
+    public function an_empty_mapped_field_is_cleared_on_a_term(): void
+    {
+        $subjects = [['name' => 'Crime', 'description' => 'Whodunnits'], ['name' => 'Poetry', 'description' => null]];
+        $this->serve('subjects.json', function () use (&$subjects) {
+            return Http::response(['data' => $subjects]);
+        });
+        $this->saveFeed('subjects', [
+            'source' => ['type' => 'url', 'url' => 'https://feeds.test/subjects.json'],
+            'format' => ['item_path' => 'data'],
+            'destination' => ['type' => 'terms', 'taxonomy' => 'subjects'],
+            'key' => ['name'],
+            'mapping' => ['title' => ['path' => 'name'], 'description' => ['path' => 'description']],
+        ]);
+
+        $run = $this->ingest('subjects');
+
+        $this->assertSame(2, $run->counts['created'], (string) $run->message);
+        $this->assertSame(0, $run->counts['failed']);
+        $this->assertFalse(Term::find('subjects::poetry')->data()->has('description'));
+
+        $subjects[0]['description'] = null;
+        $run = $this->ingest('subjects');
+
+        $this->assertSame(1, $run->counts['updated'], (string) $run->message);
+        $this->assertSame(0, $run->counts['failed']);
+        $this->assertFalse(Term::find('subjects::crime')->data()->has('description'));
+        $this->assertSame('Crime', Term::find('subjects::crime')->get('title'));
     }
 
     #[Test]

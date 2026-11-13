@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+
+- Terms feeds no longer fail an item when a mapped field is empty: the field is cleared on the term, as the dry run says. ([#2](https://github.com/1994limited/ingest-statamic/issues/2))
+
 ## 1.0.1 (2026-11-12)
 
 ### Fixed

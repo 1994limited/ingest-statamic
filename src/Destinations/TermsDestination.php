@@ -119,7 +119,8 @@ class TermsDestination implements Destination
             if ($handle === 'slug') {
                 continue;
             }
-            $value === null ? $content->remove($handle) : $content->set($handle, $value);
+            // A LocalizedTerm has no remove(), unlike entries, globals and users.
+            $value === null ? $content->data($content->data()->except($handle)) : $content->set($handle, $value);
         }
     }
 
